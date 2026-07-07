@@ -49,4 +49,6 @@ See `Enterprise_IDP_Technical_Architecture.pdf` section 4 for the full intended
 structure. Folders are scaffolded; most service files are placeholders (`pass`)
 pending build-out beyond the invoice pipeline proof-of-concept.
 
-To switch to virtula environmnt run this in the terminal: source .venv/bin/activate
+To switch to virtual environment on terminal: source .venv/bin/activate
+
+etc etc
