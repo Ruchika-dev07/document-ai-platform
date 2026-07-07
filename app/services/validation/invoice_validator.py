@@ -54,7 +54,12 @@ def check_vat_math(fields: dict) -> dict:
             "reason": "Missing SubTotal or InvoiceTotal - cannot verify math",
         }
 
-    expected_total = sub_total + total_tax - total_discount
+    # Note: Azure's prebuilt-invoice model returns SubTotal as the
+    # already-discounted taxable amount (confirmed against a real UAE
+    # invoice where Taxable Total = Amount - Discount already applied).
+    # So the correct check is SubTotal + TotalTax == InvoiceTotal.
+    # TotalDiscount is informational only here, not subtracted again.
+    expected_total = sub_total + total_tax
     difference = abs(expected_total - invoice_total)
     passed = difference <= TOLERANCE
 
@@ -65,9 +70,8 @@ def check_vat_math(fields: dict) -> dict:
         "actual_total": invoice_total,
         "difference": round(difference, 2),
         "reason": None if passed else (
-            f"SubTotal ({sub_total}) + TotalTax ({total_tax}) - "
-            f"TotalDiscount ({total_discount}) = {expected_total:.2f}, "
-            f"but InvoiceTotal is {invoice_total}"
+            f"SubTotal ({sub_total}) + TotalTax ({total_tax}) = "
+            f"{expected_total:.2f}, but InvoiceTotal is {invoice_total}"
         ),
     }
 
