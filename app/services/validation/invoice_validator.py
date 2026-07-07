@@ -125,3 +125,9 @@ if __name__ == "__main__":
     fields = extract_invoice_fields(data)
     result = validate_invoice(fields)
     print(json.dumps(result, indent=2, default=str, ensure_ascii=False))
+    """To run on terminal: python3 -m app.services.validation.invoice_validator sample-outputs/uae_invoice_analyze_result.json
+    This will run the validation checks on the extracted invoice fields and print the results in a readable format. The output 
+    will show whether the invoice passed all checks, and if not, which checks failed and why. This is useful for debugging and 
+    ensuring that the invoice data meets the required standards before further processing.
+    Example: This checks the actual math on your real invoice: 
+    SubTotal (74,125) + Tax (3,706.25) - Discount (2,000) should equal InvoiceTotal (77,831.25)"""
