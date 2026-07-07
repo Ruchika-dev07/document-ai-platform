@@ -1,7 +1,11 @@
 """FastAPI entrypoint for the IDP platform."""
 from fastapi import FastAPI
 
+from app.api.routes import upload
+
 app = FastAPI(title="Enterprise IDP Platform")
+
+app.include_router(upload.router)
 
 
 @app.get("/health")
