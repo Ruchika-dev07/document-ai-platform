@@ -19,8 +19,9 @@ the first few lines of page 1 for the longest non-numeric text block
 
 from app.core.config import settings
 
+from typing import Optional
 
-def _fallback_vendor_name_from_lines(analyze_result: dict) -> str | None:
+def _fallback_vendor_name_from_lines(analyze_result: dict) -> Optional[str]:
     """
     Heuristic fallback: scan the first 5 lines of page 1 and return the
     longest line that isn't purely numeric/symbols. This is where vendor
@@ -101,3 +102,5 @@ if __name__ == "__main__":
         data = json.load(f)
 
     print(json.dumps(extract_invoice_fields(data), indent=2, default=str))
+
+#run this on the terminal: python3 -m app.services.extraction.invoice_extractor sample-outputs/uae_invoice_analyze_result.json
