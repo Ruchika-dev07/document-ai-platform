@@ -6,5 +6,13 @@
       "currencyCode": "AED"
     },
     "first_seen": "2026-07-07T10:33:28.996288"
+  },
+  "UNKNOWN_VENDOR::1": {
+    "vendor_name": "123, ABC Building, DEF Street, GHI",
+    "invoice_total": {
+      "amount": 145172.0,
+      "currencyCode": "AED"
+    },
+    "first_seen": "2026-07-07T11:46:40.302430"
   }
 }

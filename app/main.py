@@ -11,3 +11,5 @@ app.include_router(upload.router)
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
+
+""" To start the server run the following command in the terminal: uvicorn app.main:app --reload """
