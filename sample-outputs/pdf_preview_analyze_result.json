@@ -1,0 +1,7191 @@
+{
+  "apiVersion": "2024-11-30",
+  "modelId": "prebuilt-invoice",
+  "stringIndexType": "textElements",
+  "content": "/\nشركة بشرى للتجارة ذ.م.م\nO Orignal\nO Duplicate\nO Triplicate\n203، برج سلطان، بالقرب من محطة سبخها باص ديرة\nPhone: 969988776655\nVAT Registration Number - 1234567890\nTAX INVOICE\nDetails of Receiver\nOther Details\nName:\nشركة السلتان\nInvoice No:\nب 21\nAddress:\nبرج دبرا\nInvoice Date:\n11-Oct-2017\nVat No:\n147258369\nTransporter Name:\nابتيمس\nPhone:\n0915236458\nPayment Mode:\nCash\nRemarks:\nابااب الاب يااايا تخفعقاا لابللبليل\nIIIIIاص\nNo\nProduct name\nQty\nRate\nAmount\nDiscount\nTaxable\nVAT Amt\nTotal\n+\n(Item Code)\n(UoM)\n1\nالذهب شريط 100gm\n5\n15,225.00\n76,125.00\n2,000.00\n74,125.00\n3,706.25\n77,831.25\n( 1154 )\n(PCS)\nTotal\n5.00\n76,125.00\n2,000.00\n74,125.00\n77,831.25\nشركة بشرى للتجارة ذ.صم:Bank Holder Name\nTaxable Total: 74,125.00\nبنك دبي الإسلامي :Bank Name\nBank Account Number: 001456789\nVAT Total:\n3,706.25\nBank IBAN Number: AE142536475869123\nOther Charges / Adjustments:\n0.00\nBank SWIFT Code: DIA24EE\nGrand Total: 77,831.25\nTotal in Words: SEVENTY-SEVEN THOUSAND EIGHT HUNDRED THIRTY-ONE POINT TWO FIVE AED ONLY\nTerms & Condition:\nم.م.د للتجارة بشرى شركة For\nالدفع مستحق في 7 أيام من تاريخ الفاتورة\nAuthorized Signatory\nThank you for your business :unselected:",
+  "pages": [
+    {
+      "pageNumber": 1,
+      "angle": 0.04902854934334755,
+      "width": 800,
+      "height": 715,
+      "unit": "pixel",
+      "words": [
+        {
+          "content": "/",
+          "polygon": [
+            77,
+            33,
+            114,
+            33,
+            114,
+            78,
+            75,
+            79
+          ],
+          "confidence": 0.342,
+          "span": {
+            "offset": 0,
+            "length": 1
+          }
+        },
+        {
+          "content": "شركة",
+          "polygon": [
+            496,
+            35,
+            544,
+            35,
+            544,
+            56,
+            497,
+            57
+          ],
+          "confidence": 0.988,
+          "span": {
+            "offset": 2,
+            "length": 4
+          }
+        },
+        {
+          "content": "بشرى",
+          "polygon": [
+            442,
+            35,
+            488,
+            35,
+            489,
+            57,
+            442,
+            57
+          ],
+          "confidence": 0.731,
+          "span": {
+            "offset": 7,
+            "length": 4
+          }
+        },
+        {
+          "content": "للتجارة",
+          "polygon": [
+            378,
+            36,
+            435,
+            35,
+            435,
+            57,
+            378,
+            58
+          ],
+          "confidence": 0.982,
+          "span": {
+            "offset": 12,
+            "length": 7
+          }
+        },
+        {
+          "content": "ذ.م.م",
+          "polygon": [
+            328,
+            37,
+            373,
+            36,
+            374,
+            57,
+            329,
+            58
+          ],
+          "confidence": 0.707,
+          "span": {
+            "offset": 20,
+            "length": 5
+          }
+        },
+        {
+          "content": "O",
+          "polygon": [
+            669,
+            32,
+            679,
+            32,
+            679,
+            44,
+            669,
+            44
+          ],
+          "confidence": 0.865,
+          "span": {
+            "offset": 26,
+            "length": 1
+          }
+        },
+        {
+          "content": "Orignal",
+          "polygon": [
+            682,
+            32,
+            723,
+            32,
+            723,
+            44,
+            682,
+            44
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 28,
+            "length": 7
+          }
+        },
+        {
+          "content": "O",
+          "polygon": [
+            669,
+            46,
+            679,
+            46,
+            679,
+            58,
+            669,
+            58
+          ],
+          "confidence": 0.963,
+          "span": {
+            "offset": 36,
+            "length": 1
+          }
+        },
+        {
+          "content": "Duplicate",
+          "polygon": [
+            682,
+            46,
+            735,
+            46,
+            735,
+            58,
+            682,
+            58
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 38,
+            "length": 9
+          }
+        },
+        {
+          "content": "O",
+          "polygon": [
+            669,
+            59,
+            679,
+            59,
+            679,
+            71,
+            669,
+            71
+          ],
+          "confidence": 0.962,
+          "span": {
+            "offset": 48,
+            "length": 1
+          }
+        },
+        {
+          "content": "Triplicate",
+          "polygon": [
+            681,
+            59,
+            734,
+            59,
+            734,
+            71,
+            681,
+            71
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 50,
+            "length": 10
+          }
+        },
+        {
+          "content": "203،",
+          "polygon": [
+            528,
+            70,
+            558,
+            70,
+            558,
+            83,
+            529,
+            83
+          ],
+          "confidence": 0.708,
+          "span": {
+            "offset": 61,
+            "length": 4
+          }
+        },
+        {
+          "content": "برج",
+          "polygon": [
+            513,
+            70,
+            526,
+            70,
+            526,
+            83,
+            513,
+            83
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 66,
+            "length": 3
+          }
+        },
+        {
+          "content": "سلطان،",
+          "polygon": [
+            470,
+            70,
+            509,
+            70,
+            509,
+            83,
+            470,
+            83
+          ],
+          "confidence": 0.877,
+          "span": {
+            "offset": 70,
+            "length": 6
+          }
+        },
+        {
+          "content": "بالقرب",
+          "polygon": [
+            439,
+            71,
+            468,
+            70,
+            468,
+            83,
+            439,
+            83
+          ],
+          "confidence": 0.962,
+          "span": {
+            "offset": 77,
+            "length": 6
+          }
+        },
+        {
+          "content": "من",
+          "polygon": [
+            422,
+            71,
+            436,
+            71,
+            436,
+            83,
+            422,
+            84
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 84,
+            "length": 2
+          }
+        },
+        {
+          "content": "محطة",
+          "polygon": [
+            392,
+            71,
+            419,
+            71,
+            419,
+            84,
+            392,
+            84
+          ],
+          "confidence": 0.814,
+          "span": {
+            "offset": 87,
+            "length": 4
+          }
+        },
+        {
+          "content": "سبخها",
+          "polygon": [
+            358,
+            71,
+            388,
+            71,
+            388,
+            84,
+            359,
+            84
+          ],
+          "confidence": 0.973,
+          "span": {
+            "offset": 92,
+            "length": 5
+          }
+        },
+        {
+          "content": "باص",
+          "polygon": [
+            338,
+            71,
+            356,
+            71,
+            356,
+            84,
+            339,
+            85
+          ],
+          "confidence": 0.941,
+          "span": {
+            "offset": 98,
+            "length": 3
+          }
+        },
+        {
+          "content": "ديرة",
+          "polygon": [
+            314,
+            72,
+            336,
+            71,
+            336,
+            85,
+            314,
+            85
+          ],
+          "confidence": 0.987,
+          "span": {
+            "offset": 102,
+            "length": 4
+          }
+        },
+        {
+          "content": "Phone:",
+          "polygon": [
+            374,
+            83,
+            411,
+            83,
+            411,
+            95,
+            374,
+            95
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 107,
+            "length": 6
+          }
+        },
+        {
+          "content": "969988776655",
+          "polygon": [
+            415,
+            83,
+            498,
+            83,
+            498,
+            95,
+            415,
+            95
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 114,
+            "length": 12
+          }
+        },
+        {
+          "content": "VAT",
+          "polygon": [
+            327,
+            96,
+            351,
+            96,
+            351,
+            109,
+            327,
+            109
+          ],
+          "confidence": 0.997,
+          "span": {
+            "offset": 127,
+            "length": 3
+          }
+        },
+        {
+          "content": "Registration",
+          "polygon": [
+            354,
+            96,
+            418,
+            96,
+            418,
+            108,
+            354,
+            109
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 131,
+            "length": 12
+          }
+        },
+        {
+          "content": "Number",
+          "polygon": [
+            422,
+            96,
+            464,
+            96,
+            464,
+            108,
+            422,
+            108
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 144,
+            "length": 6
+          }
+        },
+        {
+          "content": "-",
+          "polygon": [
+            467,
+            96,
+            472,
+            96,
+            472,
+            108,
+            467,
+            108
+          ],
+          "confidence": 0.913,
+          "span": {
+            "offset": 151,
+            "length": 1
+          }
+        },
+        {
+          "content": "1234567890",
+          "polygon": [
+            475,
+            96,
+            545,
+            95,
+            545,
+            108,
+            475,
+            108
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 153,
+            "length": 10
+          }
+        },
+        {
+          "content": "TAX",
+          "polygon": [
+            396,
+            110,
+            421,
+            110,
+            421,
+            122,
+            396,
+            122
+          ],
+          "confidence": 0.998,
+          "span": {
+            "offset": 164,
+            "length": 3
+          }
+        },
+        {
+          "content": "INVOICE",
+          "polygon": [
+            425,
+            110,
+            476,
+            110,
+            476,
+            122,
+            426,
+            122
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 168,
+            "length": 7
+          }
+        },
+        {
+          "content": "Details",
+          "polygon": [
+            58,
+            196,
+            101,
+            196,
+            101,
+            208,
+            58,
+            208
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 176,
+            "length": 7
+          }
+        },
+        {
+          "content": "of",
+          "polygon": [
+            105,
+            196,
+            117,
+            196,
+            117,
+            208,
+            104,
+            208
+          ],
+          "confidence": 0.989,
+          "span": {
+            "offset": 184,
+            "length": 2
+          }
+        },
+        {
+          "content": "Receiver",
+          "polygon": [
+            121,
+            196,
+            174,
+            196,
+            174,
+            208,
+            121,
+            208
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 187,
+            "length": 8
+          }
+        },
+        {
+          "content": "Other",
+          "polygon": [
+            378,
+            196,
+            413,
+            196,
+            413,
+            208,
+            378,
+            208
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 196,
+            "length": 5
+          }
+        },
+        {
+          "content": "Details",
+          "polygon": [
+            417,
+            196,
+            461,
+            196,
+            461,
+            208,
+            417,
+            208
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 202,
+            "length": 7
+          }
+        },
+        {
+          "content": "Name:",
+          "polygon": [
+            58,
+            211,
+            95,
+            211,
+            95,
+            221,
+            58,
+            221
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 210,
+            "length": 5
+          }
+        },
+        {
+          "content": "شركة",
+          "polygon": [
+            181,
+            210,
+            208,
+            210,
+            208,
+            223,
+            181,
+            223
+          ],
+          "confidence": 0.814,
+          "span": {
+            "offset": 216,
+            "length": 4
+          }
+        },
+        {
+          "content": "السلتان",
+          "polygon": [
+            144,
+            210,
+            177,
+            210,
+            177,
+            223,
+            144,
+            223
+          ],
+          "confidence": 0.474,
+          "span": {
+            "offset": 221,
+            "length": 7
+          }
+        },
+        {
+          "content": "Invoice",
+          "polygon": [
+            378,
+            210,
+            417,
+            211,
+            417,
+            222,
+            378,
+            222
+          ],
+          "confidence": 0.984,
+          "span": {
+            "offset": 229,
+            "length": 7
+          }
+        },
+        {
+          "content": "No:",
+          "polygon": [
+            420,
+            211,
+            440,
+            211,
+            440,
+            222,
+            420,
+            222
+          ],
+          "confidence": 0.989,
+          "span": {
+            "offset": 237,
+            "length": 3
+          }
+        },
+        {
+          "content": "ب",
+          "polygon": [
+            541,
+            210,
+            553,
+            211,
+            553,
+            222,
+            541,
+            222
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 241,
+            "length": 1
+          }
+        },
+        {
+          "content": "21",
+          "polygon": [
+            527,
+            210,
+            537,
+            210,
+            537,
+            222,
+            527,
+            221
+          ],
+          "confidence": 0.949,
+          "span": {
+            "offset": 243,
+            "length": 2
+          }
+        },
+        {
+          "content": "Address:",
+          "polygon": [
+            58,
+            224,
+            106,
+            224,
+            106,
+            235,
+            58,
+            234
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 246,
+            "length": 8
+          }
+        },
+        {
+          "content": "برج",
+          "polygon": [
+            165,
+            225,
+            182,
+            225,
+            182,
+            236,
+            164,
+            236
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 255,
+            "length": 3
+          }
+        },
+        {
+          "content": "دبرا",
+          "polygon": [
+            144,
+            225,
+            161,
+            225,
+            161,
+            236,
+            143,
+            236
+          ],
+          "confidence": 0.962,
+          "span": {
+            "offset": 259,
+            "length": 4
+          }
+        },
+        {
+          "content": "Invoice",
+          "polygon": [
+            378,
+            223,
+            417,
+            223,
+            417,
+            235,
+            378,
+            235
+          ],
+          "confidence": 0.989,
+          "span": {
+            "offset": 264,
+            "length": 7
+          }
+        },
+        {
+          "content": "Date:",
+          "polygon": [
+            420,
+            223,
+            451,
+            224,
+            451,
+            235,
+            420,
+            235
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 272,
+            "length": 5
+          }
+        },
+        {
+          "content": "11-Oct-2017",
+          "polygon": [
+            527,
+            223,
+            596,
+            223,
+            596,
+            235,
+            527,
+            235
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 278,
+            "length": 11
+          }
+        },
+        {
+          "content": "Vat",
+          "polygon": [
+            58,
+            236,
+            77,
+            237,
+            77,
+            247,
+            58,
+            247
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 290,
+            "length": 3
+          }
+        },
+        {
+          "content": "No:",
+          "polygon": [
+            81,
+            237,
+            100,
+            237,
+            100,
+            248,
+            81,
+            247
+          ],
+          "confidence": 0.977,
+          "span": {
+            "offset": 294,
+            "length": 3
+          }
+        },
+        {
+          "content": "147258369",
+          "polygon": [
+            144,
+            236,
+            207,
+            236,
+            207,
+            247,
+            144,
+            248
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 298,
+            "length": 9
+          }
+        },
+        {
+          "content": "Transporter",
+          "polygon": [
+            377,
+            236,
+            442,
+            237,
+            442,
+            249,
+            377,
+            248
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 308,
+            "length": 11
+          }
+        },
+        {
+          "content": "Name:",
+          "polygon": [
+            445,
+            237,
+            481,
+            237,
+            481,
+            248,
+            445,
+            249
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 320,
+            "length": 5
+          }
+        },
+        {
+          "content": "ابتيمس",
+          "polygon": [
+            527,
+            239,
+            562,
+            238,
+            562,
+            249,
+            528,
+            249
+          ],
+          "confidence": 0.895,
+          "span": {
+            "offset": 326,
+            "length": 6
+          }
+        },
+        {
+          "content": "Phone:",
+          "polygon": [
+            58,
+            251,
+            96,
+            251,
+            96,
+            262,
+            58,
+            261
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 333,
+            "length": 6
+          }
+        },
+        {
+          "content": "0915236458",
+          "polygon": [
+            144,
+            250,
+            214,
+            250,
+            214,
+            262,
+            144,
+            262
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 340,
+            "length": 10
+          }
+        },
+        {
+          "content": "Payment",
+          "polygon": [
+            378,
+            250,
+            425,
+            250,
+            425,
+            263,
+            378,
+            263
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 351,
+            "length": 7
+          }
+        },
+        {
+          "content": "Mode:",
+          "polygon": [
+            428,
+            250,
+            464,
+            250,
+            464,
+            262,
+            428,
+            263
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 359,
+            "length": 5
+          }
+        },
+        {
+          "content": "Cash",
+          "polygon": [
+            528,
+            251,
+            556,
+            251,
+            556,
+            261,
+            528,
+            261
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 365,
+            "length": 4
+          }
+        },
+        {
+          "content": "Remarks:",
+          "polygon": [
+            58,
+            264,
+            111,
+            264,
+            111,
+            275,
+            58,
+            275
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 370,
+            "length": 8
+          }
+        },
+        {
+          "content": "ابااب",
+          "polygon": [
+            261,
+            263,
+            286,
+            262,
+            286,
+            276,
+            261,
+            276
+          ],
+          "confidence": 0.973,
+          "span": {
+            "offset": 379,
+            "length": 5
+          }
+        },
+        {
+          "content": "الاب",
+          "polygon": [
+            239,
+            263,
+            257,
+            263,
+            257,
+            276,
+            239,
+            276
+          ],
+          "confidence": 0.498,
+          "span": {
+            "offset": 385,
+            "length": 4
+          }
+        },
+        {
+          "content": "يااايا",
+          "polygon": [
+            214,
+            263,
+            235,
+            263,
+            235,
+            276,
+            214,
+            276
+          ],
+          "confidence": 0.73,
+          "span": {
+            "offset": 390,
+            "length": 6
+          }
+        },
+        {
+          "content": "تخفعقاا",
+          "polygon": [
+            178,
+            263,
+            211,
+            263,
+            211,
+            276,
+            179,
+            276
+          ],
+          "confidence": 0.454,
+          "span": {
+            "offset": 397,
+            "length": 7
+          }
+        },
+        {
+          "content": "لابللبليل",
+          "polygon": [
+            144,
+            263,
+            176,
+            263,
+            176,
+            276,
+            144,
+            276
+          ],
+          "confidence": 0.747,
+          "span": {
+            "offset": 405,
+            "length": 9
+          }
+        },
+        {
+          "content": "IIIIIاص",
+          "polygon": [
+            143,
+            278,
+            177,
+            277,
+            177,
+            289,
+            143,
+            290
+          ],
+          "confidence": 0.3,
+          "span": {
+            "offset": 415,
+            "length": 7
+          }
+        },
+        {
+          "content": "No",
+          "polygon": [
+            55,
+            309,
+            72,
+            309,
+            72,
+            319,
+            55,
+            319
+          ],
+          "confidence": 0.998,
+          "span": {
+            "offset": 423,
+            "length": 2
+          }
+        },
+        {
+          "content": "Product",
+          "polygon": [
+            77,
+            309,
+            119,
+            309,
+            119,
+            320,
+            77,
+            320
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 426,
+            "length": 7
+          }
+        },
+        {
+          "content": "name",
+          "polygon": [
+            122,
+            309,
+            154,
+            309,
+            154,
+            320,
+            122,
+            320
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 434,
+            "length": 4
+          }
+        },
+        {
+          "content": "Qty",
+          "polygon": [
+            255,
+            309,
+            276,
+            309,
+            276,
+            320,
+            255,
+            319
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 439,
+            "length": 3
+          }
+        },
+        {
+          "content": "Rate",
+          "polygon": [
+            314,
+            309,
+            342,
+            309,
+            342,
+            319,
+            314,
+            319
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 443,
+            "length": 4
+          }
+        },
+        {
+          "content": "Amount",
+          "polygon": [
+            362,
+            309,
+            407,
+            309,
+            407,
+            320,
+            362,
+            320
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 448,
+            "length": 6
+          }
+        },
+        {
+          "content": "Discount",
+          "polygon": [
+            422,
+            308,
+            472,
+            308,
+            472,
+            320,
+            422,
+            320
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 455,
+            "length": 8
+          }
+        },
+        {
+          "content": "Taxable",
+          "polygon": [
+            491,
+            308,
+            537,
+            308,
+            537,
+            320,
+            491,
+            320
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 464,
+            "length": 7
+          }
+        },
+        {
+          "content": "VAT",
+          "polygon": [
+            616,
+            308,
+            638,
+            308,
+            638,
+            320,
+            616,
+            320
+          ],
+          "confidence": 0.997,
+          "span": {
+            "offset": 472,
+            "length": 3
+          }
+        },
+        {
+          "content": "Amt",
+          "polygon": [
+            642,
+            308,
+            666,
+            308,
+            666,
+            320,
+            642,
+            320
+          ],
+          "confidence": 0.998,
+          "span": {
+            "offset": 476,
+            "length": 3
+          }
+        },
+        {
+          "content": "Total",
+          "polygon": [
+            701,
+            308,
+            731,
+            309,
+            731,
+            319,
+            701,
+            319
+          ],
+          "confidence": 0.997,
+          "span": {
+            "offset": 480,
+            "length": 5
+          }
+        },
+        {
+          "content": "+",
+          "polygon": [
+            55,
+            327,
+            61,
+            327,
+            61,
+            333,
+            55,
+            333
+          ],
+          "confidence": 0.558,
+          "span": {
+            "offset": 486,
+            "length": 1
+          }
+        },
+        {
+          "content": "(Item",
+          "polygon": [
+            77,
+            322,
+            106,
+            322,
+            106,
+            333,
+            77,
+            333
+          ],
+          "confidence": 0.943,
+          "span": {
+            "offset": 488,
+            "length": 5
+          }
+        },
+        {
+          "content": "Code)",
+          "polygon": [
+            110,
+            322,
+            142,
+            322,
+            142,
+            333,
+            110,
+            333
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 494,
+            "length": 5
+          }
+        },
+        {
+          "content": "(UoM)",
+          "polygon": [
+            242,
+            321,
+            276,
+            322,
+            276,
+            333,
+            242,
+            332
+          ],
+          "confidence": 0.975,
+          "span": {
+            "offset": 500,
+            "length": 5
+          }
+        },
+        {
+          "content": "1",
+          "polygon": [
+            55,
+            341,
+            63,
+            341,
+            63,
+            350,
+            55,
+            350
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 506,
+            "length": 1
+          }
+        },
+        {
+          "content": "الذهب",
+          "polygon": [
+            135,
+            340,
+            160,
+            340,
+            160,
+            351,
+            135,
+            351
+          ],
+          "confidence": 0.853,
+          "span": {
+            "offset": 508,
+            "length": 5
+          }
+        },
+        {
+          "content": "شريط",
+          "polygon": [
+            110,
+            340,
+            133,
+            340,
+            133,
+            351,
+            110,
+            350
+          ],
+          "confidence": 0.946,
+          "span": {
+            "offset": 514,
+            "length": 4
+          }
+        },
+        {
+          "content": "100gm",
+          "polygon": [
+            77,
+            340,
+            108,
+            340,
+            108,
+            350,
+            77,
+            350
+          ],
+          "confidence": 0.982,
+          "span": {
+            "offset": 519,
+            "length": 5
+          }
+        },
+        {
+          "content": "5",
+          "polygon": [
+            269,
+            340,
+            275,
+            340,
+            275,
+            349,
+            269,
+            349
+          ],
+          "confidence": 0.989,
+          "span": {
+            "offset": 525,
+            "length": 1
+          }
+        },
+        {
+          "content": "15,225.00",
+          "polygon": [
+            296,
+            340,
+            342,
+            339,
+            342,
+            350,
+            296,
+            350
+          ],
+          "confidence": 0.935,
+          "span": {
+            "offset": 527,
+            "length": 9
+          }
+        },
+        {
+          "content": "76,125.00",
+          "polygon": [
+            360,
+            340,
+            407,
+            340,
+            407,
+            350,
+            360,
+            350
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 537,
+            "length": 9
+          }
+        },
+        {
+          "content": "2,000.00",
+          "polygon": [
+            431,
+            340,
+            472,
+            340,
+            471,
+            350,
+            431,
+            350
+          ],
+          "confidence": 0.962,
+          "span": {
+            "offset": 547,
+            "length": 8
+          }
+        },
+        {
+          "content": "74,125.00",
+          "polygon": [
+            490,
+            340,
+            537,
+            340,
+            537,
+            350,
+            490,
+            350
+          ],
+          "confidence": 0.986,
+          "span": {
+            "offset": 556,
+            "length": 9
+          }
+        },
+        {
+          "content": "3,706.25",
+          "polygon": [
+            625,
+            340,
+            665,
+            340,
+            665,
+            350,
+            625,
+            350
+          ],
+          "confidence": 0.775,
+          "span": {
+            "offset": 566,
+            "length": 8
+          }
+        },
+        {
+          "content": "77,831.25",
+          "polygon": [
+            684,
+            340,
+            730,
+            340,
+            730,
+            350,
+            684,
+            350
+          ],
+          "confidence": 0.712,
+          "span": {
+            "offset": 575,
+            "length": 9
+          }
+        },
+        {
+          "content": "(",
+          "polygon": [
+            77,
+            350,
+            81,
+            350,
+            81,
+            360,
+            77,
+            360
+          ],
+          "confidence": 0.618,
+          "span": {
+            "offset": 585,
+            "length": 1
+          }
+        },
+        {
+          "content": "1154",
+          "polygon": [
+            84,
+            350,
+            105,
+            350,
+            105,
+            360,
+            84,
+            360
+          ],
+          "confidence": 0.64,
+          "span": {
+            "offset": 587,
+            "length": 4
+          }
+        },
+        {
+          "content": ")",
+          "polygon": [
+            108,
+            350,
+            113,
+            350,
+            113,
+            360,
+            108,
+            360
+          ],
+          "confidence": 0.977,
+          "span": {
+            "offset": 592,
+            "length": 1
+          }
+        },
+        {
+          "content": "(PCS)",
+          "polygon": [
+            251,
+            350,
+            276,
+            350,
+            276,
+            360,
+            251,
+            360
+          ],
+          "confidence": 0.858,
+          "span": {
+            "offset": 594,
+            "length": 5
+          }
+        },
+        {
+          "content": "Total",
+          "polygon": [
+            77,
+            377,
+            110,
+            377,
+            110,
+            388,
+            77,
+            388
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 600,
+            "length": 5
+          }
+        },
+        {
+          "content": "5.00",
+          "polygon": [
+            250,
+            377,
+            276,
+            377,
+            276,
+            389,
+            250,
+            389
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 606,
+            "length": 4
+          }
+        },
+        {
+          "content": "76,125.00",
+          "polygon": [
+            350,
+            377,
+            406,
+            377,
+            406,
+            389,
+            350,
+            389
+          ],
+          "confidence": 0.95,
+          "span": {
+            "offset": 611,
+            "length": 9
+          }
+        },
+        {
+          "content": "2,000.00",
+          "polygon": [
+            421,
+            377,
+            471,
+            377,
+            471,
+            388,
+            421,
+            389
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 621,
+            "length": 8
+          }
+        },
+        {
+          "content": "74,125.00",
+          "polygon": [
+            480,
+            377,
+            537,
+            377,
+            537,
+            389,
+            480,
+            389
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 630,
+            "length": 9
+          }
+        },
+        {
+          "content": "77,831.25",
+          "polygon": [
+            674,
+            377,
+            730,
+            377,
+            730,
+            389,
+            674,
+            389
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 640,
+            "length": 9
+          }
+        },
+        {
+          "content": "شركة",
+          "polygon": [
+            264,
+            415,
+            291,
+            415,
+            291,
+            428,
+            263,
+            428
+          ],
+          "confidence": 0.949,
+          "span": {
+            "offset": 650,
+            "length": 4
+          }
+        },
+        {
+          "content": "بشرى",
+          "polygon": [
+            233,
+            415,
+            260,
+            415,
+            260,
+            428,
+            233,
+            428
+          ],
+          "confidence": 0.715,
+          "span": {
+            "offset": 655,
+            "length": 4
+          }
+        },
+        {
+          "content": "للتجارة",
+          "polygon": [
+            200,
+            414,
+            230,
+            415,
+            230,
+            428,
+            199,
+            427
+          ],
+          "confidence": 0.974,
+          "span": {
+            "offset": 660,
+            "length": 7
+          }
+        },
+        {
+          "content": "ذ.صم:",
+          "polygon": [
+            166,
+            414,
+            196,
+            414,
+            196,
+            427,
+            166,
+            427
+          ],
+          "confidence": 0.588,
+          "span": {
+            "offset": 668,
+            "length": 5
+          }
+        },
+        {
+          "content": "Bank",
+          "polygon": [
+            55,
+            414,
+            86,
+            414,
+            86,
+            427,
+            54,
+            427
+          ],
+          "confidence": 0.991,
+          "span": {
+            "offset": 673,
+            "length": 4
+          }
+        },
+        {
+          "content": "Holder",
+          "polygon": [
+            89,
+            414,
+            129,
+            414,
+            129,
+            427,
+            89,
+            427
+          ],
+          "confidence": 0.973,
+          "span": {
+            "offset": 678,
+            "length": 6
+          }
+        },
+        {
+          "content": "Name",
+          "polygon": [
+            133,
+            414,
+            163,
+            414,
+            163,
+            427,
+            133,
+            427
+          ],
+          "confidence": 0.588,
+          "span": {
+            "offset": 685,
+            "length": 4
+          }
+        },
+        {
+          "content": "Taxable",
+          "polygon": [
+            578,
+            414,
+            626,
+            414,
+            626,
+            426,
+            578,
+            426
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 690,
+            "length": 7
+          }
+        },
+        {
+          "content": "Total:",
+          "polygon": [
+            629,
+            414,
+            663,
+            414,
+            663,
+            426,
+            629,
+            426
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 698,
+            "length": 6
+          }
+        },
+        {
+          "content": "74,125.00",
+          "polygon": [
+            674,
+            414,
+            730,
+            414,
+            730,
+            426,
+            674,
+            426
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 705,
+            "length": 9
+          }
+        },
+        {
+          "content": "بنك",
+          "polygon": [
+            190,
+            429,
+            207,
+            428,
+            207,
+            441,
+            190,
+            441
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 715,
+            "length": 3
+          }
+        },
+        {
+          "content": "دبي",
+          "polygon": [
+            173,
+            429,
+            187,
+            429,
+            187,
+            441,
+            173,
+            441
+          ],
+          "confidence": 0.791,
+          "span": {
+            "offset": 719,
+            "length": 3
+          }
+        },
+        {
+          "content": "الإسلامي",
+          "polygon": [
+            131,
+            428,
+            169,
+            429,
+            169,
+            441,
+            131,
+            441
+          ],
+          "confidence": 0.814,
+          "span": {
+            "offset": 723,
+            "length": 8
+          }
+        },
+        {
+          "content": ":",
+          "polygon": [
+            122,
+            428,
+            128,
+            428,
+            128,
+            441,
+            122,
+            441
+          ],
+          "confidence": 0.877,
+          "span": {
+            "offset": 732,
+            "length": 1
+          }
+        },
+        {
+          "content": "Bank",
+          "polygon": [
+            55,
+            428,
+            86,
+            428,
+            86,
+            440,
+            54,
+            440
+          ],
+          "confidence": 0.988,
+          "span": {
+            "offset": 733,
+            "length": 4
+          }
+        },
+        {
+          "content": "Name",
+          "polygon": [
+            90,
+            428,
+            119,
+            428,
+            119,
+            441,
+            89,
+            440
+          ],
+          "confidence": 0.877,
+          "span": {
+            "offset": 738,
+            "length": 4
+          }
+        },
+        {
+          "content": "Bank",
+          "polygon": [
+            54,
+            441,
+            86,
+            441,
+            86,
+            453,
+            54,
+            453
+          ],
+          "confidence": 0.989,
+          "span": {
+            "offset": 743,
+            "length": 4
+          }
+        },
+        {
+          "content": "Account",
+          "polygon": [
+            89,
+            441,
+            138,
+            441,
+            138,
+            453,
+            89,
+            453
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 748,
+            "length": 7
+          }
+        },
+        {
+          "content": "Number:",
+          "polygon": [
+            142,
+            441,
+            193,
+            441,
+            193,
+            453,
+            142,
+            453
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 756,
+            "length": 7
+          }
+        },
+        {
+          "content": "001456789",
+          "polygon": [
+            197,
+            441,
+            259,
+            440,
+            259,
+            453,
+            197,
+            453
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 764,
+            "length": 9
+          }
+        },
+        {
+          "content": "VAT",
+          "polygon": [
+            602,
+            433,
+            626,
+            433,
+            626,
+            445,
+            602,
+            445
+          ],
+          "confidence": 0.997,
+          "span": {
+            "offset": 774,
+            "length": 3
+          }
+        },
+        {
+          "content": "Total:",
+          "polygon": [
+            629,
+            433,
+            665,
+            433,
+            665,
+            445,
+            629,
+            444
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 778,
+            "length": 6
+          }
+        },
+        {
+          "content": "3,706.25",
+          "polygon": [
+            680,
+            433,
+            730,
+            433,
+            730,
+            445,
+            680,
+            445
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 785,
+            "length": 8
+          }
+        },
+        {
+          "content": "Bank",
+          "polygon": [
+            55,
+            454,
+            86,
+            454,
+            86,
+            466,
+            55,
+            466
+          ],
+          "confidence": 0.985,
+          "span": {
+            "offset": 794,
+            "length": 4
+          }
+        },
+        {
+          "content": "IBAN",
+          "polygon": [
+            89,
+            454,
+            118,
+            454,
+            118,
+            466,
+            89,
+            466
+          ],
+          "confidence": 0.989,
+          "span": {
+            "offset": 799,
+            "length": 4
+          }
+        },
+        {
+          "content": "Number:",
+          "polygon": [
+            122,
+            454,
+            173,
+            454,
+            173,
+            466,
+            122,
+            466
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 804,
+            "length": 7
+          }
+        },
+        {
+          "content": "AE142536475869123",
+          "polygon": [
+            177,
+            454,
+            295,
+            454,
+            295,
+            466,
+            177,
+            466
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 812,
+            "length": 17
+          }
+        },
+        {
+          "content": "Other",
+          "polygon": [
+            485,
+            452,
+            521,
+            452,
+            521,
+            465,
+            485,
+            465
+          ],
+          "confidence": 0.997,
+          "span": {
+            "offset": 830,
+            "length": 5
+          }
+        },
+        {
+          "content": "Charges",
+          "polygon": [
+            524,
+            452,
+            573,
+            452,
+            573,
+            465,
+            524,
+            465
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 836,
+            "length": 7
+          }
+        },
+        {
+          "content": "/",
+          "polygon": [
+            576,
+            452,
+            581,
+            452,
+            581,
+            465,
+            576,
+            465
+          ],
+          "confidence": 0.977,
+          "span": {
+            "offset": 844,
+            "length": 1
+          }
+        },
+        {
+          "content": "Adjustments:",
+          "polygon": [
+            584,
+            452,
+            665,
+            452,
+            665,
+            465,
+            584,
+            465
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 846,
+            "length": 12
+          }
+        },
+        {
+          "content": "0.00",
+          "polygon": [
+            704,
+            452,
+            730,
+            452,
+            730,
+            464,
+            704,
+            464
+          ],
+          "confidence": 0.989,
+          "span": {
+            "offset": 859,
+            "length": 4
+          }
+        },
+        {
+          "content": "Bank",
+          "polygon": [
+            54,
+            468,
+            86,
+            468,
+            86,
+            480,
+            54,
+            480
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 864,
+            "length": 4
+          }
+        },
+        {
+          "content": "SWIFT",
+          "polygon": [
+            89,
+            468,
+            128,
+            468,
+            127,
+            480,
+            89,
+            480
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 869,
+            "length": 5
+          }
+        },
+        {
+          "content": "Code:",
+          "polygon": [
+            131,
+            468,
+            164,
+            468,
+            164,
+            480,
+            131,
+            480
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 875,
+            "length": 5
+          }
+        },
+        {
+          "content": "DIA24EE",
+          "polygon": [
+            169,
+            468,
+            216,
+            468,
+            216,
+            480,
+            169,
+            480
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 881,
+            "length": 7
+          }
+        },
+        {
+          "content": "Grand",
+          "polygon": [
+            589,
+            470,
+            626,
+            470,
+            626,
+            482,
+            589,
+            482
+          ],
+          "confidence": 0.997,
+          "span": {
+            "offset": 889,
+            "length": 5
+          }
+        },
+        {
+          "content": "Total:",
+          "polygon": [
+            629,
+            470,
+            663,
+            470,
+            663,
+            482,
+            629,
+            482
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 895,
+            "length": 6
+          }
+        },
+        {
+          "content": "77,831.25",
+          "polygon": [
+            675,
+            470,
+            730,
+            470,
+            730,
+            482,
+            675,
+            482
+          ],
+          "confidence": 0.963,
+          "span": {
+            "offset": 902,
+            "length": 9
+          }
+        },
+        {
+          "content": "Total",
+          "polygon": [
+            168,
+            488,
+            200,
+            488,
+            200,
+            501,
+            168,
+            501
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 912,
+            "length": 5
+          }
+        },
+        {
+          "content": "in",
+          "polygon": [
+            205,
+            488,
+            215,
+            488,
+            215,
+            502,
+            205,
+            502
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 918,
+            "length": 2
+          }
+        },
+        {
+          "content": "Words:",
+          "polygon": [
+            219,
+            488,
+            262,
+            488,
+            262,
+            502,
+            219,
+            502
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 921,
+            "length": 6
+          }
+        },
+        {
+          "content": "SEVENTY-SEVEN",
+          "polygon": [
+            265,
+            488,
+            353,
+            488,
+            353,
+            502,
+            265,
+            502
+          ],
+          "confidence": 0.963,
+          "span": {
+            "offset": 928,
+            "length": 13
+          }
+        },
+        {
+          "content": "THOUSAND",
+          "polygon": [
+            356,
+            488,
+            418,
+            488,
+            417,
+            502,
+            356,
+            502
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 942,
+            "length": 8
+          }
+        },
+        {
+          "content": "EIGHT",
+          "polygon": [
+            421,
+            488,
+            454,
+            488,
+            454,
+            502,
+            421,
+            502
+          ],
+          "confidence": 0.989,
+          "span": {
+            "offset": 951,
+            "length": 5
+          }
+        },
+        {
+          "content": "HUNDRED",
+          "polygon": [
+            457,
+            488,
+            511,
+            488,
+            511,
+            501,
+            457,
+            502
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 957,
+            "length": 7
+          }
+        },
+        {
+          "content": "THIRTY-ONE",
+          "polygon": [
+            514,
+            488,
+            580,
+            488,
+            580,
+            501,
+            514,
+            501
+          ],
+          "confidence": 0.99,
+          "span": {
+            "offset": 965,
+            "length": 10
+          }
+        },
+        {
+          "content": "POINT",
+          "polygon": [
+            583,
+            488,
+            616,
+            488,
+            616,
+            501,
+            583,
+            501
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 976,
+            "length": 5
+          }
+        },
+        {
+          "content": "TWO",
+          "polygon": [
+            620,
+            488,
+            644,
+            488,
+            644,
+            501,
+            620,
+            501
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 982,
+            "length": 3
+          }
+        },
+        {
+          "content": "FIVE",
+          "polygon": [
+            648,
+            488,
+            671,
+            488,
+            671,
+            501,
+            648,
+            501
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 986,
+            "length": 4
+          }
+        },
+        {
+          "content": "AED",
+          "polygon": [
+            674,
+            488,
+            697,
+            488,
+            697,
+            501,
+            674,
+            501
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 991,
+            "length": 3
+          }
+        },
+        {
+          "content": "ONLY",
+          "polygon": [
+            700,
+            488,
+            732,
+            488,
+            732,
+            501,
+            700,
+            501
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 995,
+            "length": 4
+          }
+        },
+        {
+          "content": "Terms",
+          "polygon": [
+            54,
+            508,
+            93,
+            508,
+            93,
+            520,
+            54,
+            520
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 1000,
+            "length": 5
+          }
+        },
+        {
+          "content": "&",
+          "polygon": [
+            97,
+            508,
+            106,
+            508,
+            105,
+            520,
+            96,
+            520
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 1006,
+            "length": 1
+          }
+        },
+        {
+          "content": "Condition:",
+          "polygon": [
+            109,
+            508,
+            172,
+            508,
+            172,
+            520,
+            109,
+            520
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 1008,
+            "length": 10
+          }
+        },
+        {
+          "content": "م.م.د",
+          "polygon": [
+            705,
+            509,
+            732,
+            509,
+            732,
+            522,
+            705,
+            522
+          ],
+          "confidence": 0.506,
+          "span": {
+            "offset": 1019,
+            "length": 5
+          }
+        },
+        {
+          "content": "للتجارة",
+          "polygon": [
+            670,
+            509,
+            701,
+            509,
+            701,
+            522,
+            670,
+            522
+          ],
+          "confidence": 0.971,
+          "span": {
+            "offset": 1025,
+            "length": 7
+          }
+        },
+        {
+          "content": "بشرى",
+          "polygon": [
+            640,
+            509,
+            667,
+            509,
+            667,
+            522,
+            640,
+            522
+          ],
+          "confidence": 0.566,
+          "span": {
+            "offset": 1033,
+            "length": 4
+          }
+        },
+        {
+          "content": "شركة",
+          "polygon": [
+            612,
+            508,
+            637,
+            509,
+            637,
+            522,
+            611,
+            521
+          ],
+          "confidence": 0.983,
+          "span": {
+            "offset": 1038,
+            "length": 4
+          }
+        },
+        {
+          "content": "For",
+          "polygon": [
+            586,
+            508,
+            607,
+            508,
+            607,
+            521,
+            586,
+            521
+          ],
+          "confidence": 0.793,
+          "span": {
+            "offset": 1043,
+            "length": 3
+          }
+        },
+        {
+          "content": "الدفع",
+          "polygon": [
+            219,
+            521,
+            243,
+            521,
+            243,
+            535,
+            219,
+            535
+          ],
+          "confidence": 0.981,
+          "span": {
+            "offset": 1047,
+            "length": 5
+          }
+        },
+        {
+          "content": "مستحق",
+          "polygon": [
+            181,
+            521,
+            215,
+            521,
+            215,
+            535,
+            181,
+            535
+          ],
+          "confidence": 0.982,
+          "span": {
+            "offset": 1053,
+            "length": 5
+          }
+        },
+        {
+          "content": "في",
+          "polygon": [
+            164,
+            521,
+            178,
+            521,
+            178,
+            535,
+            164,
+            535
+          ],
+          "confidence": 0.916,
+          "span": {
+            "offset": 1059,
+            "length": 2
+          }
+        },
+        {
+          "content": "7",
+          "polygon": [
+            154,
+            521,
+            160,
+            521,
+            160,
+            535,
+            154,
+            535
+          ],
+          "confidence": 0.988,
+          "span": {
+            "offset": 1062,
+            "length": 1
+          }
+        },
+        {
+          "content": "أيام",
+          "polygon": [
+            134,
+            521,
+            150,
+            521,
+            150,
+            535,
+            134,
+            536
+          ],
+          "confidence": 0.56,
+          "span": {
+            "offset": 1064,
+            "length": 4
+          }
+        },
+        {
+          "content": "من",
+          "polygon": [
+            117,
+            521,
+            131,
+            521,
+            131,
+            536,
+            117,
+            536
+          ],
+          "confidence": 0.988,
+          "span": {
+            "offset": 1069,
+            "length": 2
+          }
+        },
+        {
+          "content": "تاريخ",
+          "polygon": [
+            93,
+            522,
+            114,
+            521,
+            114,
+            536,
+            93,
+            536
+          ],
+          "confidence": 0.987,
+          "span": {
+            "offset": 1072,
+            "length": 5
+          }
+        },
+        {
+          "content": "الفاتورة",
+          "polygon": [
+            54,
+            522,
+            89,
+            522,
+            89,
+            536,
+            54,
+            536
+          ],
+          "confidence": 0.971,
+          "span": {
+            "offset": 1078,
+            "length": 8
+          }
+        },
+        {
+          "content": "Authorized",
+          "polygon": [
+            615,
+            601,
+            674,
+            601,
+            674,
+            614,
+            615,
+            613
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 1087,
+            "length": 10
+          }
+        },
+        {
+          "content": "Signatory",
+          "polygon": [
+            678,
+            601,
+            731,
+            601,
+            731,
+            614,
+            678,
+            614
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 1098,
+            "length": 9
+          }
+        },
+        {
+          "content": "Thank",
+          "polygon": [
+            302,
+            633,
+            340,
+            633,
+            340,
+            647,
+            302,
+            647
+          ],
+          "confidence": 0.998,
+          "span": {
+            "offset": 1108,
+            "length": 5
+          }
+        },
+        {
+          "content": "you",
+          "polygon": [
+            344,
+            633,
+            366,
+            633,
+            366,
+            647,
+            344,
+            647
+          ],
+          "confidence": 0.997,
+          "span": {
+            "offset": 1114,
+            "length": 3
+          }
+        },
+        {
+          "content": "for",
+          "polygon": [
+            370,
+            633,
+            387,
+            633,
+            387,
+            647,
+            370,
+            647
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 1118,
+            "length": 3
+          }
+        },
+        {
+          "content": "your",
+          "polygon": [
+            390,
+            633,
+            418,
+            633,
+            417,
+            647,
+            390,
+            647
+          ],
+          "confidence": 0.987,
+          "span": {
+            "offset": 1122,
+            "length": 4
+          }
+        },
+        {
+          "content": "business",
+          "polygon": [
+            421,
+            633,
+            475,
+            633,
+            475,
+            647,
+            421,
+            647
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 1127,
+            "length": 8
+          }
+        }
+      ],
+      "selectionMarks": [
+        {
+          "state": "unselected",
+          "polygon": [
+            54,
+            374,
+            75,
+            374,
+            75,
+            392,
+            54,
+            392
+          ],
+          "confidence": 0.1,
+          "span": {
+            "offset": 1136,
+            "length": 12
+          }
+        }
+      ],
+      "lines": [
+        {
+          "content": "/",
+          "polygon": [
+            76,
+            32,
+            114,
+            33,
+            113,
+            79,
+            75,
+            79
+          ],
+          "spans": [
+            {
+              "offset": 0,
+              "length": 1
+            }
+          ]
+        },
+        {
+          "content": "شركة بشرى للتجارة ذ.م.م",
+          "polygon": [
+            328,
+            36,
+            543,
+            34,
+            543,
+            56,
+            328,
+            58
+          ],
+          "spans": [
+            {
+              "offset": 2,
+              "length": 23
+            }
+          ]
+        },
+        {
+          "content": "O Orignal",
+          "polygon": [
+            669,
+            32,
+            722,
+            32,
+            722,
+            44,
+            669,
+            44
+          ],
+          "spans": [
+            {
+              "offset": 26,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "content": "O Duplicate",
+          "polygon": [
+            669,
+            46,
+            734,
+            46,
+            734,
+            58,
+            669,
+            58
+          ],
+          "spans": [
+            {
+              "offset": 36,
+              "length": 11
+            }
+          ]
+        },
+        {
+          "content": "O Triplicate",
+          "polygon": [
+            669,
+            59,
+            733,
+            59,
+            733,
+            71,
+            669,
+            71
+          ],
+          "spans": [
+            {
+              "offset": 48,
+              "length": 12
+            }
+          ]
+        },
+        {
+          "content": "203، برج سلطان، بالقرب من محطة سبخها باص ديرة",
+          "polygon": [
+            314,
+            71,
+            557,
+            70,
+            557,
+            83,
+            314,
+            85
+          ],
+          "spans": [
+            {
+              "offset": 61,
+              "length": 45
+            }
+          ]
+        },
+        {
+          "content": "Phone: 969988776655",
+          "polygon": [
+            374,
+            83,
+            498,
+            83,
+            498,
+            95,
+            374,
+            95
+          ],
+          "spans": [
+            {
+              "offset": 107,
+              "length": 19
+            }
+          ]
+        },
+        {
+          "content": "VAT Registration Number - 1234567890",
+          "polygon": [
+            327,
+            96,
+            544,
+            95,
+            544,
+            108,
+            327,
+            108
+          ],
+          "spans": [
+            {
+              "offset": 127,
+              "length": 36
+            }
+          ]
+        },
+        {
+          "content": "TAX INVOICE",
+          "polygon": [
+            396,
+            110,
+            476,
+            110,
+            476,
+            122,
+            396,
+            122
+          ],
+          "spans": [
+            {
+              "offset": 164,
+              "length": 11
+            }
+          ]
+        },
+        {
+          "content": "Details of Receiver",
+          "polygon": [
+            58,
+            196,
+            174,
+            196,
+            174,
+            208,
+            58,
+            208
+          ],
+          "spans": [
+            {
+              "offset": 176,
+              "length": 19
+            }
+          ]
+        },
+        {
+          "content": "Other Details",
+          "polygon": [
+            378,
+            196,
+            460,
+            196,
+            460,
+            208,
+            378,
+            208
+          ],
+          "spans": [
+            {
+              "offset": 196,
+              "length": 13
+            }
+          ]
+        },
+        {
+          "content": "Name:",
+          "polygon": [
+            58,
+            211,
+            95,
+            211,
+            95,
+            221,
+            58,
+            221
+          ],
+          "spans": [
+            {
+              "offset": 210,
+              "length": 5
+            }
+          ]
+        },
+        {
+          "content": "شركة السلتان",
+          "polygon": [
+            144,
+            210,
+            208,
+            210,
+            208,
+            223,
+            144,
+            223
+          ],
+          "spans": [
+            {
+              "offset": 216,
+              "length": 12
+            }
+          ]
+        },
+        {
+          "content": "Invoice No:",
+          "polygon": [
+            378,
+            210,
+            439,
+            211,
+            439,
+            222,
+            378,
+            222
+          ],
+          "spans": [
+            {
+              "offset": 229,
+              "length": 11
+            }
+          ]
+        },
+        {
+          "content": "ب 21",
+          "polygon": [
+            527,
+            210,
+            552,
+            211,
+            552,
+            222,
+            527,
+            221
+          ],
+          "spans": [
+            {
+              "offset": 241,
+              "length": 4
+            }
+          ]
+        },
+        {
+          "content": "Address:",
+          "polygon": [
+            58,
+            224,
+            106,
+            224,
+            106,
+            235,
+            58,
+            234
+          ],
+          "spans": [
+            {
+              "offset": 246,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "content": "برج دبرا",
+          "polygon": [
+            144,
+            225,
+            182,
+            225,
+            181,
+            236,
+            143,
+            236
+          ],
+          "spans": [
+            {
+              "offset": 255,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "content": "Invoice Date:",
+          "polygon": [
+            378,
+            223,
+            450,
+            224,
+            450,
+            235,
+            378,
+            235
+          ],
+          "spans": [
+            {
+              "offset": 264,
+              "length": 13
+            }
+          ]
+        },
+        {
+          "content": "11-Oct-2017",
+          "polygon": [
+            527,
+            223,
+            596,
+            223,
+            596,
+            234,
+            527,
+            235
+          ],
+          "spans": [
+            {
+              "offset": 278,
+              "length": 11
+            }
+          ]
+        },
+        {
+          "content": "Vat No:",
+          "polygon": [
+            58,
+            236,
+            100,
+            237,
+            100,
+            247,
+            58,
+            247
+          ],
+          "spans": [
+            {
+              "offset": 290,
+              "length": 7
+            }
+          ]
+        },
+        {
+          "content": "147258369",
+          "polygon": [
+            144,
+            236,
+            206,
+            236,
+            206,
+            247,
+            144,
+            247
+          ],
+          "spans": [
+            {
+              "offset": 298,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "content": "Transporter Name:",
+          "polygon": [
+            377,
+            236,
+            481,
+            237,
+            481,
+            248,
+            377,
+            248
+          ],
+          "spans": [
+            {
+              "offset": 308,
+              "length": 17
+            }
+          ]
+        },
+        {
+          "content": "ابتيمس",
+          "polygon": [
+            527,
+            239,
+            561,
+            238,
+            561,
+            248,
+            528,
+            249
+          ],
+          "spans": [
+            {
+              "offset": 326,
+              "length": 6
+            }
+          ]
+        },
+        {
+          "content": "Phone:",
+          "polygon": [
+            58,
+            251,
+            96,
+            251,
+            96,
+            261,
+            58,
+            261
+          ],
+          "spans": [
+            {
+              "offset": 333,
+              "length": 6
+            }
+          ]
+        },
+        {
+          "content": "0915236458",
+          "polygon": [
+            144,
+            250,
+            213,
+            250,
+            213,
+            261,
+            144,
+            262
+          ],
+          "spans": [
+            {
+              "offset": 340,
+              "length": 10
+            }
+          ]
+        },
+        {
+          "content": "Payment Mode:",
+          "polygon": [
+            378,
+            250,
+            463,
+            250,
+            463,
+            262,
+            378,
+            263
+          ],
+          "spans": [
+            {
+              "offset": 351,
+              "length": 13
+            }
+          ]
+        },
+        {
+          "content": "Cash",
+          "polygon": [
+            527,
+            251,
+            555,
+            251,
+            555,
+            261,
+            528,
+            261
+          ],
+          "spans": [
+            {
+              "offset": 365,
+              "length": 4
+            }
+          ]
+        },
+        {
+          "content": "Remarks:",
+          "polygon": [
+            58,
+            264,
+            110,
+            264,
+            110,
+            275,
+            58,
+            275
+          ],
+          "spans": [
+            {
+              "offset": 370,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "content": "ابااب الاب يااايا تخفعقاا لابللبليل",
+          "polygon": [
+            144,
+            263,
+            285,
+            262,
+            285,
+            275,
+            144,
+            276
+          ],
+          "spans": [
+            {
+              "offset": 379,
+              "length": 35
+            }
+          ]
+        },
+        {
+          "content": "IIIIIاص",
+          "polygon": [
+            143,
+            278,
+            177,
+            277,
+            177,
+            288,
+            143,
+            289
+          ],
+          "spans": [
+            {
+              "offset": 415,
+              "length": 7
+            }
+          ]
+        },
+        {
+          "content": "No",
+          "polygon": [
+            55,
+            309,
+            71,
+            309,
+            71,
+            319,
+            55,
+            319
+          ],
+          "spans": [
+            {
+              "offset": 423,
+              "length": 2
+            }
+          ]
+        },
+        {
+          "content": "Product name",
+          "polygon": [
+            77,
+            308,
+            153,
+            309,
+            153,
+            320,
+            77,
+            320
+          ],
+          "spans": [
+            {
+              "offset": 426,
+              "length": 12
+            }
+          ]
+        },
+        {
+          "content": "Qty",
+          "polygon": [
+            255,
+            309,
+            276,
+            309,
+            276,
+            320,
+            255,
+            319
+          ],
+          "spans": [
+            {
+              "offset": 439,
+              "length": 3
+            }
+          ]
+        },
+        {
+          "content": "Rate",
+          "polygon": [
+            314,
+            309,
+            341,
+            309,
+            341,
+            319,
+            314,
+            319
+          ],
+          "spans": [
+            {
+              "offset": 443,
+              "length": 4
+            }
+          ]
+        },
+        {
+          "content": "Amount",
+          "polygon": [
+            362,
+            309,
+            406,
+            309,
+            406,
+            319,
+            362,
+            320
+          ],
+          "spans": [
+            {
+              "offset": 448,
+              "length": 6
+            }
+          ]
+        },
+        {
+          "content": "Discount",
+          "polygon": [
+            422,
+            308,
+            472,
+            308,
+            472,
+            319,
+            422,
+            319
+          ],
+          "spans": [
+            {
+              "offset": 455,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "content": "Taxable",
+          "polygon": [
+            491,
+            308,
+            536,
+            308,
+            536,
+            320,
+            491,
+            319
+          ],
+          "spans": [
+            {
+              "offset": 464,
+              "length": 7
+            }
+          ]
+        },
+        {
+          "content": "VAT Amt",
+          "polygon": [
+            616,
+            308,
+            666,
+            308,
+            666,
+            320,
+            616,
+            319
+          ],
+          "spans": [
+            {
+              "offset": 472,
+              "length": 7
+            }
+          ]
+        },
+        {
+          "content": "Total",
+          "polygon": [
+            701,
+            308,
+            731,
+            309,
+            730,
+            319,
+            701,
+            319
+          ],
+          "spans": [
+            {
+              "offset": 480,
+              "length": 5
+            }
+          ]
+        },
+        {
+          "content": "+",
+          "polygon": [
+            55,
+            327,
+            60,
+            327,
+            60,
+            333,
+            55,
+            333
+          ],
+          "spans": [
+            {
+              "offset": 486,
+              "length": 1
+            }
+          ]
+        },
+        {
+          "content": "(Item Code)",
+          "polygon": [
+            77,
+            322,
+            142,
+            322,
+            142,
+            333,
+            77,
+            333
+          ],
+          "spans": [
+            {
+              "offset": 488,
+              "length": 11
+            }
+          ]
+        },
+        {
+          "content": "(UoM)",
+          "polygon": [
+            242,
+            321,
+            276,
+            322,
+            275,
+            333,
+            242,
+            332
+          ],
+          "spans": [
+            {
+              "offset": 500,
+              "length": 5
+            }
+          ]
+        },
+        {
+          "content": "1",
+          "polygon": [
+            55,
+            341,
+            62,
+            341,
+            62,
+            350,
+            55,
+            350
+          ],
+          "spans": [
+            {
+              "offset": 506,
+              "length": 1
+            }
+          ]
+        },
+        {
+          "content": "الذهب شريط 100gm",
+          "polygon": [
+            77,
+            339,
+            159,
+            340,
+            159,
+            351,
+            77,
+            350
+          ],
+          "spans": [
+            {
+              "offset": 508,
+              "length": 16
+            }
+          ]
+        },
+        {
+          "content": "5",
+          "polygon": [
+            269,
+            340,
+            275,
+            340,
+            275,
+            349,
+            269,
+            349
+          ],
+          "spans": [
+            {
+              "offset": 525,
+              "length": 1
+            }
+          ]
+        },
+        {
+          "content": "15,225.00",
+          "polygon": [
+            296,
+            340,
+            341,
+            339,
+            341,
+            350,
+            296,
+            350
+          ],
+          "spans": [
+            {
+              "offset": 527,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "content": "76,125.00",
+          "polygon": [
+            360,
+            340,
+            406,
+            340,
+            406,
+            350,
+            360,
+            350
+          ],
+          "spans": [
+            {
+              "offset": 537,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "content": "2,000.00",
+          "polygon": [
+            431,
+            340,
+            471,
+            340,
+            471,
+            350,
+            431,
+            350
+          ],
+          "spans": [
+            {
+              "offset": 547,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "content": "74,125.00",
+          "polygon": [
+            490,
+            340,
+            536,
+            340,
+            536,
+            349,
+            490,
+            350
+          ],
+          "spans": [
+            {
+              "offset": 556,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "content": "3,706.25",
+          "polygon": [
+            625,
+            340,
+            665,
+            340,
+            665,
+            349,
+            625,
+            350
+          ],
+          "spans": [
+            {
+              "offset": 566,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "content": "77,831.25",
+          "polygon": [
+            684,
+            340,
+            730,
+            340,
+            730,
+            349,
+            684,
+            349
+          ],
+          "spans": [
+            {
+              "offset": 575,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "content": "( 1154 )",
+          "polygon": [
+            77,
+            350,
+            113,
+            350,
+            113,
+            360,
+            77,
+            360
+          ],
+          "spans": [
+            {
+              "offset": 585,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "content": "(PCS)",
+          "polygon": [
+            251,
+            350,
+            276,
+            350,
+            276,
+            359,
+            251,
+            360
+          ],
+          "spans": [
+            {
+              "offset": 594,
+              "length": 5
+            }
+          ]
+        },
+        {
+          "content": "Total",
+          "polygon": [
+            77,
+            377,
+            110,
+            377,
+            110,
+            388,
+            77,
+            388
+          ],
+          "spans": [
+            {
+              "offset": 600,
+              "length": 5
+            }
+          ]
+        },
+        {
+          "content": "5.00",
+          "polygon": [
+            250,
+            377,
+            276,
+            377,
+            276,
+            388,
+            250,
+            388
+          ],
+          "spans": [
+            {
+              "offset": 606,
+              "length": 4
+            }
+          ]
+        },
+        {
+          "content": "76,125.00",
+          "polygon": [
+            350,
+            377,
+            406,
+            377,
+            406,
+            388,
+            350,
+            388
+          ],
+          "spans": [
+            {
+              "offset": 611,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "content": "2,000.00",
+          "polygon": [
+            421,
+            377,
+            471,
+            377,
+            471,
+            388,
+            421,
+            389
+          ],
+          "spans": [
+            {
+              "offset": 621,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "content": "74,125.00",
+          "polygon": [
+            480,
+            377,
+            536,
+            377,
+            536,
+            388,
+            480,
+            388
+          ],
+          "spans": [
+            {
+              "offset": 630,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "content": "77,831.25",
+          "polygon": [
+            674,
+            377,
+            730,
+            377,
+            730,
+            389,
+            674,
+            389
+          ],
+          "spans": [
+            {
+              "offset": 640,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "content": "شركة بشرى للتجارة ذ.صم:Bank Holder Name",
+          "polygon": [
+            55,
+            414,
+            291,
+            415,
+            291,
+            428,
+            54,
+            427
+          ],
+          "spans": [
+            {
+              "offset": 650,
+              "length": 39
+            }
+          ]
+        },
+        {
+          "content": "Taxable Total: 74,125.00",
+          "polygon": [
+            577,
+            414,
+            730,
+            414,
+            730,
+            426,
+            578,
+            426
+          ],
+          "spans": [
+            {
+              "offset": 690,
+              "length": 24
+            }
+          ]
+        },
+        {
+          "content": "بنك دبي الإسلامي :Bank Name",
+          "polygon": [
+            55,
+            428,
+            207,
+            428,
+            207,
+            441,
+            54,
+            440
+          ],
+          "spans": [
+            {
+              "offset": 715,
+              "length": 27
+            }
+          ]
+        },
+        {
+          "content": "Bank Account Number: 001456789",
+          "polygon": [
+            54,
+            441,
+            259,
+            440,
+            259,
+            453,
+            54,
+            453
+          ],
+          "spans": [
+            {
+              "offset": 743,
+              "length": 30
+            }
+          ]
+        },
+        {
+          "content": "VAT Total:",
+          "polygon": [
+            602,
+            433,
+            664,
+            433,
+            664,
+            445,
+            602,
+            444
+          ],
+          "spans": [
+            {
+              "offset": 774,
+              "length": 10
+            }
+          ]
+        },
+        {
+          "content": "3,706.25",
+          "polygon": [
+            680,
+            433,
+            729,
+            433,
+            729,
+            445,
+            680,
+            445
+          ],
+          "spans": [
+            {
+              "offset": 785,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "content": "Bank IBAN Number: AE142536475869123",
+          "polygon": [
+            55,
+            454,
+            295,
+            454,
+            295,
+            466,
+            55,
+            466
+          ],
+          "spans": [
+            {
+              "offset": 794,
+              "length": 35
+            }
+          ]
+        },
+        {
+          "content": "Other Charges / Adjustments:",
+          "polygon": [
+            485,
+            452,
+            665,
+            452,
+            665,
+            465,
+            485,
+            465
+          ],
+          "spans": [
+            {
+              "offset": 830,
+              "length": 28
+            }
+          ]
+        },
+        {
+          "content": "0.00",
+          "polygon": [
+            704,
+            452,
+            730,
+            452,
+            730,
+            464,
+            704,
+            463
+          ],
+          "spans": [
+            {
+              "offset": 859,
+              "length": 4
+            }
+          ]
+        },
+        {
+          "content": "Bank SWIFT Code: DIA24EE",
+          "polygon": [
+            54,
+            468,
+            216,
+            468,
+            216,
+            480,
+            54,
+            480
+          ],
+          "spans": [
+            {
+              "offset": 864,
+              "length": 24
+            }
+          ]
+        },
+        {
+          "content": "Grand Total: 77,831.25",
+          "polygon": [
+            589,
+            470,
+            730,
+            470,
+            730,
+            482,
+            589,
+            482
+          ],
+          "spans": [
+            {
+              "offset": 889,
+              "length": 22
+            }
+          ]
+        },
+        {
+          "content": "Total in Words: SEVENTY-SEVEN THOUSAND EIGHT HUNDRED THIRTY-ONE POINT TWO FIVE AED ONLY",
+          "polygon": [
+            168,
+            488,
+            731,
+            488,
+            731,
+            501,
+            168,
+            502
+          ],
+          "spans": [
+            {
+              "offset": 912,
+              "length": 87
+            }
+          ]
+        },
+        {
+          "content": "Terms & Condition:",
+          "polygon": [
+            54,
+            508,
+            172,
+            508,
+            172,
+            520,
+            54,
+            520
+          ],
+          "spans": [
+            {
+              "offset": 1000,
+              "length": 18
+            }
+          ]
+        },
+        {
+          "content": "م.م.د للتجارة بشرى شركة For",
+          "polygon": [
+            586,
+            508,
+            732,
+            509,
+            731,
+            522,
+            586,
+            521
+          ],
+          "spans": [
+            {
+              "offset": 1019,
+              "length": 27
+            }
+          ]
+        },
+        {
+          "content": "الدفع مستحق في 7 أيام من تاريخ الفاتورة",
+          "polygon": [
+            54,
+            522,
+            243,
+            521,
+            243,
+            535,
+            54,
+            536
+          ],
+          "spans": [
+            {
+              "offset": 1047,
+              "length": 39
+            }
+          ]
+        },
+        {
+          "content": "Authorized Signatory",
+          "polygon": [
+            615,
+            601,
+            731,
+            601,
+            731,
+            614,
+            615,
+            613
+          ],
+          "spans": [
+            {
+              "offset": 1087,
+              "length": 20
+            }
+          ]
+        },
+        {
+          "content": "Thank you for your business",
+          "polygon": [
+            302,
+            633,
+            475,
+            633,
+            475,
+            647,
+            302,
+            647
+          ],
+          "spans": [
+            {
+              "offset": 1108,
+              "length": 27
+            }
+          ]
+        }
+      ],
+      "spans": [
+        {
+          "offset": 0,
+          "length": 1148
+        }
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "rowCount": 5,
+      "columnCount": 2,
+      "cells": [
+        {
+          "rowIndex": 0,
+          "columnIndex": 0,
+          "content": "Other Details",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                367,
+                190,
+                501,
+                191,
+                501,
+                209,
+                367,
+                209
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 196,
+              "length": 13
+            }
+          ]
+        },
+        {
+          "rowIndex": 0,
+          "columnIndex": 1,
+          "content": "",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                501,
+                191,
+                602,
+                192,
+                602,
+                209,
+                501,
+                209
+              ]
+            }
+          ],
+          "spans": []
+        },
+        {
+          "rowIndex": 1,
+          "columnIndex": 0,
+          "content": "Invoice No:",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                367,
+                209,
+                501,
+                209,
+                501,
+                222,
+                367,
+                222
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 229,
+              "length": 11
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "columnIndex": 1,
+          "content": "ب 21",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                501,
+                209,
+                602,
+                209,
+                602,
+                222,
+                501,
+                222
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 241,
+              "length": 4
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 0,
+          "content": "Invoice Date:",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                367,
+                222,
+                501,
+                222,
+                501,
+                236,
+                367,
+                236
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 264,
+              "length": 13
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 1,
+          "content": "11-Oct-2017",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                501,
+                222,
+                602,
+                222,
+                602,
+                236,
+                501,
+                236
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 278,
+              "length": 11
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "columnIndex": 0,
+          "content": "Transporter Name:",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                367,
+                236,
+                501,
+                236,
+                501,
+                249,
+                367,
+                249
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 308,
+              "length": 17
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "columnIndex": 1,
+          "content": "ابتيمس",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                501,
+                236,
+                602,
+                236,
+                602,
+                249,
+                501,
+                249
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 326,
+              "length": 6
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "columnIndex": 0,
+          "content": "Payment Mode:",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                367,
+                249,
+                501,
+                249,
+                501,
+                271,
+                367,
+                271
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 351,
+              "length": 13
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "columnIndex": 1,
+          "content": "Cash",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                501,
+                249,
+                602,
+                249,
+                601,
+                271,
+                501,
+                271
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 365,
+              "length": 4
+            }
+          ]
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            375,
+            200,
+            598,
+            201,
+            599,
+            263,
+            375,
+            263
+          ]
+        }
+      ],
+      "spans": [
+        {
+          "offset": 196,
+          "length": 13
+        },
+        {
+          "offset": 229,
+          "length": 16
+        },
+        {
+          "offset": 264,
+          "length": 25
+        },
+        {
+          "offset": 308,
+          "length": 24
+        },
+        {
+          "offset": 351,
+          "length": 18
+        }
+      ]
+    },
+    {
+      "rowCount": 7,
+      "columnCount": 2,
+      "cells": [
+        {
+          "kind": "columnHeader",
+          "rowIndex": 0,
+          "columnIndex": 0,
+          "columnSpan": 2,
+          "content": "",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                47,
+                194,
+                292,
+                196,
+                292,
+                209,
+                47,
+                208
+              ]
+            }
+          ],
+          "spans": []
+        },
+        {
+          "rowIndex": 1,
+          "columnIndex": 0,
+          "content": "Name:",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                47,
+                208,
+                126,
+                208,
+                126,
+                222,
+                47,
+                222
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 210,
+              "length": 5
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "columnIndex": 1,
+          "content": "شركة السلتان",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                126,
+                208,
+                292,
+                209,
+                292,
+                222,
+                126,
+                222
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 216,
+              "length": 12
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 0,
+          "content": "Address:",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                47,
+                222,
+                126,
+                222,
+                126,
+                236,
+                47,
+                236
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 246,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 1,
+          "content": "برج دبرا",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                126,
+                222,
+                292,
+                222,
+                292,
+                236,
+                126,
+                236
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 255,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "columnIndex": 0,
+          "content": "Vat No:",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                47,
+                236,
+                126,
+                236,
+                126,
+                249,
+                47,
+                249
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 290,
+              "length": 7
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "columnIndex": 1,
+          "content": "147258369",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                126,
+                236,
+                292,
+                236,
+                292,
+                249,
+                126,
+                249
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 298,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "columnIndex": 0,
+          "content": "Phone:",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                47,
+                249,
+                126,
+                249,
+                126,
+                262,
+                47,
+                262
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 333,
+              "length": 6
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "columnIndex": 1,
+          "content": "0915236458",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                126,
+                249,
+                292,
+                249,
+                292,
+                262,
+                126,
+                262
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 340,
+              "length": 10
+            }
+          ]
+        },
+        {
+          "rowIndex": 5,
+          "columnIndex": 0,
+          "content": "Remarks:",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                47,
+                262,
+                126,
+                262,
+                126,
+                274,
+                47,
+                275
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 370,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "rowIndex": 5,
+          "columnIndex": 1,
+          "content": "ابااب الاب يااايا تخفعقاا لابللبليل",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                126,
+                262,
+                292,
+                262,
+                292,
+                275,
+                126,
+                274
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 379,
+              "length": 35
+            }
+          ]
+        },
+        {
+          "rowIndex": 6,
+          "columnIndex": 0,
+          "content": "",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                47,
+                275,
+                126,
+                274,
+                126,
+                296,
+                47,
+                296
+              ]
+            }
+          ],
+          "spans": []
+        },
+        {
+          "rowIndex": 6,
+          "columnIndex": 1,
+          "content": "IIIIIاص",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                126,
+                274,
+                292,
+                275,
+                292,
+                297,
+                126,
+                296
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 415,
+              "length": 7
+            }
+          ]
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            56,
+            210,
+            287,
+            211,
+            287,
+            291,
+            56,
+            291
+          ]
+        }
+      ],
+      "spans": [
+        {
+          "offset": 210,
+          "length": 18
+        },
+        {
+          "offset": 246,
+          "length": 17
+        },
+        {
+          "offset": 290,
+          "length": 17
+        },
+        {
+          "offset": 333,
+          "length": 17
+        },
+        {
+          "offset": 370,
+          "length": 52
+        }
+      ]
+    },
+    {
+      "rowCount": 3,
+      "columnCount": 9,
+      "cells": [
+        {
+          "kind": "columnHeader",
+          "rowIndex": 0,
+          "columnIndex": 0,
+          "content": "No\n+",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                55,
+                304,
+                72,
+                304,
+                72,
+                336,
+                54,
+                336
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 423,
+              "length": 2
+            },
+            {
+              "offset": 486,
+              "length": 1
+            }
+          ]
+        },
+        {
+          "kind": "columnHeader",
+          "rowIndex": 0,
+          "columnIndex": 1,
+          "content": "Product name\n(Item Code)",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                72,
+                304,
+                235,
+                304,
+                235,
+                336,
+                72,
+                336
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 426,
+              "length": 12
+            },
+            {
+              "offset": 488,
+              "length": 11
+            }
+          ]
+        },
+        {
+          "kind": "columnHeader",
+          "rowIndex": 0,
+          "columnIndex": 2,
+          "content": "Qty\n(UoM)",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                235,
+                304,
+                279,
+                304,
+                279,
+                336,
+                235,
+                336
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 439,
+              "length": 3
+            },
+            {
+              "offset": 500,
+              "length": 5
+            }
+          ]
+        },
+        {
+          "kind": "columnHeader",
+          "rowIndex": 0,
+          "columnIndex": 3,
+          "content": "Rate",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                279,
+                304,
+                344,
+                304,
+                344,
+                336,
+                279,
+                336
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 443,
+              "length": 4
+            }
+          ]
+        },
+        {
+          "kind": "columnHeader",
+          "rowIndex": 0,
+          "columnIndex": 4,
+          "content": "Amount",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                344,
+                304,
+                408,
+                304,
+                408,
+                336,
+                344,
+                336
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 448,
+              "length": 6
+            }
+          ]
+        },
+        {
+          "kind": "columnHeader",
+          "rowIndex": 0,
+          "columnIndex": 5,
+          "content": "Discount",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                408,
+                304,
+                474,
+                304,
+                474,
+                336,
+                408,
+                336
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 455,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "kind": "columnHeader",
+          "rowIndex": 0,
+          "columnIndex": 6,
+          "content": "Taxable",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                474,
+                304,
+                576,
+                304,
+                576,
+                336,
+                474,
+                336
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 464,
+              "length": 7
+            }
+          ]
+        },
+        {
+          "kind": "columnHeader",
+          "rowIndex": 0,
+          "columnIndex": 7,
+          "content": "VAT Amt",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                576,
+                304,
+                668,
+                304,
+                668,
+                336,
+                576,
+                336
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 472,
+              "length": 7
+            }
+          ]
+        },
+        {
+          "kind": "columnHeader",
+          "rowIndex": 0,
+          "columnIndex": 8,
+          "content": "Total",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                668,
+                304,
+                733,
+                304,
+                733,
+                336,
+                668,
+                336
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 480,
+              "length": 5
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "columnIndex": 0,
+          "content": "1",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                54,
+                336,
+                72,
+                336,
+                72,
+                372,
+                54,
+                372
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 506,
+              "length": 1
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "columnIndex": 1,
+          "content": "( 1154 )\nالذهب شريط 100gm",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                72,
+                336,
+                235,
+                336,
+                234,
+                373,
+                72,
+                372
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 585,
+              "length": 8
+            },
+            {
+              "offset": 508,
+              "length": 16
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "columnIndex": 2,
+          "content": "5\n(PCS)",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                235,
+                336,
+                279,
+                336,
+                279,
+                373,
+                234,
+                373
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 525,
+              "length": 1
+            },
+            {
+              "offset": 594,
+              "length": 5
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "columnIndex": 3,
+          "content": "15,225.00",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                279,
+                336,
+                344,
+                336,
+                344,
+                373,
+                279,
+                373
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 527,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "columnIndex": 4,
+          "content": "76,125.00",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                344,
+                336,
+                408,
+                336,
+                408,
+                372,
+                344,
+                373
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 537,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "columnIndex": 5,
+          "content": "2,000.00",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                408,
+                336,
+                474,
+                336,
+                474,
+                372,
+                408,
+                372
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 547,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "columnIndex": 6,
+          "content": "74,125.00",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                474,
+                336,
+                576,
+                336,
+                576,
+                373,
+                474,
+                372
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 556,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "columnIndex": 7,
+          "content": "3,706.25",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                576,
+                336,
+                668,
+                336,
+                668,
+                373,
+                576,
+                373
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 566,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "columnIndex": 8,
+          "content": "77,831.25",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                668,
+                336,
+                733,
+                336,
+                733,
+                373,
+                668,
+                373
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 575,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 0,
+          "content": ":unselected:",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                54,
+                372,
+                72,
+                372,
+                72,
+                392,
+                54,
+                392
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 1136,
+              "length": 12
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 1,
+          "content": "Total",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                72,
+                372,
+                234,
+                373,
+                234,
+                392,
+                72,
+                392
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 600,
+              "length": 5
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 2,
+          "content": "5.00",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                234,
+                373,
+                279,
+                373,
+                279,
+                392,
+                234,
+                392
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 606,
+              "length": 4
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 3,
+          "content": "",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                279,
+                373,
+                344,
+                373,
+                344,
+                392,
+                279,
+                392
+              ]
+            }
+          ],
+          "spans": []
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 4,
+          "content": "76,125.00",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                344,
+                373,
+                408,
+                372,
+                408,
+                392,
+                344,
+                392
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 611,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 5,
+          "content": "2,000.00",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                408,
+                372,
+                474,
+                372,
+                474,
+                392,
+                408,
+                392
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 621,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 6,
+          "content": "74,125.00",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                474,
+                372,
+                576,
+                373,
+                576,
+                392,
+                474,
+                392
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 630,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 7,
+          "content": "",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                576,
+                373,
+                668,
+                373,
+                668,
+                392,
+                576,
+                392
+              ]
+            }
+          ],
+          "spans": []
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 8,
+          "content": "77,831.25",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                668,
+                373,
+                733,
+                373,
+                733,
+                392,
+                668,
+                392
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 640,
+              "length": 9
+            }
+          ]
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            52,
+            303,
+            734,
+            303,
+            734,
+            394,
+            52,
+            394
+          ]
+        }
+      ],
+      "spans": [
+        {
+          "offset": 423,
+          "length": 2
+        },
+        {
+          "offset": 486,
+          "length": 1
+        },
+        {
+          "offset": 426,
+          "length": 12
+        },
+        {
+          "offset": 488,
+          "length": 11
+        },
+        {
+          "offset": 439,
+          "length": 3
+        },
+        {
+          "offset": 500,
+          "length": 5
+        },
+        {
+          "offset": 443,
+          "length": 42
+        },
+        {
+          "offset": 506,
+          "length": 1
+        },
+        {
+          "offset": 585,
+          "length": 8
+        },
+        {
+          "offset": 508,
+          "length": 18
+        },
+        {
+          "offset": 594,
+          "length": 5
+        },
+        {
+          "offset": 527,
+          "length": 57
+        },
+        {
+          "offset": 1136,
+          "length": 12
+        },
+        {
+          "offset": 600,
+          "length": 49
+        }
+      ]
+    },
+    {
+      "rowCount": 4,
+      "columnCount": 3,
+      "cells": [
+        {
+          "kind": "columnHeader",
+          "rowIndex": 0,
+          "columnIndex": 0,
+          "rowSpan": 2,
+          "content": "",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                475,
+                405,
+                573,
+                405,
+                573,
+                449,
+                475,
+                449
+              ]
+            }
+          ],
+          "spans": []
+        },
+        {
+          "kind": "columnHeader",
+          "rowIndex": 0,
+          "columnIndex": 1,
+          "content": "Taxable Total:",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                573,
+                405,
+                668,
+                405,
+                668,
+                428,
+                573,
+                429
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 690,
+              "length": 14
+            }
+          ]
+        },
+        {
+          "kind": "columnHeader",
+          "rowIndex": 0,
+          "columnIndex": 2,
+          "content": "74,125.00",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                668,
+                405,
+                738,
+                405,
+                738,
+                428,
+                668,
+                428
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 705,
+              "length": 9
+            }
+          ]
+        },
+        {
+          "kind": "columnHeader",
+          "rowIndex": 1,
+          "columnIndex": 1,
+          "content": "VAT Total:",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                573,
+                429,
+                668,
+                428,
+                667,
+                449,
+                573,
+                449
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 774,
+              "length": 10
+            }
+          ]
+        },
+        {
+          "kind": "columnHeader",
+          "rowIndex": 1,
+          "columnIndex": 2,
+          "content": "3,706.25",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                668,
+                428,
+                738,
+                428,
+                738,
+                449,
+                667,
+                449
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 785,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 0,
+          "content": "Other Charges",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                475,
+                449,
+                573,
+                449,
+                573,
+                467,
+                475,
+                467
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 830,
+              "length": 13
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 1,
+          "content": "/ Adjustments:",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                573,
+                449,
+                667,
+                449,
+                667,
+                467,
+                573,
+                467
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 844,
+              "length": 14
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "columnIndex": 2,
+          "content": "0.00",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                667,
+                449,
+                738,
+                449,
+                738,
+                467,
+                667,
+                467
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 859,
+              "length": 4
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "columnIndex": 0,
+          "content": "",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                475,
+                467,
+                573,
+                467,
+                573,
+                488,
+                475,
+                488
+              ]
+            }
+          ],
+          "spans": []
+        },
+        {
+          "rowIndex": 3,
+          "columnIndex": 1,
+          "content": "Grand Total:",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                573,
+                467,
+                667,
+                467,
+                667,
+                488,
+                573,
+                488
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 889,
+              "length": 12
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "columnIndex": 2,
+          "content": "77,831.25",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                667,
+                467,
+                738,
+                467,
+                738,
+                488,
+                667,
+                488
+              ]
+            }
+          ],
+          "spans": [
+            {
+              "offset": 902,
+              "length": 9
+            }
+          ]
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            483,
+            412,
+            732,
+            412,
+            732,
+            484,
+            482,
+            484
+          ]
+        }
+      ],
+      "spans": [
+        {
+          "offset": 690,
+          "length": 24
+        },
+        {
+          "offset": 774,
+          "length": 19
+        },
+        {
+          "offset": 830,
+          "length": 33
+        },
+        {
+          "offset": 889,
+          "length": 22
+        }
+      ]
+    }
+  ],
+  "styles": [
+    {
+      "confidence": 0.95,
+      "spans": [
+        {
+          "offset": 486,
+          "length": 1
+        }
+      ],
+      "isHandwritten": true
+    }
+  ],
+  "documents": [
+    {
+      "docType": "invoice",
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            0,
+            0,
+            800,
+            0,
+            800,
+            715,
+            0,
+            715
+          ]
+        }
+      ],
+      "fields": {
+        "CustomerAddress": {
+          "type": "address",
+          "content": "برج دبرا",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                143,
+                225,
+                182,
+                225,
+                182,
+                236,
+                143,
+                236
+              ]
+            }
+          ],
+          "confidence": 0.717,
+          "spans": [
+            {
+              "offset": 255,
+              "length": 8
+            }
+          ],
+          "valueAddress": {
+            "streetAddress": "",
+            "house": "برج دبرا"
+          }
+        },
+        "CustomerAddressRecipient": {
+          "type": "string",
+          "valueString": "شركة السلتان",
+          "content": "شركة السلتان",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                144,
+                210,
+                208,
+                210,
+                208,
+                223,
+                144,
+                223
+              ]
+            }
+          ],
+          "confidence": 0.652,
+          "spans": [
+            {
+              "offset": 216,
+              "length": 12
+            }
+          ]
+        },
+        "CustomerName": {
+          "type": "string",
+          "valueString": "شركة السلتان",
+          "content": "شركة السلتان",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                144,
+                210,
+                208,
+                210,
+                208,
+                223,
+                144,
+                223
+              ]
+            }
+          ],
+          "confidence": 0.652,
+          "spans": [
+            {
+              "offset": 216,
+              "length": 12
+            }
+          ]
+        },
+        "CustomerTaxId": {
+          "type": "string",
+          "valueString": "147258369",
+          "content": "147258369",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                144,
+                236,
+                207,
+                236,
+                207,
+                247,
+                144,
+                248
+              ]
+            }
+          ],
+          "confidence": 0.965,
+          "spans": [
+            {
+              "offset": 298,
+              "length": 9
+            }
+          ]
+        },
+        "InvoiceDate": {
+          "type": "date",
+          "valueDate": "2017-10-11",
+          "content": "11-Oct-2017",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                527,
+                223,
+                596,
+                223,
+                596,
+                235,
+                527,
+                235
+              ]
+            }
+          ],
+          "confidence": 0.968,
+          "spans": [
+            {
+              "offset": 278,
+              "length": 11
+            }
+          ]
+        },
+        "InvoiceId": {
+          "type": "string",
+          "valueString": "ب 21",
+          "content": "ب 21",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                527,
+                209,
+                554,
+                211,
+                553,
+                223,
+                526,
+                221
+              ]
+            }
+          ],
+          "confidence": 0.948,
+          "spans": [
+            {
+              "offset": 241,
+              "length": 4
+            }
+          ]
+        },
+        "InvoiceTotal": {
+          "type": "currency",
+          "valueCurrency": {
+            "amount": 77831.25,
+            "currencyCode": "AED"
+          },
+          "content": "77,831.25",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                674,
+                377,
+                730,
+                377,
+                730,
+                389,
+                674,
+                389
+              ]
+            }
+          ],
+          "confidence": 0.85,
+          "spans": [
+            {
+              "offset": 640,
+              "length": 9
+            }
+          ]
+        },
+        "Items": {
+          "type": "array",
+          "valueArray": [
+            {
+              "type": "object",
+              "valueObject": {
+                "Amount": {
+                  "type": "currency",
+                  "valueCurrency": {
+                    "amount": 77831.25,
+                    "currencyCode": "AED"
+                  },
+                  "content": "77,831.25",
+                  "boundingRegions": [
+                    {
+                      "pageNumber": 1,
+                      "polygon": [
+                        684,
+                        340,
+                        730,
+                        340,
+                        730,
+                        350,
+                        684,
+                        350
+                      ]
+                    }
+                  ],
+                  "confidence": 0.848,
+                  "spans": [
+                    {
+                      "offset": 575,
+                      "length": 9
+                    }
+                  ]
+                },
+                "Description": {
+                  "type": "string",
+                  "valueString": "الذهب شريط 100gm\n( 1154 )",
+                  "content": "الذهب شريط 100gm\n( 1154 )",
+                  "boundingRegions": [
+                    {
+                      "pageNumber": 1,
+                      "polygon": [
+                        77,
+                        340,
+                        160,
+                        340,
+                        160,
+                        360,
+                        77,
+                        360
+                      ]
+                    }
+                  ],
+                  "confidence": 0.38,
+                  "spans": [
+                    {
+                      "offset": 508,
+                      "length": 16
+                    },
+                    {
+                      "offset": 585,
+                      "length": 8
+                    }
+                  ]
+                },
+                "Quantity": {
+                  "type": "number",
+                  "valueNumber": 5,
+                  "content": "5",
+                  "boundingRegions": [
+                    {
+                      "pageNumber": 1,
+                      "polygon": [
+                        269,
+                        340,
+                        275,
+                        340,
+                        275,
+                        349,
+                        269,
+                        349
+                      ]
+                    }
+                  ],
+                  "confidence": 0.735,
+                  "spans": [
+                    {
+                      "offset": 525,
+                      "length": 1
+                    }
+                  ]
+                },
+                "Tax": {
+                  "type": "currency",
+                  "valueCurrency": {
+                    "amount": 3706.25,
+                    "currencyCode": "AED"
+                  },
+                  "content": "3,706.25",
+                  "boundingRegions": [
+                    {
+                      "pageNumber": 1,
+                      "polygon": [
+                        625,
+                        340,
+                        665,
+                        340,
+                        665,
+                        350,
+                        625,
+                        350
+                      ]
+                    }
+                  ],
+                  "confidence": 0.826,
+                  "spans": [
+                    {
+                      "offset": 566,
+                      "length": 8
+                    }
+                  ]
+                },
+                "Unit": {
+                  "type": "string",
+                  "valueString": "(PCS)",
+                  "content": "(PCS)",
+                  "boundingRegions": [
+                    {
+                      "pageNumber": 1,
+                      "polygon": [
+                        251,
+                        350,
+                        276,
+                        350,
+                        276,
+                        360,
+                        251,
+                        360
+                      ]
+                    }
+                  ],
+                  "confidence": 0.805,
+                  "spans": [
+                    {
+                      "offset": 594,
+                      "length": 5
+                    }
+                  ]
+                },
+                "UnitPrice": {
+                  "type": "currency",
+                  "valueCurrency": {
+                    "amount": 15225.0,
+                    "currencyCode": "AED"
+                  },
+                  "content": "15,225.00",
+                  "boundingRegions": [
+                    {
+                      "pageNumber": 1,
+                      "polygon": [
+                        296,
+                        340,
+                        342,
+                        339,
+                        342,
+                        350,
+                        296,
+                        350
+                      ]
+                    }
+                  ],
+                  "confidence": 0.76,
+                  "spans": [
+                    {
+                      "offset": 527,
+                      "length": 9
+                    }
+                  ]
+                }
+              },
+              "content": "1\nالذهب شريط 100gm\n5\n15,225.00\n76,125.00\n2,000.00\n74,125.00\n3,706.25\n77,831.25\n( 1154 )\n(PCS)",
+              "boundingRegions": [
+                {
+                  "pageNumber": 1,
+                  "polygon": [
+                    55,
+                    339,
+                    730,
+                    339,
+                    730,
+                    360,
+                    55,
+                    360
+                  ]
+                }
+              ],
+              "confidence": 0.821,
+              "spans": [
+                {
+                  "offset": 506,
+                  "length": 93
+                }
+              ]
+            }
+          ]
+        },
+        "PaymentDetails": {
+          "type": "array",
+          "valueArray": [
+            {
+              "type": "object",
+              "valueObject": {
+                "IBAN": {
+                  "type": "string",
+                  "valueString": "AE142536475869123",
+                  "content": "AE142536475869123",
+                  "boundingRegions": [
+                    {
+                      "pageNumber": 1,
+                      "polygon": [
+                        177,
+                        454,
+                        295,
+                        454,
+                        295,
+                        466,
+                        177,
+                        466
+                      ]
+                    }
+                  ],
+                  "confidence": 0.967,
+                  "spans": [
+                    {
+                      "offset": 812,
+                      "length": 17
+                    }
+                  ]
+                },
+                "SWIFT": {
+                  "type": "string",
+                  "valueString": "DIA24EE",
+                  "content": "DIA24EE",
+                  "boundingRegions": [
+                    {
+                      "pageNumber": 1,
+                      "polygon": [
+                        169,
+                        468,
+                        216,
+                        468,
+                        216,
+                        480,
+                        169,
+                        480
+                      ]
+                    }
+                  ],
+                  "confidence": 0.964,
+                  "spans": [
+                    {
+                      "offset": 881,
+                      "length": 7
+                    }
+                  ]
+                }
+              },
+              "confidence": 0.995
+            }
+          ]
+        },
+        "PaymentTerm": {
+          "type": "string",
+          "valueString": "مستحق في 7 أيام من تاريخ الفاتورة",
+          "content": "مستحق في 7 أيام من تاريخ الفاتورة",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                54,
+                521,
+                215,
+                521,
+                215,
+                536,
+                54,
+                536
+              ]
+            }
+          ],
+          "confidence": 0.568,
+          "spans": [
+            {
+              "offset": 1053,
+              "length": 33
+            }
+          ]
+        },
+        "SubTotal": {
+          "type": "currency",
+          "valueCurrency": {
+            "amount": 74125.0,
+            "currencyCode": "AED"
+          },
+          "content": "74,125.00",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                674,
+                414,
+                730,
+                414,
+                730,
+                426,
+                674,
+                426
+              ]
+            }
+          ],
+          "confidence": 0.956,
+          "spans": [
+            {
+              "offset": 705,
+              "length": 9
+            }
+          ]
+        },
+        "TotalDiscount": {
+          "type": "currency",
+          "valueCurrency": {
+            "amount": 2000.0,
+            "currencyCode": "AED"
+          },
+          "content": "2,000.00",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                421,
+                377,
+                471,
+                377,
+                471,
+                388,
+                421,
+                389
+              ]
+            }
+          ],
+          "confidence": 0.822,
+          "spans": [
+            {
+              "offset": 621,
+              "length": 8
+            }
+          ]
+        },
+        "TotalTax": {
+          "type": "currency",
+          "valueCurrency": {
+            "amount": 3706.25,
+            "currencyCode": "AED"
+          },
+          "content": "3,706.25",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                680,
+                433,
+                730,
+                433,
+                730,
+                445,
+                680,
+                445
+              ]
+            }
+          ],
+          "confidence": 0.967,
+          "spans": [
+            {
+              "offset": 785,
+              "length": 8
+            }
+          ]
+        },
+        "VendorAddress": {
+          "type": "address",
+          "content": "203، برج سلطان، بالقرب من محطة سبخها باص ديرة",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                314,
+                70,
+                558,
+                70,
+                558,
+                85,
+                314,
+                85
+              ]
+            }
+          ],
+          "confidence": 0.879,
+          "spans": [
+            {
+              "offset": 61,
+              "length": 45
+            }
+          ],
+          "valueAddress": {
+            "houseNumber": "203",
+            "road": "، برج سلطان، بالقرب من محطة سبخها باص",
+            "city": "ديرة",
+            "streetAddress": "203 ، برج سلطان، بالقرب من محطة سبخها باص"
+          }
+        },
+        "VendorAddressRecipient": {
+          "type": "string",
+          "valueString": "شركة بشرى للتجارة ذ.م.م",
+          "content": "شركة بشرى للتجارة ذ.م.م",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                328,
+                36,
+                544,
+                34,
+                544,
+                57,
+                328,
+                59
+              ]
+            }
+          ],
+          "confidence": 0.917,
+          "spans": [
+            {
+              "offset": 2,
+              "length": 23
+            }
+          ]
+        },
+        "VendorName": {
+          "type": "string",
+          "valueString": "/",
+          "content": "/",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                77,
+                33,
+                114,
+                33,
+                114,
+                78,
+                75,
+                79
+              ]
+            }
+          ],
+          "confidence": 0.447,
+          "spans": [
+            {
+              "offset": 0,
+              "length": 1
+            }
+          ]
+        },
+        "VendorTaxId": {
+          "type": "string",
+          "valueString": "1234567890",
+          "content": "1234567890",
+          "boundingRegions": [
+            {
+              "pageNumber": 1,
+              "polygon": [
+                475,
+                96,
+                545,
+                95,
+                545,
+                108,
+                475,
+                108
+              ]
+            }
+          ],
+          "confidence": 0.946,
+          "spans": [
+            {
+              "offset": 153,
+              "length": 10
+            }
+          ]
+        }
+      },
+      "confidence": 1,
+      "spans": [
+        {
+          "offset": 0,
+          "length": 1148
+        }
+      ]
+    }
+  ],
+  "contentFormat": "text"
+}

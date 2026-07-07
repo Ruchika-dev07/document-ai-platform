@@ -30,4 +30,10 @@ def analyze_invoice(file_path: str) -> dict:
         )
 
     result = poller.result()
-    return result.as_dict()
+
+    # The SDK returns fields flat (documents, content, pages, etc. at the
+    # top level). Document Intelligence Studio's exported JSON nests all
+    # of this under an "analyzeResult" key instead. We wrap it here so
+    # invoice_extractor.py and everything downstream can treat both
+    # sources identically.
+    return {"analyzeResult": result.as_dict()}
