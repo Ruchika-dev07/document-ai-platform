@@ -101,6 +101,6 @@ if __name__ == "__main__":
     with open(sys.argv[1]) as f:
         data = json.load(f)
 
-    print(json.dumps(extract_invoice_fields(data), indent=2, default=str))
+    print(json.dumps(extract_invoice_fields(data), indent=2, default=str, ensure_ascii=False))
 
 #run this on the terminal: python3 -m app.services.extraction.invoice_extractor sample-outputs/uae_invoice_analyze_result.json
