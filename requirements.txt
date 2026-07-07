@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+python-multipart
+azure-ai-documentintelligence
+pydantic
+python-dotenv
+sqlalchemy
+psycopg2-binary

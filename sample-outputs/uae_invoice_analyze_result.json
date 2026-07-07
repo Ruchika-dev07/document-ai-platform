@@ -1,0 +1,37 @@
+{
+	"status": "succeeded",
+	"createdDateTime": "2026-07-07T08:14:54Z",
+	"lastUpdatedDateTime": "2026-07-07T08:14:57Z",
+	"analyzeResult": {
+		"apiVersion": "2024-11-30",
+		"modelId": "prebuilt-invoice",
+		"documents": [
+			{
+				"docType": "invoice",
+				"fields": {
+					"VendorName": {"type": "string", "valueString": "/", "content": "/", "confidence": 0.447},
+					"VendorTaxId": {"type": "string", "valueString": "1234567890", "content": "1234567890", "confidence": 0.946},
+					"CustomerName": {"type": "string", "valueString": "شركة السلتان", "content": "شركة السلتان", "confidence": 0.652},
+					"CustomerTaxId": {"type": "string", "valueString": "147258369", "content": "147258369", "confidence": 0.965},
+					"InvoiceId": {"type": "string", "valueString": "ب 21", "content": "ب 21", "confidence": 0.948},
+					"InvoiceDate": {"type": "date", "valueDate": "2017-10-11", "content": "11-Oct-2017", "confidence": 0.968},
+					"InvoiceTotal": {"type": "currency", "valueCurrency": {"amount": 77831.25, "currencyCode": "AED"}, "confidence": 0.85},
+					"SubTotal": {"type": "currency", "valueCurrency": {"amount": 74125, "currencyCode": "AED"}, "confidence": 0.956},
+					"TotalTax": {"type": "currency", "valueCurrency": {"amount": 3706.25, "currencyCode": "AED"}, "confidence": 0.967},
+					"TotalDiscount": {"type": "currency", "valueCurrency": {"amount": 2000, "currencyCode": "AED"}, "confidence": 0.822}
+				},
+				"confidence": 1
+			}
+		],
+		"pages": [
+			{
+				"pageNumber": 1,
+				"lines": [
+					{"content": "/"},
+					{"content": "شركة بشرى للتجارة ذ.م.م"},
+					{"content": "O Orignal"}
+				]
+			}
+		]
+	}
+}
