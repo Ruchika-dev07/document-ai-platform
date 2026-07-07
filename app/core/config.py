@@ -1,10 +1,14 @@
 """
 Central configuration for the IDP platform.
-Reads Azure Document Intelligence credentials from environment variables.
-Never hardcode keys directly in source files.
+
+Loads Azure Document Intelligence credentials from a .env file so you
+never have to manually `export` them in every new terminal session.
 """
 
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # reads .env in the project root, if present
 
 
 class Settings:
@@ -22,3 +26,9 @@ class Settings:
 
 
 settings = Settings()
+
+if not settings.AZURE_DOCINTEL_ENDPOINT or not settings.AZURE_DOCINTEL_KEY:
+    print(
+        "WARNING: Azure credentials not found. Create a .env file "
+        "(see .env.example) with AZURE_DOCINTEL_ENDPOINT and AZURE_DOCINTEL_KEY."
+    )

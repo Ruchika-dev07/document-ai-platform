@@ -14,5 +14,13 @@
       "currencyCode": "AED"
     },
     "first_seen": "2026-07-07T11:46:40.302430"
+  },
+  "UNKNOWN_VENDOR::L00121": {
+    "vendor_name": "SFS\nASYAD",
+    "invoice_total": {
+      "amount": 383675.0,
+      "currencyCode": "AED"
+    },
+    "first_seen": "2026-07-07T15:13:36.277355"
   }
 }
