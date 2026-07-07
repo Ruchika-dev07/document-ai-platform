@@ -48,3 +48,5 @@ python app/services/extraction/invoice_extractor.py sample-outputs/uae_invoice_a
 See `Enterprise_IDP_Technical_Architecture.pdf` section 4 for the full intended
 structure. Folders are scaffolded; most service files are placeholders (`pass`)
 pending build-out beyond the invoice pipeline proof-of-concept.
+
+To switch to virtula environmnt run this in the terminal: source .venv/bin/activate
