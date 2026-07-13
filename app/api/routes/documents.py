@@ -18,6 +18,16 @@ import uuid
 import pdfplumber
 import pytesseract
 from PIL import Image, ImageOps
+
+# Hardcode the Tesseract binary path instead of relying on shell PATH.
+# Homebrew adds /opt/homebrew/bin to PATH only for zsh (via ~/.zprofile),
+# but bash sessions never get it, causing intermittent "tesseract not
+# found" failures depending on which terminal tab is running.
+import os as _os
+for _candidate in ['/opt/homebrew/bin/tesseract', '/usr/local/bin/tesseract']:
+    if _os.path.exists(_candidate):
+        pytesseract.pytesseract.tesseract_cmd = _candidate
+        break
 from fastapi import APIRouter, File, HTTPException, UploadFile
 from pydantic import BaseModel
 
