@@ -15,250 +15,65 @@
     --review: #B4443B;
     --accent: #E8B34C;
   }
-
   * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .topbar {
-    height: 56px;
-    background: var(--rail);
-    color: #EDEFF5;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    gap: 20px;
-    border-bottom: 1px solid var(--rail-line);
-  }
-
-  .topbar .title {
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: 0.2px;
-  }
-
-  .upload-btn {
-    background: var(--accent);
-    color: #14213D;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 13px;
-    cursor: pointer;
-  }
-
+  body { margin: 0; font-family: -apple-system, "Segoe UI", system-ui, sans-serif; background: var(--paper); color: var(--ink); height: 100vh; overflow: hidden; }
+  .topbar { height: 56px; background: var(--rail); color: #EDEFF5; display: flex; align-items: center; padding: 0 20px; gap: 20px; border-bottom: 1px solid var(--rail-line); }
+  .topbar .title { font-weight: 600; font-size: 15px; }
+  .upload-btn { background: var(--accent); color: #14213D; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 13px; cursor: pointer; }
   .upload-btn:hover { filter: brightness(1.08); }
-
-  .meta {
-    font-size: 13px;
-    color: #9AA5C4;
-  }
-
-  .layout {
-    display: flex;
-    height: calc(100vh - 56px);
-  }
-
-  /* LEFT: page thumbnail rail */
-  .rail {
-    width: 220px;
-    background: var(--rail);
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid var(--rail-line);
-  }
-
-  .rail-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--rail-line);
-  }
-
-  .rail-header span {
-    color: #9AA5C4;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-  }
-
-  .zoom-controls {
-    display: flex;
-    gap: 4px;
-  }
-
-  .zoom-controls button {
-    width: 22px;
-    height: 22px;
-    border-radius: 4px;
-    border: 1px solid var(--rail-line);
-    background: #1B2A4D;
-    color: #EDEFF5;
-    cursor: pointer;
-    font-size: 13px;
-    line-height: 1;
-  }
-
+  .meta { font-size: 13px; color: #9AA5C4; }
+  .layout { display: flex; height: calc(100vh - 56px); }
+  .rail { width: 220px; background: var(--rail); display: flex; flex-direction: column; border-right: 1px solid var(--rail-line); }
+  .rail-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--rail-line); }
+  .rail-header span { color: #9AA5C4; font-size: 12px; text-transform: uppercase; letter-spacing: 0.6px; }
+  .zoom-controls { display: flex; gap: 4px; }
+  .zoom-controls button { width: 22px; height: 22px; border-radius: 4px; border: 1px solid var(--rail-line); background: #1B2A4D; color: #EDEFF5; cursor: pointer; font-size: 13px; line-height: 1; }
   .zoom-controls button:hover { background: #253a6b; }
-
-  .rail-scroll {
-    flex: 1;
-    overflow-y: auto;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .page-thumb {
-    background: #1B2A4D;
-    border: 2px solid transparent;
-    border-radius: 6px;
-    padding: 6px;
-    cursor: pointer;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
-
+  .rail-scroll { flex: 1; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+  .page-thumb { background: #1B2A4D; border: 2px solid transparent; border-radius: 6px; padding: 6px; cursor: pointer; display: flex; gap: 8px; align-items: center; }
   .page-thumb.selected { border-color: var(--accent); }
-
-  .page-thumb img {
-    width: var(--thumb-w, 42px);
-    border-radius: 3px;
-    display: block;
-    background: #fff;
-  }
-
-  .page-thumb .info {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .page-thumb .page-num {
-    font-size: 11px;
-    color: #9AA5C4;
-  }
-
-  .cat-tag {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-top: 3px;
-    color: #14213D;
-  }
-
+  .page-thumb img { width: var(--thumb-w, 42px); border-radius: 3px; display: block; background: #fff; }
+  .page-thumb .info { flex: 1; min-width: 0; }
+  .page-thumb .page-num { font-size: 11px; color: #9AA5C4; }
+  .cat-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; margin-top: 3px; color: #14213D; }
   .cat-tag.JV { background: var(--jv); }
   .cat-tag.Invoice { background: var(--invoice); color: #fff; }
   .cat-tag.Supporting-Document { background: var(--supporting); color: #fff; }
   .cat-tag.review-flag { background: var(--review); color: #fff; }
-
-  /* CENTER: preview */
-  .preview {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 30px;
-    overflow-y: auto;
-    background: #EFEDE7;
-  }
-
-  .preview img {
-    max-width: 100%;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-    border-radius: 4px;
-  }
-
-  .preview .empty {
-    color: #9CA3AF;
-    font-size: 14px;
-    margin-top: 100px;
-    text-align: center;
-  }
-
-  /* RIGHT: category blocks */
-  .blocks-panel {
-    width: 320px;
-    background: #fff;
-    border-left: 1px solid #E5E1D8;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .blocks-header {
-    padding: 16px;
-    border-bottom: 1px solid #E5E1D8;
-  }
-
-  .blocks-header h2 {
-    margin: 0 0 8px 0;
-    font-size: 16px;
-  }
-
-  .summary-row {
-    display: flex;
-    gap: 10px;
-    font-size: 12px;
-    color: #6B7280;
-  }
-
+  .preview { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 30px; overflow-y: auto; background: #EFEDE7; }
+  .preview img { max-width: 100%; box-shadow: 0 4px 24px rgba(0,0,0,0.15); border-radius: 4px; }
+  .preview .empty { color: #9CA3AF; font-size: 14px; margin-top: 100px; text-align: center; }
+  .blocks-panel { width: 340px; background: #fff; border-left: 1px solid #E5E1D8; display: flex; flex-direction: column; }
+  .blocks-header { padding: 16px; border-bottom: 1px solid #E5E1D8; }
+  .blocks-header h2 { margin: 0 0 8px 0; font-size: 16px; }
+  .summary-row { display: flex; gap: 10px; font-size: 12px; color: #6B7280; }
   .summary-row b { color: var(--ink); }
-
-  .blocks-scroll {
-    flex: 1;
-    overflow-y: auto;
-    padding: 12px;
-  }
-
-  .block-card {
-    border: 1px solid #E5E1D8;
-    border-radius: 8px;
-    padding: 10px 12px;
-    margin-bottom: 8px;
-    cursor: pointer;
-  }
-
-  .block-card:hover { border-color: var(--accent); }
-
-  .block-card .label {
-    font-weight: 700;
-    font-size: 13px;
-  }
-
-  .block-card .pages-list {
-    font-size: 11px;
-    color: #6B7280;
-    margin-top: 4px;
-  }
-
+  .tree-scroll { flex: 1; overflow-y: auto; padding: 8px; }
+  .category-folder { margin-bottom: 6px; }
+  .category-header { display: flex; align-items: center; gap: 8px; padding: 10px 10px; border-radius: 6px; cursor: pointer; font-weight: 700; font-size: 13px; user-select: none; }
+  .category-header:hover { background: #F5F3EE; }
+  .category-header .chevron { width: 14px; display: inline-block; transition: transform 0.15s; color: #9CA3AF; font-size: 11px; }
+  .category-header.expanded .chevron { transform: rotate(90deg); }
+  .category-swatch { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+  .category-swatch.JV { background: var(--jv); }
+  .category-swatch.Invoice { background: var(--invoice); }
+  .category-swatch.Supporting-Document { background: var(--supporting); }
+  .category-count { color: #9CA3AF; font-weight: 400; font-size: 12px; margin-left: auto; }
+  .category-children { padding-left: 22px; display: none; }
+  .category-children.expanded { display: block; }
+  .block-folder { margin-bottom: 2px; }
+  .block-header { display: flex; align-items: center; gap: 6px; padding: 7px 8px; border-radius: 5px; cursor: pointer; font-size: 12.5px; font-weight: 600; user-select: none; }
+  .block-header:hover { background: #F5F3EE; }
+  .block-header .chevron { width: 12px; display: inline-block; transition: transform 0.15s; color: #B8B2A5; font-size: 10px; }
+  .block-header.expanded .chevron { transform: rotate(90deg); }
+  .block-pagecount { color: #9CA3AF; font-weight: 400; font-size: 11px; margin-left: auto; }
+  .block-pages { padding-left: 20px; display: none; }
+  .block-pages.expanded { display: block; }
+  .page-leaf { display: block; padding: 4px 8px; font-size: 12px; color: #4B5563; cursor: pointer; border-radius: 4px; }
+  .page-leaf:hover { background: #F0EDE6; color: var(--ink); }
+  .drop-zone { flex: 1; display: flex; align-items: center; justify-content: center; color: #9AA5C4; font-size: 14px; }
   input[type=file] { display: none; }
-
-  .drop-zone {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #9AA5C4;
-    font-size: 14px;
-  }
-
-  .loading {
-    color: var(--accent);
-    font-size: 13px;
-  }
+  .loading { color: var(--accent); font-size: 13px; padding: 20px; }
 </style>
 </head>
 <body>
@@ -293,7 +108,7 @@
       <h2>Categorized blocks</h2>
       <div class="summary-row" id="summary-row"></div>
     </div>
-    <div class="blocks-scroll" id="blocks-scroll"></div>
+    <div class="tree-scroll" id="tree-scroll"></div>
   </div>
 </div>
 
@@ -304,42 +119,31 @@ let currentData = null;
 
 const fileInput = document.getElementById("file-input");
 const railScroll = document.getElementById("rail-scroll");
-const blocksScroll = document.getElementById("blocks-scroll");
+const treeScroll = document.getElementById("tree-scroll");
 const summaryRow = document.getElementById("summary-row");
 const preview = document.getElementById("preview");
 const metaInfo = document.getElementById("meta-info");
 const pageCountLabel = document.getElementById("page-count-label");
 
-document.getElementById("zoom-in").onclick = () => {
-  thumbWidth = Math.min(thumbWidth + 12, 120);
-  applyZoom();
-};
-document.getElementById("zoom-out").onclick = () => {
-  thumbWidth = Math.max(thumbWidth - 12, 28);
-  applyZoom();
-};
+document.getElementById("zoom-in").onclick = () => { thumbWidth = Math.min(thumbWidth + 12, 120); applyZoom(); };
+document.getElementById("zoom-out").onclick = () => { thumbWidth = Math.max(thumbWidth - 12, 28); applyZoom(); };
 
 function applyZoom() {
-  document.querySelectorAll(".page-thumb img").forEach(img => {
-    img.style.width = thumbWidth + "px";
-  });
+  document.querySelectorAll(".page-thumb img").forEach(img => { img.style.width = thumbWidth + "px"; });
 }
 
 fileInput.addEventListener("change", async (e) => {
   const file = e.target.files[0];
   if (!file) return;
 
-  railScroll.innerHTML = '<div class="loading" style="padding:20px;">Uploading and splitting pages…</div>';
+  railScroll.innerHTML = '<div class="loading">Uploading and splitting pages…</div>';
   metaInfo.textContent = "Processing " + file.name + "…";
 
   const formData = new FormData();
   formData.append("file", file);
 
   try {
-    const res = await fetch(API_BASE + "/documents/split", {
-      method: "POST",
-      body: formData,
-    });
+    const res = await fetch(API_BASE + "/documents/split", { method: "POST", body: formData });
     const data = await res.json();
     if (!res.ok) {
       railScroll.innerHTML = '<div style="color:#B4443B; padding:16px; font-size:13px;">' + (data.detail || "Something went wrong") + '</div>';
@@ -347,7 +151,7 @@ fileInput.addEventListener("change", async (e) => {
     }
     currentData = data;
     renderPages(data);
-    renderBlocks(data);
+    renderTree(data);
     metaInfo.textContent = data.filename + " — " + data.total_pages + " pages";
     pageCountLabel.textContent = data.total_pages + " Pages";
   } catch (err) {
@@ -355,9 +159,7 @@ fileInput.addEventListener("change", async (e) => {
   }
 });
 
-function categoryClass(cat) {
-  return cat.replace(/ /g, "-");
-}
+function categoryClass(cat) { return cat.replace(/ /g, "-"); }
 
 function renderPages(data) {
   railScroll.innerHTML = "";
@@ -387,36 +189,90 @@ function renderPages(data) {
 
 function selectPage(page, el) {
   document.querySelectorAll(".page-thumb").forEach(t => t.classList.remove("selected"));
-  el.classList.add("selected");
+  if (el) el.classList.add("selected");
+  else {
+    const match = document.querySelector(`.page-thumb[data-page="${page.page_number}"]`);
+    if (match) { match.classList.add("selected"); match.scrollIntoView({behavior:"smooth", block:"center"}); }
+  }
   preview.innerHTML = `<img src="${API_BASE + page.thumbnail_url}">`;
 }
 
-function renderBlocks(data) {
+function jumpToPage(pageNumber) {
+  const page = currentData.pages.find(p => p.page_number === pageNumber);
+  if (page) selectPage(page, null);
+}
+
+function renderTree(data) {
   summaryRow.innerHTML = `
     <span><b>${data.summary.jv_count}</b> JV</span>
     <span><b>${data.summary.invoice_count}</b> Invoice</span>
     <span><b>${data.summary.supporting_document_count}</b> Supporting</span>
   `;
 
-  blocksScroll.innerHTML = "";
-  data.blocks.forEach(block => {
-    const div = document.createElement("div");
-    div.className = "block-card";
-    div.innerHTML = `
-      <div class="label">
-        <span class="cat-tag ${categoryClass(block.category)}">${block.category}</span>
-        ${block.block_label}
-      </div>
-      <div class="pages-list">Pages: ${block.pages.join(", ")}</div>
+  const categories = ["JV", "Invoice", "Supporting Document"];
+  treeScroll.innerHTML = "";
+
+  categories.forEach(cat => {
+    const blocksInCat = data.blocks.filter(b => b.category === cat);
+    if (blocksInCat.length === 0) return;
+
+    const totalPages = blocksInCat.reduce((sum, b) => sum + b.pages.length, 0);
+
+    const folder = document.createElement("div");
+    folder.className = "category-folder";
+
+    const header = document.createElement("div");
+    header.className = "category-header";
+    header.innerHTML = `
+      <span class="chevron">▶</span>
+      <span class="category-swatch ${categoryClass(cat)}"></span>
+      <span>${cat}</span>
+      <span class="category-count">${blocksInCat.length} · ${totalPages}p</span>
     `;
-    div.onclick = () => {
-      const firstPageEl = document.querySelector(`.page-thumb[data-page="${block.pages[0]}"]`);
-      if (firstPageEl) {
-        firstPageEl.scrollIntoView({ behavior: "smooth", block: "center" });
-        firstPageEl.click();
-      }
+
+    const children = document.createElement("div");
+    children.className = "category-children";
+
+    blocksInCat.forEach(block => {
+      const blockFolder = document.createElement("div");
+      blockFolder.className = "block-folder";
+
+      const blockHeader = document.createElement("div");
+      blockHeader.className = "block-header";
+      blockHeader.innerHTML = `
+        <span class="chevron">▶</span>
+        <span>${block.block_label}</span>
+        <span class="block-pagecount">${block.pages.length}p</span>
+      `;
+
+      const pagesDiv = document.createElement("div");
+      pagesDiv.className = "block-pages";
+      block.pages.forEach(pageNum => {
+        const leaf = document.createElement("div");
+        leaf.className = "page-leaf";
+        leaf.textContent = "Page " + pageNum;
+        leaf.onclick = (ev) => { ev.stopPropagation(); jumpToPage(pageNum); };
+        pagesDiv.appendChild(leaf);
+      });
+
+      blockHeader.onclick = () => {
+        blockHeader.classList.toggle("expanded");
+        pagesDiv.classList.toggle("expanded");
+      };
+
+      blockFolder.appendChild(blockHeader);
+      blockFolder.appendChild(pagesDiv);
+      children.appendChild(blockFolder);
+    });
+
+    header.onclick = () => {
+      header.classList.toggle("expanded");
+      children.classList.toggle("expanded");
     };
-    blocksScroll.appendChild(div);
+
+    folder.appendChild(header);
+    folder.appendChild(children);
+    treeScroll.appendChild(folder);
   });
 }
 </script>
