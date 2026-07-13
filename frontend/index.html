@@ -27,80 +27,39 @@
   }
 
   .topbar {
-    height: 60px;
-    background: var(--rail);
-    color: #EEF1F8;
-    display: flex;
-    align-items: center;
-    padding: 0 24px;
-    gap: 22px;
+    height: 60px; background: var(--rail); color: #EEF1F8;
+    display: flex; align-items: center; padding: 0 24px; gap: 22px;
     border-bottom: 1px solid var(--rail-line);
   }
-  .topbar .brand {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-  }
+  .topbar .brand { font-family: Georgia, "Times New Roman", serif; font-size: 17px; font-weight: 600; }
   .topbar .brand span { color: var(--accent); }
-
   .upload-btn {
-    background: var(--accent);
-    color: #1A1200;
-    border: none;
-    padding: 9px 18px;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 13px;
-    cursor: pointer;
-    letter-spacing: 0.2px;
+    background: var(--accent); color: #1A1200; border: none;
+    padding: 9px 18px; border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer;
   }
   .upload-btn:hover { filter: brightness(1.06); }
-
   .meta { font-size: 13px; color: #A9B2CC; font-family: "SF Mono", Menlo, monospace; }
+  .status-pill {
+    font-size: 11px; padding: 3px 9px; border-radius: 20px; background: #1B2A4D; color: #8FDDBF;
+    font-family: "SF Mono", Menlo, monospace;
+  }
 
   .layout { display: flex; height: calc(100vh - 60px); }
 
-  /* LEFT RAIL */
-  .rail {
-    width: 236px;
-    background: var(--rail);
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid var(--rail-line);
-  }
-  .rail-header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 12px 16px; border-bottom: 1px solid var(--rail-line);
-  }
-  .rail-header .label {
-    color: #8792B0; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
-  }
+  .rail { width: 236px; background: var(--rail); display: flex; flex-direction: column; border-right: 1px solid var(--rail-line); }
+  .rail-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-bottom: 1px solid var(--rail-line); }
+  .rail-header .label { color: #8792B0; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
   .zoom-controls { display: flex; gap: 4px; }
-  .zoom-controls button {
-    width: 24px; height: 24px; border-radius: 5px;
-    border: 1px solid var(--rail-line); background: #1B2A4D;
-    color: #EEF1F8; cursor: pointer; font-size: 14px; line-height: 1;
-  }
+  .zoom-controls button { width: 24px; height: 24px; border-radius: 5px; border: 1px solid var(--rail-line); background: #1B2A4D; color: #EEF1F8; cursor: pointer; font-size: 14px; line-height: 1; }
   .zoom-controls button:hover { background: var(--accent); color: #1A1200; }
 
-  .rail-scroll {
-    flex: 1; overflow-y: auto; padding: 12px;
-    display: flex; flex-direction: column; gap: 7px;
-  }
+  .rail-scroll { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 7px; }
   .rail-scroll::-webkit-scrollbar { width: 6px; }
   .rail-scroll::-webkit-scrollbar-thumb { background: var(--rail-line); border-radius: 3px; }
 
   .page-thumb {
-    background: #16223F;
-    border: 1px solid transparent;
-    border-left: 3px solid var(--supporting);
-    border-radius: 5px;
-    padding: 7px 8px;
-    cursor: grab;
-    display: flex;
-    gap: 9px;
-    align-items: center;
+    background: #16223F; border: 1px solid transparent; border-left: 3px solid var(--supporting);
+    border-radius: 5px; padding: 7px 8px; cursor: grab; display: flex; gap: 9px; align-items: center;
     transition: border-color 0.12s, background 0.12s;
   }
   .page-thumb.cat-JV { border-left-color: var(--jv); }
@@ -109,114 +68,79 @@
   .page-thumb.selected { background: #1D2E52; border-color: var(--accent); }
   .page-thumb.dragging { opacity: 0.4; }
   .page-thumb:hover { background: #1B2A4D; }
-
   .page-thumb img { width: var(--thumb-w, 46px); border-radius: 3px; display: block; background: #fff; }
   .page-thumb .info { flex: 1; min-width: 0; }
   .page-thumb .page-num { font-size: 11px; color: #8792B0; font-family: "SF Mono", Menlo, monospace; }
 
-  .cat-tag {
-    display: inline-block; font-size: 9.5px; font-weight: 700;
-    padding: 2px 6px; border-radius: 4px; margin-top: 3px; color: #14213D;
-    letter-spacing: 0.2px;
-  }
+  .cat-tag { display: inline-block; font-size: 9.5px; font-weight: 700; padding: 2px 6px; border-radius: 4px; margin-top: 3px; color: #14213D; letter-spacing: 0.2px; }
   .cat-tag.JV { background: var(--jv); color: #241300; }
   .cat-tag.Invoice { background: var(--invoice); color: #fff; }
   .cat-tag.Supporting-Document { background: var(--supporting); color: #fff; }
   .cat-tag.review-flag { background: var(--review); color: #fff; margin-left: 4px; }
+  .cat-tag.corrected-flag { background: var(--accent); color: #1A1200; margin-left: 4px; }
 
-  .override-select {
-    background: #0F1830; color: #EEF1F8; border: 1px solid var(--rail-line);
-    border-radius: 4px; font-size: 10px; padding: 2px 4px; margin-left: auto;
-    align-self: flex-start; cursor: pointer;
-  }
+  .override-select { background: #0F1830; color: #EEF1F8; border: 1px solid var(--rail-line); border-radius: 4px; font-size: 10px; padding: 2px 4px; margin-left: auto; align-self: flex-start; cursor: pointer; }
 
-  /* CENTER PREVIEW */
-  .preview {
-    flex: 1; display: flex; flex-direction: column; align-items: center;
-    justify-content: flex-start; padding: 34px; overflow-y: auto; background: #ECE9E1;
-  }
+  .preview { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 34px; overflow-y: auto; background: #ECE9E1; }
   .preview img { max-width: 100%; box-shadow: 0 6px 28px rgba(20,20,30,0.18); border-radius: 3px; }
   .preview .empty { color: #A2A398; font-size: 14px; margin-top: 120px; text-align: center; font-family: Georgia, serif; font-style: italic; }
 
-  /* RIGHT TREE PANEL */
-  .blocks-panel {
-    width: 360px; background: #FFFFFF; border-left: 1px solid #E4E0D4;
-    display: flex; flex-direction: column;
-  }
+  .blocks-panel { width: 380px; background: #FFFFFF; border-left: 1px solid #E4E0D4; display: flex; flex-direction: column; }
   .blocks-header { padding: 18px; border-bottom: 1px solid #E4E0D4; }
-  .blocks-header h2 {
-    margin: 0 0 10px 0; font-size: 17px; font-family: Georgia, serif; font-weight: 700;
-  }
+  .blocks-header h2 { margin: 0 0 10px 0; font-size: 17px; font-family: Georgia, serif; font-weight: 700; }
   .summary-row { display: flex; gap: 14px; font-size: 12px; color: #6E7180; }
   .summary-row b { color: var(--ink); font-size: 13px; }
 
-  .tree-scroll { flex: 1; overflow-y: auto; padding: 10px; }
-  .tree-scroll::-webkit-scrollbar { width: 6px; }
-  .tree-scroll::-webkit-scrollbar-thumb { background: #E4E0D4; border-radius: 3px; }
+  .panel-tabs { display: flex; border-bottom: 1px solid #E4E0D4; }
+  .panel-tab { flex: 1; padding: 10px; text-align: center; font-size: 12px; font-weight: 700; color: #A2A398; cursor: pointer; border-bottom: 2px solid transparent; }
+  .panel-tab.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+  .tree-scroll, .extracted-scroll { flex: 1; overflow-y: auto; padding: 10px; }
+  .tree-scroll::-webkit-scrollbar, .extracted-scroll::-webkit-scrollbar { width: 6px; }
+  .tree-scroll::-webkit-scrollbar-thumb, .extracted-scroll::-webkit-scrollbar-thumb { background: #E4E0D4; border-radius: 3px; }
 
   .category-folder { margin-bottom: 8px; border-radius: 8px; }
   .category-folder.drag-over { background: var(--accent-soft); outline: 2px dashed var(--accent); }
-
-  .category-header {
-    display: flex; align-items: center; gap: 9px;
-    padding: 11px 10px; border-radius: 7px; cursor: pointer;
-    font-weight: 700; font-size: 13.5px; user-select: none;
-  }
+  .category-header { display: flex; align-items: center; gap: 9px; padding: 11px 10px; border-radius: 7px; cursor: pointer; font-weight: 700; font-size: 13.5px; user-select: none; }
   .category-header:hover { background: #F7F5EE; }
-  .category-header .chevron {
-    width: 14px; display: inline-block; transition: transform 0.15s;
-    color: #B3AF9F; font-size: 11px;
-  }
+  .category-header .chevron { width: 14px; display: inline-block; transition: transform 0.15s; color: #B3AF9F; font-size: 11px; }
   .category-header.expanded .chevron { transform: rotate(90deg); }
   .category-swatch { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
   .category-swatch.JV { background: var(--jv); }
   .category-swatch.Invoice { background: var(--invoice); }
   .category-swatch.Supporting-Document { background: var(--supporting); }
   .category-count { color: #A2A398; font-weight: 500; font-size: 12px; margin-left: auto; font-family: "SF Mono", Menlo, monospace; }
-
   .category-children { padding-left: 22px; display: none; }
   .category-children.expanded { display: block; }
 
   .block-folder { margin-bottom: 2px; border-radius: 6px; }
   .block-folder.drag-over { background: var(--accent-soft); outline: 2px dashed var(--accent); }
-
-  .block-header {
-    display: flex; align-items: center; gap: 6px;
-    padding: 7px 8px; border-radius: 5px; cursor: pointer;
-    font-size: 12.5px; font-weight: 600; user-select: none;
-  }
+  .block-header { display: flex; align-items: center; gap: 6px; padding: 7px 8px; border-radius: 5px; cursor: pointer; font-size: 12.5px; font-weight: 600; user-select: none; }
   .block-header:hover { background: #F7F5EE; }
-  .block-header .chevron {
-    width: 12px; display: inline-block; transition: transform 0.15s;
-    color: #C3BFAF; font-size: 10px;
-  }
+  .block-header .chevron { width: 12px; display: inline-block; transition: transform 0.15s; color: #C3BFAF; font-size: 10px; }
   .block-header.expanded .chevron { transform: rotate(90deg); }
   .block-pagecount { color: #A2A398; font-weight: 400; font-size: 11px; margin-left: auto; font-family: "SF Mono", Menlo, monospace; }
 
-  .extract-btn {
-    font-size: 10px; font-weight: 700; background: var(--ink); color: #fff;
-    border: none; border-radius: 4px; padding: 3px 7px; cursor: pointer; margin-left: 6px;
-  }
+  .extract-btn { font-size: 10px; font-weight: 700; background: var(--ink); color: #fff; border: none; border-radius: 4px; padding: 3px 7px; cursor: pointer; margin-left: 6px; }
   .extract-btn:hover { background: var(--invoice); }
   .extract-btn:disabled { background: #D5D2C6; color: #8A8676; cursor: not-allowed; }
 
   .block-pages { padding-left: 20px; display: none; }
   .block-pages.expanded { display: block; }
-
-  .page-leaf {
-    display: block; padding: 4px 8px; font-size: 12px; color: #55586A;
-    cursor: pointer; border-radius: 4px; font-family: "SF Mono", Menlo, monospace;
-  }
+  .page-leaf { display: block; padding: 4px 8px; font-size: 12px; color: #55586A; cursor: pointer; border-radius: 4px; font-family: "SF Mono", Menlo, monospace; }
   .page-leaf:hover { background: #F1EEE3; color: var(--ink); }
 
-  .extract-result {
-    margin: 8px 0 4px 20px; padding: 10px; background: #F1EEE3; border-radius: 6px;
-    font-size: 11.5px; line-height: 1.5;
-  }
+  .extract-result { margin: 8px 0 4px 20px; padding: 10px; background: #F1EEE3; border-radius: 6px; font-size: 11.5px; line-height: 1.5; }
   .extract-result .row { display: flex; justify-content: space-between; gap: 8px; }
   .extract-result .row b { color: var(--ink); }
   .extract-result .loading { color: var(--invoice); font-style: italic; }
   .extract-result .error { color: var(--review); }
+  .extract-result .note { color: #8A8676; font-size: 10px; font-style: italic; margin-top: 4px; }
+
+  .extracted-card { border: 1px solid #E4E0D4; border-radius: 8px; padding: 12px; margin-bottom: 10px; }
+  .extracted-card .card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .extracted-card .card-head b { font-size: 13px; }
+  .extracted-empty { color: #A2A398; font-size: 12.5px; padding: 16px; text-align: center; font-style: italic; }
 
   .drop-zone { flex: 1; display: flex; align-items: center; justify-content: center; color: #8792B0; font-size: 14px; text-align: center; padding: 20px; }
   input[type=file] { display: none; }
@@ -230,6 +154,7 @@
   <label class="upload-btn" for="file-input">Upload document</label>
   <input id="file-input" type="file" accept="application/pdf">
   <div class="meta" id="meta-info"></div>
+  <div class="status-pill" id="save-status" style="display:none;">Saved</div>
 </div>
 
 <div class="layout">
@@ -255,7 +180,14 @@
       <h2>Categorized blocks</h2>
       <div class="summary-row" id="summary-row"></div>
     </div>
+    <div class="panel-tabs">
+      <div class="panel-tab active" data-tab="tree">Blocks</div>
+      <div class="panel-tab" data-tab="extracted">Extracted Data</div>
+    </div>
     <div class="tree-scroll" id="tree-scroll"></div>
+    <div class="extracted-scroll" id="extracted-scroll" style="display:none;">
+      <div class="extracted-empty">Extracted metadata will appear here once you click "Extract" on a JV or Invoice block. This is the staging area before pushing to SharePoint/ERP.</div>
+    </div>
   </div>
 </div>
 
@@ -264,20 +196,38 @@ const API_BASE = "http://127.0.0.1:8000";
 let thumbWidth = 46;
 let currentData = null;
 let draggedPageNumber = null;
+let extractedResults = [];
 
 const fileInput = document.getElementById("file-input");
 const railScroll = document.getElementById("rail-scroll");
 const treeScroll = document.getElementById("tree-scroll");
+const extractedScroll = document.getElementById("extracted-scroll");
 const summaryRow = document.getElementById("summary-row");
 const preview = document.getElementById("preview");
 const metaInfo = document.getElementById("meta-info");
 const pageCountLabel = document.getElementById("page-count-label");
+const saveStatus = document.getElementById("save-status");
 
 document.getElementById("zoom-in").onclick = () => { thumbWidth = Math.min(thumbWidth + 12, 130); applyZoom(); };
 document.getElementById("zoom-out").onclick = () => { thumbWidth = Math.max(thumbWidth - 12, 30); applyZoom(); };
 
+document.querySelectorAll(".panel-tab").forEach(tab => {
+  tab.onclick = () => {
+    document.querySelectorAll(".panel-tab").forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+    treeScroll.style.display = tab.dataset.tab === "tree" ? "block" : "none";
+    extractedScroll.style.display = tab.dataset.tab === "extracted" ? "block" : "none";
+  };
+});
+
 function applyZoom() {
   document.querySelectorAll(".page-thumb img").forEach(img => { img.style.width = thumbWidth + "px"; });
+}
+
+function showSaved() {
+  saveStatus.style.display = "inline-block";
+  saveStatus.textContent = "Saved";
+  setTimeout(() => { saveStatus.style.display = "none"; }, 1500);
 }
 
 fileInput.addEventListener("change", async (e) => {
@@ -297,13 +247,36 @@ fileInput.addEventListener("change", async (e) => {
       railScroll.innerHTML = '<div style="color:#C0463D; padding:16px; font-size:13px;">' + (data.detail || "Something went wrong") + '</div>';
       return;
     }
-    currentData = data;
-    renderPages(data);
-    renderTree(data);
-    metaInfo.textContent = data.filename + " — " + data.total_pages + " pages";
-    pageCountLabel.textContent = data.total_pages + " Pages";
+    loadBatch(data);
+    window.location.hash = data.batch_id;
   } catch (err) {
     railScroll.innerHTML = '<div style="color:#C0463D; padding:16px; font-size:13px;">Could not reach the server. Is uvicorn running?</div>';
+  }
+});
+
+function loadBatch(data) {
+  currentData = data;
+  renderPages(data);
+  renderTree(data);
+  metaInfo.textContent = data.filename + " — " + data.total_pages + " pages";
+  pageCountLabel.textContent = data.total_pages + " Pages";
+}
+
+// On page load, check the URL hash for a batch_id and restore it
+window.addEventListener("load", async () => {
+  const batchId = window.location.hash.replace("#", "");
+  if (!batchId) return;
+  railScroll.innerHTML = '<div class="loading-msg">Restoring previous session…</div>';
+  try {
+    const res = await fetch(API_BASE + "/documents/batch/" + batchId);
+    if (!res.ok) {
+      railScroll.innerHTML = '<div class="drop-zone">Upload a multi-page PDF to begin.</div>';
+      return;
+    }
+    const data = await res.json();
+    loadBatch(data);
+  } catch (err) {
+    railScroll.innerHTML = '<div class="drop-zone">Upload a multi-page PDF to begin.</div>';
   }
 });
 
@@ -334,6 +307,7 @@ function renderPages(data) {
       <div class="page-num">Page ${page.page_number}</div>
       <span class="cat-tag ${categoryClass(page.category)}">${page.category}</span>
       ${page.needs_review ? '<span class="cat-tag review-flag">Review</span>' : ''}
+      ${page.manually_corrected ? '<span class="cat-tag corrected-flag">Fixed</span>' : ''}
     `;
 
     div.appendChild(img);
@@ -343,16 +317,12 @@ function renderPages(data) {
     select.className = "override-select";
     ["JV", "Invoice", "Supporting Document"].forEach(cat => {
       const opt = document.createElement("option");
-      opt.value = cat;
-      opt.textContent = cat;
+      opt.value = cat; opt.textContent = cat;
       if (cat === page.category) opt.selected = true;
       select.appendChild(opt);
     });
     select.onclick = (ev) => ev.stopPropagation();
-    select.onchange = (ev) => {
-      ev.stopPropagation();
-      reassignPage(page.page_number, select.value);
-    };
+    select.onchange = (ev) => { ev.stopPropagation(); reassignPage(page.page_number, select.value); };
     div.appendChild(select);
 
     div.onclick = () => selectPage(page, div);
@@ -360,15 +330,22 @@ function renderPages(data) {
   });
 }
 
-function reassignPage(pageNumber, newCategory) {
-  const page = currentData.pages.find(p => p.page_number === pageNumber);
-  if (!page) return;
-  page.category = newCategory;
-  page.confidence = 1.0;
-  page.needs_review = false;
-  page.manually_corrected = true;
-  renderPages(currentData);
-  renderTree(currentData);
+async function reassignPage(pageNumber, newCategory) {
+  try {
+    const res = await fetch(API_BASE + "/documents/reassign", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ batch_id: currentData.batch_id, page_number: pageNumber, category: newCategory }),
+    });
+    const data = await res.json();
+    if (!res.ok) { alert(data.detail || "Could not save change"); return; }
+    currentData = data;
+    renderPages(data);
+    renderTree(data);
+    showSaved();
+  } catch (err) {
+    alert("Could not reach server to save change.");
+  }
 }
 
 function selectPage(page, el) {
@@ -386,65 +363,76 @@ function jumpToPage(pageNumber) {
   if (page) selectPage(page, null);
 }
 
-function regroupIntoBlocks(pages) {
-  const blocks = [];
-  let jvCounter = 0, invoiceCounter = 0, supportingCounter = 0;
-  let currentBlock = null;
-
-  pages.forEach(page => {
-    if (page.category === "Supporting Document") {
-      if (currentBlock && currentBlock.category === "Supporting Document") {
-        currentBlock.pages.push(page.page_number);
-      } else {
-        supportingCounter++;
-        currentBlock = { block_label: `Supporting Document ${supportingCounter}`, category: "Supporting Document", pages: [page.page_number] };
-        blocks.push(currentBlock);
-      }
-    } else {
-      let label;
-      if (page.category === "JV") { jvCounter++; label = `JV ${jvCounter}`; }
-      else { invoiceCounter++; label = `Invoice ${invoiceCounter}`; }
-      currentBlock = { block_label: label, category: page.category, pages: [page.page_number] };
-      blocks.push(currentBlock);
-    }
-  });
-
-  return blocks;
-}
-
-async function extractBlockData(pageNumber, resultDiv) {
-  resultDiv.innerHTML = '<span class="loading">Calling Azure Document Intelligence…</span>';
+async function extractBlockData(pageNumber, category, resultDiv) {
+  resultDiv.innerHTML = '<span class="loading">Extracting…</span>';
+  const endpoint = category === "Invoice" ? "/documents/extract-invoice" : "/documents/extract-jv";
   try {
-    const res = await fetch(API_BASE + "/documents/extract-block", {
+    const res = await fetch(API_BASE + endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ batch_id: currentData.batch_id, page_number: pageNumber }),
     });
     const data = await res.json();
-    if (!res.ok) {
-      resultDiv.innerHTML = `<span class="error">${data.detail || "Extraction failed"}</span>`;
-      return;
-    }
+    if (!res.ok) { resultDiv.innerHTML = `<span class="error">${data.detail || "Extraction failed"}</span>`; return; }
+
     const f = data.fields;
-    resultDiv.innerHTML = `
-      <div class="row"><span>Vendor</span><b>${f.vendor_name || "—"}</b></div>
-      <div class="row"><span>Invoice #</span><b>${f.invoice_id || "—"}</b></div>
-      <div class="row"><span>Date</span><b>${f.invoice_date || "—"}</b></div>
-      <div class="row"><span>Total</span><b>${f.invoice_total ? f.invoice_total.amount + " " + f.invoice_total.currencyCode : "—"}</b></div>
-    `;
+    if (category === "Invoice") {
+      resultDiv.innerHTML = `
+        <div class="row"><span>Vendor</span><b>${f.vendor_name || "—"}</b></div>
+        <div class="row"><span>Invoice #</span><b>${f.invoice_id || "—"}</b></div>
+        <div class="row"><span>Date</span><b>${f.invoice_date || "—"}</b></div>
+        <div class="row"><span>Total</span><b>${f.invoice_total ? f.invoice_total.amount + " " + f.invoice_total.currencyCode : "—"}</b></div>
+      `;
+    } else {
+      resultDiv.innerHTML = `
+        <div class="row"><span>JV #</span><b>${f.jv_number || "—"}</b></div>
+        <div class="row"><span>Date</span><b>${f.date || "—"}</b></div>
+        <div class="row"><span>Amount</span><b>${f.amount || "—"}</b></div>
+        <div class="note">${f.note}</div>
+      `;
+    }
+
+    extractedResults.unshift({ pageNumber, category, fields: f });
+    renderExtracted();
   } catch (err) {
     resultDiv.innerHTML = '<span class="error">Could not reach server</span>';
   }
 }
 
-function renderTree(data) {
-  data.blocks = regroupIntoBlocks(data.pages);
-  data.summary = {
-    jv_count: data.blocks.filter(b => b.category === "JV").length,
-    invoice_count: data.blocks.filter(b => b.category === "Invoice").length,
-    supporting_document_count: data.blocks.filter(b => b.category === "Supporting Document").length,
-  };
+function renderExtracted() {
+  if (extractedResults.length === 0) {
+    extractedScroll.innerHTML = '<div class="extracted-empty">Extracted metadata will appear here once you click "Extract" on a JV or Invoice block. This is the staging area before pushing to SharePoint/ERP.</div>';
+    return;
+  }
+  extractedScroll.innerHTML = "";
+  extractedResults.forEach(r => {
+    const card = document.createElement("div");
+    card.className = "extracted-card";
+    const f = r.fields;
+    const bodyHtml = r.category === "Invoice"
+      ? `
+        <div class="row"><span>Vendor</span><b>${f.vendor_name || "—"}</b></div>
+        <div class="row"><span>Invoice #</span><b>${f.invoice_id || "—"}</b></div>
+        <div class="row"><span>Date</span><b>${f.invoice_date || "—"}</b></div>
+        <div class="row"><span>Total</span><b>${f.invoice_total ? f.invoice_total.amount + " " + f.invoice_total.currencyCode : "—"}</b></div>
+      `
+      : `
+        <div class="row"><span>JV #</span><b>${f.jv_number || "—"}</b></div>
+        <div class="row"><span>Date</span><b>${f.date || "—"}</b></div>
+        <div class="row"><span>Amount</span><b>${f.amount || "—"}</b></div>
+      `;
+    card.innerHTML = `
+      <div class="card-head">
+        <b>${r.category} — Page ${r.pageNumber}</b>
+        <span class="cat-tag ${categoryClass(r.category)}">${r.category}</span>
+      </div>
+      ${bodyHtml}
+    `;
+    extractedScroll.appendChild(card);
+  });
+}
 
+function renderTree(data) {
   summaryRow.innerHTML = `
     <span><b>${data.summary.jv_count}</b> JV</span>
     <span><b>${data.summary.invoice_count}</b> Invoice</span>
@@ -464,8 +452,7 @@ function renderTree(data) {
     folder.addEventListener("dragover", (ev) => { ev.preventDefault(); folder.classList.add("drag-over"); });
     folder.addEventListener("dragleave", () => folder.classList.remove("drag-over"));
     folder.addEventListener("drop", (ev) => {
-      ev.preventDefault();
-      folder.classList.remove("drag-over");
+      ev.preventDefault(); folder.classList.remove("drag-over");
       if (draggedPageNumber != null) reassignPage(draggedPageNumber, cat);
     });
 
@@ -495,15 +482,14 @@ function renderTree(data) {
       blockFolder.addEventListener("dragover", (ev) => { ev.preventDefault(); ev.stopPropagation(); blockFolder.classList.add("drag-over"); });
       blockFolder.addEventListener("dragleave", () => blockFolder.classList.remove("drag-over"));
       blockFolder.addEventListener("drop", (ev) => {
-        ev.preventDefault(); ev.stopPropagation();
-        blockFolder.classList.remove("drag-over");
+        ev.preventDefault(); ev.stopPropagation(); blockFolder.classList.remove("drag-over");
         if (draggedPageNumber != null) reassignPage(draggedPageNumber, cat);
       });
 
       const blockHeader = document.createElement("div");
       blockHeader.className = "block-header";
-      const extractBtnHtml = cat === "Invoice"
-        ? `<button class="extract-btn" data-page="${block.pages[0]}">Extract</button>`
+      const extractBtnHtml = (cat === "Invoice" || cat === "JV")
+        ? `<button class="extract-btn" data-page="${block.pages[0]}" data-cat="${cat}">Extract</button>`
         : "";
       blockHeader.innerHTML = `
         <span class="chevron">▶</span>
@@ -521,7 +507,7 @@ function renderTree(data) {
         extractBtn.onclick = (ev) => {
           ev.stopPropagation();
           resultDiv.style.display = "block";
-          extractBlockData(parseInt(extractBtn.dataset.page), resultDiv);
+          extractBlockData(parseInt(extractBtn.dataset.page), extractBtn.dataset.cat, resultDiv);
         };
       }
 
@@ -547,11 +533,7 @@ function renderTree(data) {
       children.appendChild(blockFolder);
     });
 
-    header.onclick = () => {
-      header.classList.toggle("expanded");
-      children.classList.toggle("expanded");
-    };
-
+    header.onclick = () => { header.classList.toggle("expanded"); children.classList.toggle("expanded"); };
     folder.appendChild(header);
     folder.appendChild(children);
     treeScroll.appendChild(folder);
