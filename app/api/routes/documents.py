@@ -104,7 +104,7 @@ async def split_document(file: UploadFile = File(...)):
 
                 page_classifications.append({
                     "page_number": page_number,
-                    "thumbnail_path": thumb_path,
+                    "thumbnail_url": f"/thumbnails/{thumb_filename}",
                     "category": classification["category"],
                     "confidence": classification["confidence"],
                     "matched_keyword": classification["matched_keyword"],
