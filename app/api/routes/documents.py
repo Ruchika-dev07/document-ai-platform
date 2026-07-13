@@ -1,5 +1,5 @@
 """
-Multi-page document upload, split, and classification endpoint.
+Multi-page document upload, split, classification, and metadata extraction.
 """
 
 import os
@@ -8,36 +8,34 @@ import uuid
 
 import pdfplumber
 import pytesseract
+from PIL import Image, ImageOps
 from fastapi import APIRouter, File, HTTPException, UploadFile
+from pydantic import BaseModel
 
 from app.services.classification.document_classifier import (
     classify_page,
     group_pages_into_blocks,
 )
+from app.services.extraction.invoice_extractor import extract_invoice_fields
+from app.services.ocr.azure_ocr_service import analyze_invoice
 
 router = APIRouter()
 
 UPLOAD_DIR = "uploads"
 THUMBNAIL_DIR = "uploads/page_thumbnails"
+OCR_RESOLUTION = 200  # higher res + preprocessing fixed real misreads like
+                      # "Tax Purchase - Invoice" -> "Fax Purchase - Iriwesioe"
 
 
 def _get_page_text(page, thumb_path: str, page_number: int) -> str:
-    """
-    Gets text for classification: tries the PDF's embedded text layer
-    first (instant, free). Falls back to Tesseract OCR on the page
-    image if that's empty.
-
-    Errors are printed to the server console (not silently swallowed)
-    so a broken Tesseract install shows up immediately instead of
-    quietly misclassifying every page.
-    """
     text = page.extract_text() or ""
     if text.strip():
         return text
 
     try:
-        from PIL import Image
-        ocr_text = pytesseract.image_to_string(Image.open(thumb_path))
+        img = Image.open(thumb_path).convert("L")
+        img = ImageOps.autocontrast(img)
+        ocr_text = pytesseract.image_to_string(img)
         if not ocr_text.strip():
             print(f"[WARN] Page {page_number}: Tesseract returned empty text.")
         return ocr_text
@@ -71,22 +69,16 @@ async def split_document(file: UploadFile = File(...)):
 
                 thumb_filename = f"{batch_id}_page_{page_number}.png"
                 thumb_path = os.path.join(THUMBNAIL_DIR, thumb_filename)
-                # Higher resolution than before (150 vs 100) - small
-                # thumbnails at low res were likely too blurry for
-                # Tesseract to reliably read header text like
-                # "JOURNAL VOUCHER" or "TAX INVOICE".
-                im = page.to_image(resolution=150)
+                im = page.to_image(resolution=OCR_RESOLUTION)
                 im.save(thumb_path)
 
                 page_text = _get_page_text(page, thumb_path, page_number)
                 classification = classify_page(page_text)
 
-                if page_number <= 3:
-                    print(f"[DEBUG] Page {page_number} OCR preview: {page_text[:80]!r} -> {classification['category']}")
-
                 page_classifications.append({
                     "page_number": page_number,
                     "thumbnail_url": f"/thumbnails/{thumb_filename}",
+                    "thumbnail_path": thumb_path,
                     "category": classification["category"],
                     "confidence": classification["confidence"],
                     "matched_keyword": classification["matched_keyword"],
@@ -97,6 +89,9 @@ async def split_document(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail=f"Failed to process PDF: {str(e)}")
 
     blocks = group_pages_into_blocks(page_classifications)
+
+    for p in page_classifications:
+        p.pop("thumbnail_path", None)
 
     return {
         "batch_id": batch_id,
@@ -110,3 +105,29 @@ async def split_document(file: UploadFile = File(...)):
             "supporting_document_count": sum(1 for b in blocks if b["category"] == "Supporting Document"),
         },
     }
+
+
+class ExtractRequest(BaseModel):
+    batch_id: str
+    page_number: int
+
+
+@router.post("/documents/extract-block")
+async def extract_block(req: ExtractRequest):
+    """
+    Runs real Azure Document Intelligence extraction on a single page
+    (the first page of an Invoice block) and returns structured fields.
+    Uses the exact same extraction pipeline already validated earlier
+    (azure_ocr_service.py + invoice_extractor.py).
+    """
+    thumb_path = os.path.join(THUMBNAIL_DIR, f"{req.batch_id}_page_{req.page_number}.png")
+    if not os.path.exists(thumb_path):
+        raise HTTPException(status_code=404, detail="Page image not found. Re-upload the document.")
+
+    try:
+        analyze_result = analyze_invoice(thumb_path)
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"Azure OCR call failed: {str(e)}")
+
+    fields = extract_invoice_fields(analyze_result)
+    return {"page_number": req.page_number, "fields": fields}
