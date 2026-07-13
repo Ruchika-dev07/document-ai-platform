@@ -5,86 +5,228 @@
 <title>Document Split &amp; Categorize</title>
 <style>
   :root {
-    --ink: #0F172A;
-    --paper: #FAF9F6;
-    --rail: #14213D;
-    --rail-line: #263559;
-    --jv: #C97B3D;
-    --invoice: #2F7A6B;
-    --supporting: #6B7280;
-    --review: #B4443B;
-    --accent: #E8B34C;
+    --ink: #1A2036;
+    --paper: #F6F4EF;
+    --rail: #10192E;
+    --rail-line: #22304F;
+    --jv: #C9843D;
+    --invoice: #2E8B7A;
+    --supporting: #7A8299;
+    --review: #C0463D;
+    --accent: #E3B04B;
+    --accent-soft: #E3B04B22;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: -apple-system, "Segoe UI", system-ui, sans-serif; background: var(--paper); color: var(--ink); height: 100vh; overflow: hidden; }
-  .topbar { height: 56px; background: var(--rail); color: #EDEFF5; display: flex; align-items: center; padding: 0 20px; gap: 20px; border-bottom: 1px solid var(--rail-line); }
-  .topbar .title { font-weight: 600; font-size: 15px; }
-  .upload-btn { background: var(--accent); color: #14213D; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 13px; cursor: pointer; }
-  .upload-btn:hover { filter: brightness(1.08); }
-  .meta { font-size: 13px; color: #9AA5C4; }
-  .layout { display: flex; height: calc(100vh - 56px); }
-  .rail { width: 220px; background: var(--rail); display: flex; flex-direction: column; border-right: 1px solid var(--rail-line); }
-  .rail-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--rail-line); }
-  .rail-header span { color: #9AA5C4; font-size: 12px; text-transform: uppercase; letter-spacing: 0.6px; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", -apple-system, system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .topbar {
+    height: 60px;
+    background: var(--rail);
+    color: #EEF1F8;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 22px;
+    border-bottom: 1px solid var(--rail-line);
+  }
+  .topbar .brand {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+  .topbar .brand span { color: var(--accent); }
+
+  .upload-btn {
+    background: var(--accent);
+    color: #1A1200;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    letter-spacing: 0.2px;
+  }
+  .upload-btn:hover { filter: brightness(1.06); }
+
+  .meta { font-size: 13px; color: #A9B2CC; font-family: "SF Mono", Menlo, monospace; }
+
+  .layout { display: flex; height: calc(100vh - 60px); }
+
+  /* LEFT RAIL */
+  .rail {
+    width: 236px;
+    background: var(--rail);
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--rail-line);
+  }
+  .rail-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 16px; border-bottom: 1px solid var(--rail-line);
+  }
+  .rail-header .label {
+    color: #8792B0; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
+  }
   .zoom-controls { display: flex; gap: 4px; }
-  .zoom-controls button { width: 22px; height: 22px; border-radius: 4px; border: 1px solid var(--rail-line); background: #1B2A4D; color: #EDEFF5; cursor: pointer; font-size: 13px; line-height: 1; }
-  .zoom-controls button:hover { background: #253a6b; }
-  .rail-scroll { flex: 1; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
-  .page-thumb { background: #1B2A4D; border: 2px solid transparent; border-radius: 6px; padding: 6px; cursor: pointer; display: flex; gap: 8px; align-items: center; }
-  .page-thumb.selected { border-color: var(--accent); }
-  .page-thumb img { width: var(--thumb-w, 42px); border-radius: 3px; display: block; background: #fff; }
+  .zoom-controls button {
+    width: 24px; height: 24px; border-radius: 5px;
+    border: 1px solid var(--rail-line); background: #1B2A4D;
+    color: #EEF1F8; cursor: pointer; font-size: 14px; line-height: 1;
+  }
+  .zoom-controls button:hover { background: var(--accent); color: #1A1200; }
+
+  .rail-scroll {
+    flex: 1; overflow-y: auto; padding: 12px;
+    display: flex; flex-direction: column; gap: 7px;
+  }
+  .rail-scroll::-webkit-scrollbar { width: 6px; }
+  .rail-scroll::-webkit-scrollbar-thumb { background: var(--rail-line); border-radius: 3px; }
+
+  .page-thumb {
+    background: #16223F;
+    border: 1px solid transparent;
+    border-left: 3px solid var(--supporting);
+    border-radius: 5px;
+    padding: 7px 8px;
+    cursor: grab;
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    transition: border-color 0.12s, background 0.12s;
+  }
+  .page-thumb.cat-JV { border-left-color: var(--jv); }
+  .page-thumb.cat-Invoice { border-left-color: var(--invoice); }
+  .page-thumb.cat-Supporting-Document { border-left-color: var(--supporting); }
+  .page-thumb.selected { background: #1D2E52; border-color: var(--accent); }
+  .page-thumb.dragging { opacity: 0.4; }
+  .page-thumb:hover { background: #1B2A4D; }
+
+  .page-thumb img { width: var(--thumb-w, 46px); border-radius: 3px; display: block; background: #fff; }
   .page-thumb .info { flex: 1; min-width: 0; }
-  .page-thumb .page-num { font-size: 11px; color: #9AA5C4; }
-  .cat-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; margin-top: 3px; color: #14213D; }
-  .cat-tag.JV { background: var(--jv); }
+  .page-thumb .page-num { font-size: 11px; color: #8792B0; font-family: "SF Mono", Menlo, monospace; }
+
+  .cat-tag {
+    display: inline-block; font-size: 9.5px; font-weight: 700;
+    padding: 2px 6px; border-radius: 4px; margin-top: 3px; color: #14213D;
+    letter-spacing: 0.2px;
+  }
+  .cat-tag.JV { background: var(--jv); color: #241300; }
   .cat-tag.Invoice { background: var(--invoice); color: #fff; }
   .cat-tag.Supporting-Document { background: var(--supporting); color: #fff; }
-  .cat-tag.review-flag { background: var(--review); color: #fff; }
-  .preview { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 30px; overflow-y: auto; background: #EFEDE7; }
-  .preview img { max-width: 100%; box-shadow: 0 4px 24px rgba(0,0,0,0.15); border-radius: 4px; }
-  .preview .empty { color: #9CA3AF; font-size: 14px; margin-top: 100px; text-align: center; }
-  .blocks-panel { width: 340px; background: #fff; border-left: 1px solid #E5E1D8; display: flex; flex-direction: column; }
-  .blocks-header { padding: 16px; border-bottom: 1px solid #E5E1D8; }
-  .blocks-header h2 { margin: 0 0 8px 0; font-size: 16px; }
-  .summary-row { display: flex; gap: 10px; font-size: 12px; color: #6B7280; }
-  .summary-row b { color: var(--ink); }
-  .tree-scroll { flex: 1; overflow-y: auto; padding: 8px; }
-  .category-folder { margin-bottom: 6px; }
-  .category-header { display: flex; align-items: center; gap: 8px; padding: 10px 10px; border-radius: 6px; cursor: pointer; font-weight: 700; font-size: 13px; user-select: none; }
-  .category-header:hover { background: #F5F3EE; }
-  .category-header .chevron { width: 14px; display: inline-block; transition: transform 0.15s; color: #9CA3AF; font-size: 11px; }
+  .cat-tag.review-flag { background: var(--review); color: #fff; margin-left: 4px; }
+
+  .override-select {
+    background: #0F1830; color: #EEF1F8; border: 1px solid var(--rail-line);
+    border-radius: 4px; font-size: 10px; padding: 2px 4px; margin-left: auto;
+    align-self: flex-start; cursor: pointer;
+  }
+
+  /* CENTER PREVIEW */
+  .preview {
+    flex: 1; display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-start; padding: 34px; overflow-y: auto; background: #ECE9E1;
+  }
+  .preview img { max-width: 100%; box-shadow: 0 6px 28px rgba(20,20,30,0.18); border-radius: 3px; }
+  .preview .empty { color: #A2A398; font-size: 14px; margin-top: 120px; text-align: center; font-family: Georgia, serif; font-style: italic; }
+
+  /* RIGHT TREE PANEL */
+  .blocks-panel {
+    width: 360px; background: #FFFFFF; border-left: 1px solid #E4E0D4;
+    display: flex; flex-direction: column;
+  }
+  .blocks-header { padding: 18px; border-bottom: 1px solid #E4E0D4; }
+  .blocks-header h2 {
+    margin: 0 0 10px 0; font-size: 17px; font-family: Georgia, serif; font-weight: 700;
+  }
+  .summary-row { display: flex; gap: 14px; font-size: 12px; color: #6E7180; }
+  .summary-row b { color: var(--ink); font-size: 13px; }
+
+  .tree-scroll { flex: 1; overflow-y: auto; padding: 10px; }
+  .tree-scroll::-webkit-scrollbar { width: 6px; }
+  .tree-scroll::-webkit-scrollbar-thumb { background: #E4E0D4; border-radius: 3px; }
+
+  .category-folder { margin-bottom: 8px; border-radius: 8px; }
+  .category-folder.drag-over { background: var(--accent-soft); outline: 2px dashed var(--accent); }
+
+  .category-header {
+    display: flex; align-items: center; gap: 9px;
+    padding: 11px 10px; border-radius: 7px; cursor: pointer;
+    font-weight: 700; font-size: 13.5px; user-select: none;
+  }
+  .category-header:hover { background: #F7F5EE; }
+  .category-header .chevron {
+    width: 14px; display: inline-block; transition: transform 0.15s;
+    color: #B3AF9F; font-size: 11px;
+  }
   .category-header.expanded .chevron { transform: rotate(90deg); }
   .category-swatch { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
   .category-swatch.JV { background: var(--jv); }
   .category-swatch.Invoice { background: var(--invoice); }
   .category-swatch.Supporting-Document { background: var(--supporting); }
-  .category-count { color: #9CA3AF; font-weight: 400; font-size: 12px; margin-left: auto; }
+  .category-count { color: #A2A398; font-weight: 500; font-size: 12px; margin-left: auto; font-family: "SF Mono", Menlo, monospace; }
+
   .category-children { padding-left: 22px; display: none; }
   .category-children.expanded { display: block; }
-  .block-folder { margin-bottom: 2px; }
-  .block-header { display: flex; align-items: center; gap: 6px; padding: 7px 8px; border-radius: 5px; cursor: pointer; font-size: 12.5px; font-weight: 600; user-select: none; }
-  .block-header:hover { background: #F5F3EE; }
-  .block-header .chevron { width: 12px; display: inline-block; transition: transform 0.15s; color: #B8B2A5; font-size: 10px; }
+
+  .block-folder { margin-bottom: 2px; border-radius: 6px; }
+  .block-folder.drag-over { background: var(--accent-soft); outline: 2px dashed var(--accent); }
+
+  .block-header {
+    display: flex; align-items: center; gap: 6px;
+    padding: 7px 8px; border-radius: 5px; cursor: pointer;
+    font-size: 12.5px; font-weight: 600; user-select: none;
+  }
+  .block-header:hover { background: #F7F5EE; }
+  .block-header .chevron {
+    width: 12px; display: inline-block; transition: transform 0.15s;
+    color: #C3BFAF; font-size: 10px;
+  }
   .block-header.expanded .chevron { transform: rotate(90deg); }
-  .block-pagecount { color: #9CA3AF; font-weight: 400; font-size: 11px; margin-left: auto; }
+  .block-pagecount { color: #A2A398; font-weight: 400; font-size: 11px; margin-left: auto; font-family: "SF Mono", Menlo, monospace; }
+
+  .extract-btn {
+    font-size: 10px; font-weight: 700; background: var(--ink); color: #fff;
+    border: none; border-radius: 4px; padding: 3px 7px; cursor: pointer; margin-left: 6px;
+  }
+  .extract-btn:hover { background: var(--invoice); }
+  .extract-btn:disabled { background: #D5D2C6; color: #8A8676; cursor: not-allowed; }
+
   .block-pages { padding-left: 20px; display: none; }
   .block-pages.expanded { display: block; }
-  .page-leaf { display: block; padding: 4px 8px; font-size: 12px; color: #4B5563; cursor: pointer; border-radius: 4px; }
-  .page-leaf:hover { background: #F0EDE6; color: var(--ink); }
-  .drop-zone { flex: 1; display: flex; align-items: center; justify-content: center; color: #9AA5C4; font-size: 14px; }
-  .override-select {
-    background: #0F1830; color: #EDEFF5; border: 1px solid var(--rail-line);
-    border-radius: 4px; font-size: 10px; padding: 2px 4px; margin-left: auto;
-    align-self: flex-start; cursor: pointer;
+
+  .page-leaf {
+    display: block; padding: 4px 8px; font-size: 12px; color: #55586A;
+    cursor: pointer; border-radius: 4px; font-family: "SF Mono", Menlo, monospace;
   }
+  .page-leaf:hover { background: #F1EEE3; color: var(--ink); }
+
+  .extract-result {
+    margin: 8px 0 4px 20px; padding: 10px; background: #F1EEE3; border-radius: 6px;
+    font-size: 11.5px; line-height: 1.5;
+  }
+  .extract-result .row { display: flex; justify-content: space-between; gap: 8px; }
+  .extract-result .row b { color: var(--ink); }
+  .extract-result .loading { color: var(--invoice); font-style: italic; }
+  .extract-result .error { color: var(--review); }
+
+  .drop-zone { flex: 1; display: flex; align-items: center; justify-content: center; color: #8792B0; font-size: 14px; text-align: center; padding: 20px; }
   input[type=file] { display: none; }
-  .loading { color: var(--accent); font-size: 13px; padding: 20px; }
+  .loading-msg { color: var(--accent); font-size: 13px; padding: 22px; font-style: italic; }
 </style>
 </head>
 <body>
 
 <div class="topbar">
-  <div class="title">Document Split &amp; Categorize</div>
+  <div class="brand">Document Split &amp; <span>Categorize</span></div>
   <label class="upload-btn" for="file-input">Upload document</label>
   <input id="file-input" type="file" accept="application/pdf">
   <div class="meta" id="meta-info"></div>
@@ -93,14 +235,14 @@
 <div class="layout">
   <div class="rail">
     <div class="rail-header">
-      <span id="page-count-label">Pages</span>
+      <span class="label" id="page-count-label">Pages</span>
       <div class="zoom-controls">
         <button id="zoom-out">–</button>
         <button id="zoom-in">+</button>
       </div>
     </div>
     <div class="rail-scroll" id="rail-scroll">
-      <div class="drop-zone">Upload a PDF to begin</div>
+      <div class="drop-zone">Upload a multi-page PDF to begin splitting it into JV, Invoice, and Supporting Document blocks.</div>
     </div>
   </div>
 
@@ -119,8 +261,9 @@
 
 <script>
 const API_BASE = "http://127.0.0.1:8000";
-let thumbWidth = 42;
+let thumbWidth = 46;
 let currentData = null;
+let draggedPageNumber = null;
 
 const fileInput = document.getElementById("file-input");
 const railScroll = document.getElementById("rail-scroll");
@@ -130,8 +273,8 @@ const preview = document.getElementById("preview");
 const metaInfo = document.getElementById("meta-info");
 const pageCountLabel = document.getElementById("page-count-label");
 
-document.getElementById("zoom-in").onclick = () => { thumbWidth = Math.min(thumbWidth + 12, 120); applyZoom(); };
-document.getElementById("zoom-out").onclick = () => { thumbWidth = Math.max(thumbWidth - 12, 28); applyZoom(); };
+document.getElementById("zoom-in").onclick = () => { thumbWidth = Math.min(thumbWidth + 12, 130); applyZoom(); };
+document.getElementById("zoom-out").onclick = () => { thumbWidth = Math.max(thumbWidth - 12, 30); applyZoom(); };
 
 function applyZoom() {
   document.querySelectorAll(".page-thumb img").forEach(img => { img.style.width = thumbWidth + "px"; });
@@ -141,7 +284,7 @@ fileInput.addEventListener("change", async (e) => {
   const file = e.target.files[0];
   if (!file) return;
 
-  railScroll.innerHTML = '<div class="loading">Uploading and splitting pages…</div>';
+  railScroll.innerHTML = '<div class="loading-msg">Uploading and splitting pages…</div>';
   metaInfo.textContent = "Processing " + file.name + "…";
 
   const formData = new FormData();
@@ -151,7 +294,7 @@ fileInput.addEventListener("change", async (e) => {
     const res = await fetch(API_BASE + "/documents/split", { method: "POST", body: formData });
     const data = await res.json();
     if (!res.ok) {
-      railScroll.innerHTML = '<div style="color:#B4443B; padding:16px; font-size:13px;">' + (data.detail || "Something went wrong") + '</div>';
+      railScroll.innerHTML = '<div style="color:#C0463D; padding:16px; font-size:13px;">' + (data.detail || "Something went wrong") + '</div>';
       return;
     }
     currentData = data;
@@ -160,7 +303,7 @@ fileInput.addEventListener("change", async (e) => {
     metaInfo.textContent = data.filename + " — " + data.total_pages + " pages";
     pageCountLabel.textContent = data.total_pages + " Pages";
   } catch (err) {
-    railScroll.innerHTML = '<div style="color:#B4443B; padding:16px; font-size:13px;">Could not reach the server. Is uvicorn running?</div>';
+    railScroll.innerHTML = '<div style="color:#C0463D; padding:16px; font-size:13px;">Could not reach the server. Is uvicorn running?</div>';
   }
 });
 
@@ -170,8 +313,16 @@ function renderPages(data) {
   railScroll.innerHTML = "";
   data.pages.forEach(page => {
     const div = document.createElement("div");
-    div.className = "page-thumb";
+    div.className = "page-thumb cat-" + categoryClass(page.category);
     div.dataset.page = page.page_number;
+    div.draggable = true;
+
+    div.addEventListener("dragstart", (ev) => {
+      draggedPageNumber = page.page_number;
+      div.classList.add("dragging");
+      ev.dataTransfer.setData("text/plain", String(page.page_number));
+    });
+    div.addEventListener("dragend", () => { div.classList.remove("dragging"); });
 
     const img = document.createElement("img");
     img.src = API_BASE + page.thumbnail_url;
@@ -182,7 +333,7 @@ function renderPages(data) {
     info.innerHTML = `
       <div class="page-num">Page ${page.page_number}</div>
       <span class="cat-tag ${categoryClass(page.category)}">${page.category}</span>
-      ${page.needs_review ? '<span class="cat-tag review-flag">Needs review</span>' : ''}
+      ${page.needs_review ? '<span class="cat-tag review-flag">Review</span>' : ''}
     `;
 
     div.appendChild(img);
@@ -200,18 +351,24 @@ function renderPages(data) {
     select.onclick = (ev) => ev.stopPropagation();
     select.onchange = (ev) => {
       ev.stopPropagation();
-      page.category = select.value;
-      page.confidence = 1.0;
-      page.needs_review = false;
-      page.manually_corrected = true;
-      renderPages(currentData);
-      renderTree(currentData);
+      reassignPage(page.page_number, select.value);
     };
     div.appendChild(select);
 
     div.onclick = () => selectPage(page, div);
     railScroll.appendChild(div);
   });
+}
+
+function reassignPage(pageNumber, newCategory) {
+  const page = currentData.pages.find(p => p.page_number === pageNumber);
+  if (!page) return;
+  page.category = newCategory;
+  page.confidence = 1.0;
+  page.needs_review = false;
+  page.manually_corrected = true;
+  renderPages(currentData);
+  renderTree(currentData);
 }
 
 function selectPage(page, el) {
@@ -255,6 +412,31 @@ function regroupIntoBlocks(pages) {
   return blocks;
 }
 
+async function extractBlockData(pageNumber, resultDiv) {
+  resultDiv.innerHTML = '<span class="loading">Calling Azure Document Intelligence…</span>';
+  try {
+    const res = await fetch(API_BASE + "/documents/extract-block", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ batch_id: currentData.batch_id, page_number: pageNumber }),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      resultDiv.innerHTML = `<span class="error">${data.detail || "Extraction failed"}</span>`;
+      return;
+    }
+    const f = data.fields;
+    resultDiv.innerHTML = `
+      <div class="row"><span>Vendor</span><b>${f.vendor_name || "—"}</b></div>
+      <div class="row"><span>Invoice #</span><b>${f.invoice_id || "—"}</b></div>
+      <div class="row"><span>Date</span><b>${f.invoice_date || "—"}</b></div>
+      <div class="row"><span>Total</span><b>${f.invoice_total ? f.invoice_total.amount + " " + f.invoice_total.currencyCode : "—"}</b></div>
+    `;
+  } catch (err) {
+    resultDiv.innerHTML = '<span class="error">Could not reach server</span>';
+  }
+}
+
 function renderTree(data) {
   data.blocks = regroupIntoBlocks(data.pages);
   data.summary = {
@@ -274,12 +456,18 @@ function renderTree(data) {
 
   categories.forEach(cat => {
     const blocksInCat = data.blocks.filter(b => b.category === cat);
-    if (blocksInCat.length === 0) return;
-
     const totalPages = blocksInCat.reduce((sum, b) => sum + b.pages.length, 0);
 
     const folder = document.createElement("div");
     folder.className = "category-folder";
+
+    folder.addEventListener("dragover", (ev) => { ev.preventDefault(); folder.classList.add("drag-over"); });
+    folder.addEventListener("dragleave", () => folder.classList.remove("drag-over"));
+    folder.addEventListener("drop", (ev) => {
+      ev.preventDefault();
+      folder.classList.remove("drag-over");
+      if (draggedPageNumber != null) reassignPage(draggedPageNumber, cat);
+    });
 
     const header = document.createElement("div");
     header.className = "category-header";
@@ -287,23 +475,55 @@ function renderTree(data) {
       <span class="chevron">▶</span>
       <span class="category-swatch ${categoryClass(cat)}"></span>
       <span>${cat}</span>
-      <span class="category-count">${blocksInCat.length} · ${totalPages}p</span>
+      <span class="category-count">${blocksInCat.length} block${blocksInCat.length===1?'':'s'} · ${totalPages}p</span>
     `;
 
     const children = document.createElement("div");
     children.className = "category-children";
 
+    if (blocksInCat.length === 0) {
+      const empty = document.createElement("div");
+      empty.style.cssText = "padding:8px; font-size:11.5px; color:#B3AF9F; font-style:italic;";
+      empty.textContent = "Drag a page here to categorize it as " + cat;
+      children.appendChild(empty);
+    }
+
     blocksInCat.forEach(block => {
       const blockFolder = document.createElement("div");
       blockFolder.className = "block-folder";
 
+      blockFolder.addEventListener("dragover", (ev) => { ev.preventDefault(); ev.stopPropagation(); blockFolder.classList.add("drag-over"); });
+      blockFolder.addEventListener("dragleave", () => blockFolder.classList.remove("drag-over"));
+      blockFolder.addEventListener("drop", (ev) => {
+        ev.preventDefault(); ev.stopPropagation();
+        blockFolder.classList.remove("drag-over");
+        if (draggedPageNumber != null) reassignPage(draggedPageNumber, cat);
+      });
+
       const blockHeader = document.createElement("div");
       blockHeader.className = "block-header";
+      const extractBtnHtml = cat === "Invoice"
+        ? `<button class="extract-btn" data-page="${block.pages[0]}">Extract</button>`
+        : "";
       blockHeader.innerHTML = `
         <span class="chevron">▶</span>
         <span>${block.block_label}</span>
+        ${extractBtnHtml}
         <span class="block-pagecount">${block.pages.length}p</span>
       `;
+
+      const resultDiv = document.createElement("div");
+      resultDiv.className = "extract-result";
+      resultDiv.style.display = "none";
+
+      const extractBtn = blockHeader.querySelector(".extract-btn");
+      if (extractBtn) {
+        extractBtn.onclick = (ev) => {
+          ev.stopPropagation();
+          resultDiv.style.display = "block";
+          extractBlockData(parseInt(extractBtn.dataset.page), resultDiv);
+        };
+      }
 
       const pagesDiv = document.createElement("div");
       pagesDiv.className = "block-pages";
@@ -314,8 +534,10 @@ function renderTree(data) {
         leaf.onclick = (ev) => { ev.stopPropagation(); jumpToPage(pageNum); };
         pagesDiv.appendChild(leaf);
       });
+      pagesDiv.appendChild(resultDiv);
 
-      blockHeader.onclick = () => {
+      blockHeader.onclick = (ev) => {
+        if (ev.target.classList.contains("extract-btn")) return;
         blockHeader.classList.toggle("expanded");
         pagesDiv.classList.toggle("expanded");
       };
