@@ -72,6 +72,11 @@
   .page-leaf { display: block; padding: 4px 8px; font-size: 12px; color: #4B5563; cursor: pointer; border-radius: 4px; }
   .page-leaf:hover { background: #F0EDE6; color: var(--ink); }
   .drop-zone { flex: 1; display: flex; align-items: center; justify-content: center; color: #9AA5C4; font-size: 14px; }
+  .override-select {
+    background: #0F1830; color: #EDEFF5; border: 1px solid var(--rail-line);
+    border-radius: 4px; font-size: 10px; padding: 2px 4px; margin-left: auto;
+    align-self: flex-start; cursor: pointer;
+  }
   input[type=file] { display: none; }
   .loading { color: var(--accent); font-size: 13px; padding: 20px; }
 </style>
@@ -182,6 +187,28 @@ function renderPages(data) {
 
     div.appendChild(img);
     div.appendChild(info);
+
+    const select = document.createElement("select");
+    select.className = "override-select";
+    ["JV", "Invoice", "Supporting Document"].forEach(cat => {
+      const opt = document.createElement("option");
+      opt.value = cat;
+      opt.textContent = cat;
+      if (cat === page.category) opt.selected = true;
+      select.appendChild(opt);
+    });
+    select.onclick = (ev) => ev.stopPropagation();
+    select.onchange = (ev) => {
+      ev.stopPropagation();
+      page.category = select.value;
+      page.confidence = 1.0;
+      page.needs_review = false;
+      page.manually_corrected = true;
+      renderPages(currentData);
+      renderTree(currentData);
+    };
+    div.appendChild(select);
+
     div.onclick = () => selectPage(page, div);
     railScroll.appendChild(div);
   });
@@ -202,7 +229,40 @@ function jumpToPage(pageNumber) {
   if (page) selectPage(page, null);
 }
 
+function regroupIntoBlocks(pages) {
+  const blocks = [];
+  let jvCounter = 0, invoiceCounter = 0, supportingCounter = 0;
+  let currentBlock = null;
+
+  pages.forEach(page => {
+    if (page.category === "Supporting Document") {
+      if (currentBlock && currentBlock.category === "Supporting Document") {
+        currentBlock.pages.push(page.page_number);
+      } else {
+        supportingCounter++;
+        currentBlock = { block_label: `Supporting Document ${supportingCounter}`, category: "Supporting Document", pages: [page.page_number] };
+        blocks.push(currentBlock);
+      }
+    } else {
+      let label;
+      if (page.category === "JV") { jvCounter++; label = `JV ${jvCounter}`; }
+      else { invoiceCounter++; label = `Invoice ${invoiceCounter}`; }
+      currentBlock = { block_label: label, category: page.category, pages: [page.page_number] };
+      blocks.push(currentBlock);
+    }
+  });
+
+  return blocks;
+}
+
 function renderTree(data) {
+  data.blocks = regroupIntoBlocks(data.pages);
+  data.summary = {
+    jv_count: data.blocks.filter(b => b.category === "JV").length,
+    invoice_count: data.blocks.filter(b => b.category === "Invoice").length,
+    supporting_document_count: data.blocks.filter(b => b.category === "Supporting Document").length,
+  };
+
   summaryRow.innerHTML = `
     <span><b>${data.summary.jv_count}</b> JV</span>
     <span><b>${data.summary.invoice_count}</b> Invoice</span>
