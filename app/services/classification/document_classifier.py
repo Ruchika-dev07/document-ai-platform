@@ -25,7 +25,7 @@ HEADER_CHARS = 200
 
 JV_KEYWORDS = ["JOURNAL VOUCHER", "سند قيد", "JV NO", "JOURNAL ENTRY"]
 INVOICE_STRICT_KEYWORDS = ["TAX INVOICE", "ORIGINAL INVOICE", "TAX PURCHASE", "INVOICE NO", "فاتورة ضريبية"]
-INVOICE_HEADER_ONLY_KEYWORDS = ["INVOICE"]  # too broad to trust outside the header/title area
+INVOICE_HEADER_ONLY_KEYWORDS = ["TAX INVOICE", "فاتورة ضريبية", "Tax Purchase - Invoice"]  # too broad to trust outside the header/title area
 
 
 def classify_page(page_text: str) -> dict:
