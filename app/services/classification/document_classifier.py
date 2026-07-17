@@ -1,26 +1,27 @@
 """
 Page-level document classifier.
 
-Keywords are loaded from classification_config.json rather than
-hardcoded, so they can be edited without touching code. Reloaded fresh
-on every call to classify_page so config edits take effect without
-restarting the server.
+Classification is based on the page's VISUAL top region (top 20% of
+the page height, by word position), not a character-count slice of the
+OCR text stream. This distinction matters: OCR text order doesn't
+always match visual top-to-bottom layout, especially on multi-column
+invoices where a right-column field label (e.g. "Vendor Invoice No")
+can appear earlier in the extracted text than the actual document
+title, even though it sits lower on the physical page. A character-
+count "header" would wrongly catch that field label; a position-based
+header correctly only looks at what's actually printed near the top of
+the page.
 
-Classification logic (header/title area only, first `header_chars`
-characters):
-1. Check exclusion keywords first (e.g. "Credit Memo") - if any exclusion
-   keyword is present, the page is NEVER classified as Invoice, even if
-   an include keyword also matches. This prevents credit memos/notes
-   from being misfiled as invoices just because they share the word
-   "Invoice" in a compound heading like "Tax Purchase_Credit Memo".
-2. Check JV include keywords.
-3. Check Invoice include keywords (only if no exclusion matched).
-4. Anything else defaults to Supporting Document.
+Keywords are loaded from classification_config.json (editable without
+touching code), reloaded fresh on every call.
+
+Exclusions (e.g. "Credit Memo") are checked before inclusions - if an
+exclusion keyword appears in the header, the page can never be
+classified as Invoice, even if "Invoice" also appears in the header.
 """
 
 import json
 import os
-from typing import Optional
 
 CATEGORY_JV = "JV"
 CATEGORY_INVOICE = "Invoice"
@@ -34,22 +35,23 @@ def _load_config() -> dict:
         return json.load(f)
 
 
-def classify_page(page_text: str) -> dict:
+def classify_page(header_text: str, full_text: str = "") -> dict:
     """
-    Classifies a single page's OCR/text content using the header/title
-    area, checking exclusions before inclusions.
+    Classifies a page using its VISUAL header region text (top 20% of
+    the page, by word position - see documents.py for how this is
+    extracted). `full_text` is used only as a lower-confidence fallback
+    for JV keywords if the header is empty/unreadable; the broad
+    "Invoice"/"فاتورة" keywords are deliberately NEVER checked outside
+    the header, per the classification rule.
     """
     config = _load_config()
-    header_chars = config.get("header_chars", 200)
-    full_text_upper = (page_text or "").upper()
-    header_upper = full_text_upper[:header_chars]
+    header_upper = (header_text or "").upper()
+    full_text_upper = (full_text or header_text or "").upper()
 
     jv_keywords = config.get("jv_include_keywords", [])
     invoice_include = config.get("invoice_include_keywords", [])
     invoice_exclude = config.get("invoice_exclude_keywords", [])
 
-    # Exclusions checked first - if present, this page can never be
-    # classified as Invoice regardless of other keyword matches.
     excluded = any(kw.upper() in header_upper for kw in invoice_exclude)
 
     for kw in jv_keywords:
@@ -61,37 +63,18 @@ def classify_page(page_text: str) -> dict:
             if kw.upper() in header_upper:
                 return {"category": CATEGORY_INVOICE, "confidence": 0.9, "matched_keyword": kw}
 
-    # Fallback: full-text pass, strict phrases only (skips the single
-    # broad "INVOICE" keyword to avoid false positives from trial
-    # balance tables listing "Invoice" as a row/document-type value)
-    strict_invoice = [kw for kw in invoice_include if kw.upper() not in ("INVOICE", "فاتورة")]
-
+    # Fallback only for JV, using full text at lower confidence, in case
+    # the header region extraction failed for some reason. Invoice
+    # keywords are NEVER checked outside the header - that's the rule.
     for kw in jv_keywords:
         if kw.upper() in full_text_upper:
             return {"category": CATEGORY_JV, "confidence": 0.55, "matched_keyword": kw}
 
-    if not excluded:
-        for kw in strict_invoice:
-            if kw.upper() in full_text_upper:
-                return {"category": CATEGORY_INVOICE, "confidence": 0.55, "matched_keyword": kw}
-
-    reason = "matched exclusion keyword" if excluded else None
+    reason = "matched exclusion keyword in header" if excluded else None
     return {"category": CATEGORY_SUPPORTING, "confidence": 0.4, "matched_keyword": reason}
 
 
 def group_pages_into_blocks(page_classifications: list) -> list:
-    """
-    Groups classified pages into blocks:
-    - JV and Invoice pages are numbered individually (JV 1, Invoice 1,
-      Invoice 2, ...) even if scattered across the document.
-    - ALL Supporting Document pages across the entire document are
-      merged into a single block ("Supporting Document 1"), regardless
-      of whether they're consecutive or scattered - since supporting
-      docs aren't the "main" document type and don't need per-section
-      splitting.
-    - Any other category (from a single-document-type upload, e.g.
-      "Emirates ID") is also grouped as one block per category.
-    """
     blocks_by_category = {}
     invoice_counter = 0
     jv_counter = 0
@@ -119,9 +102,6 @@ def group_pages_into_blocks(page_classifications: list) -> list:
             ordered_blocks.append(block)
 
         else:
-            # Single-document-type mode (e.g. every page tagged
-            # "Emirates ID" directly) - one block per category, all
-            # pages merged together.
             if category not in blocks_by_category:
                 block = {"block_label": f"{category} 1", "category": category, "pages": []}
                 blocks_by_category[category] = block
