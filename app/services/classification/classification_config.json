@@ -1,0 +1,6 @@
+{
+  "jv_include_keywords": ["JOURNAL VOUCHER", "سند قيد", "JV NO", "JOURNAL ENTRY"],
+  "invoice_include_keywords": ["TAX INVOICE", "ORIGINAL INVOICE", "TAX PURCHASE", "INVOICE NO", "فاتورة ضريبية", "فاتورة", "INVOICE"],
+  "invoice_exclude_keywords": ["CREDIT MEMO", "TAX PURCHASE_CREDIT MEMO", "CREDIT NOTE", "إشعار دائن"],
+  "header_chars": 200
+}
