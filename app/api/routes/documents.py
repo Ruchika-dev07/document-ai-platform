@@ -80,20 +80,54 @@ def _recompute(data: dict) -> dict:
     return data
 
 
-def _get_page_text(page, thumb_path: str, page_number: int) -> str:
-    text = page.extract_text() or ""
-    if text.strip():
-        return text
+HEADER_FRACTION = 0.20  # top 20% of the page, by visual position
+
+
+def _get_page_header_and_full_text(page, thumb_path: str, page_number: int):
+    """
+    Returns (header_text, full_text) where header_text is built from
+    only the words positioned in the top 20% of the page, by actual
+    pixel/point position - not a character-count slice of the text
+    stream. This matters because OCR/PDF text order does not always
+    match visual top-to-bottom layout on multi-column documents.
+    """
+    full_text = page.extract_text() or ""
+
+    if full_text.strip():
+        # Text-layer PDF: pdfplumber gives word-level bounding boxes
+        # directly, no OCR needed.
+        try:
+            words = page.extract_words()
+            cutoff = page.height * HEADER_FRACTION
+            header_words = [w["text"] for w in words if w["top"] < cutoff]
+            header_text = " ".join(header_words)
+            return header_text, full_text
+        except Exception as e:
+            print(f"[WARN] Page {page_number}: word position extraction failed ({e}), using full text as header.")
+            return full_text, full_text
+
+    # No text layer - fall back to OCR, using Tesseract'''s own word
+    # bounding boxes (image_to_data) to isolate the top 20% region.
     try:
         img = Image.open(thumb_path).convert("L")
         img = ImageOps.autocontrast(img)
-        ocr_text = pytesseract.image_to_string(img)
-        if not ocr_text.strip():
+        full_text = pytesseract.image_to_string(img)
+
+        data = pytesseract.image_to_data(img, output_type=pytesseract.Output.DICT)
+        img_height = img.height
+        cutoff = img_height * HEADER_FRACTION
+        header_words = [
+            data["text"][i] for i in range(len(data["text"]))
+            if data["top"][i] < cutoff and data["text"][i].strip()
+        ]
+        header_text = " ".join(header_words)
+
+        if not full_text.strip():
             print(f"[WARN] Page {page_number}: Tesseract returned empty text.")
-        return ocr_text
+        return header_text, full_text
     except Exception as e:
         print(f"[ERROR] Page {page_number}: Tesseract OCR failed - {type(e).__name__}: {e}")
-        return ""
+        return "", ""
 
 
 @router.post("/documents/split")
@@ -133,8 +167,8 @@ async def split_document(file: UploadFile = File(...), doc_type: str = Form(defa
                 if single_type_mode:
                     category, confidence, matched_keyword = doc_type, 1.0, None
                 else:
-                    page_text = _get_page_text(page, thumb_path, page_number)
-                    result = classify_page(page_text)
+                    header_text, full_text = _get_page_header_and_full_text(page, thumb_path, page_number)
+                    result = classify_page(header_text, full_text)
                     category, confidence, matched_keyword = result["category"], result["confidence"], result["matched_keyword"]
 
                 page_classifications.append({
