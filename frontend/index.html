@@ -43,6 +43,16 @@
     font-size: 11px; padding: 3px 9px; border-radius: 20px; background: #1B2A4D; color: #8FDDBF;
     font-family: "SF Mono", Menlo, monospace;
   }
+  .doc-type-select {
+    background: #16223F; color: #EEF1F8; border: 1px solid var(--rail-line);
+    border-radius: 6px; padding: 8px 10px; font-size: 12.5px; cursor: pointer;
+  }
+  .download-btn {
+    background: none; border: 1px solid #D5D2C6; color: var(--ink);
+    border-radius: 5px; padding: 2px 8px; font-size: 11px; font-weight: 600;
+    cursor: pointer; margin-left: 8px; display: inline-flex; align-items: center; gap: 4px;
+  }
+  .download-btn:hover { background: var(--accent); border-color: var(--accent); color: #1A1200; }
 
   .layout { display: flex; height: calc(100vh - 60px); }
 
@@ -151,6 +161,13 @@
 
 <div class="topbar">
   <div class="brand">Document Split &amp; <span>Categorize</span></div>
+  <select id="doc-type-select" class="doc-type-select">
+    <option value="Mixed">Mixed (JV / Invoice / Supporting)</option>
+    <option value="Emirates ID">Emirates ID batch</option>
+    <option value="Passport">Passport batch</option>
+    <option value="Resume">Resume batch</option>
+    <option value="Contract">Contract batch</option>
+  </select>
   <label class="upload-btn" for="file-input">Upload document</label>
   <input id="file-input" type="file" accept="application/pdf">
   <div class="meta" id="meta-info"></div>
@@ -239,6 +256,7 @@ fileInput.addEventListener("change", async (e) => {
 
   const formData = new FormData();
   formData.append("file", file);
+  formData.append("doc_type", document.getElementById("doc-type-select").value);
 
   try {
     const res = await fetch(API_BASE + "/documents/split", { method: "POST", body: formData });
@@ -432,6 +450,11 @@ function renderExtracted() {
   });
 }
 
+function downloadCategory(category) {
+  const url = `${API_BASE}/documents/download?batch_id=${currentData.batch_id}&category=${encodeURIComponent(category)}`;
+  window.location.href = url;
+}
+
 function renderTree(data) {
   summaryRow.innerHTML = `
     <span><b>${data.summary.jv_count}</b> JV</span>
@@ -439,7 +462,9 @@ function renderTree(data) {
     <span><b>${data.summary.supporting_document_count}</b> Supporting</span>
   `;
 
-  const categories = ["JV", "Invoice", "Supporting Document"];
+  const categoriesFromBlocks = [...new Set(data.blocks.map(b => b.category))];
+  const standard = ["JV", "Invoice", "Supporting Document"];
+  const categories = [...standard, ...categoriesFromBlocks.filter(c => !standard.includes(c))];
   treeScroll.innerHTML = "";
 
   categories.forEach(cat => {
@@ -458,12 +483,17 @@ function renderTree(data) {
 
     const header = document.createElement("div");
     header.className = "category-header";
+    const knownSwatch = standard.includes(cat) ? categoryClass(cat) : "Supporting-Document";
     header.innerHTML = `
       <span class="chevron">▶</span>
-      <span class="category-swatch ${categoryClass(cat)}"></span>
+      <span class="category-swatch ${knownSwatch}"></span>
       <span>${cat}</span>
+      ${totalPages > 0 ? `<button class="download-btn" title="Download all ${cat} pages as one PDF">⬇ Download</button>` : ''}
       <span class="category-count">${blocksInCat.length} block${blocksInCat.length===1?'':'s'} · ${totalPages}p</span>
     `;
+    const dlBtn = header.querySelector(".download-btn");
+    if (dlBtn) dlBtn.onclick = (ev) => { ev.stopPropagation(); downloadCategory(cat); };
+
 
     const children = document.createElement("div");
     children.className = "category-children";
