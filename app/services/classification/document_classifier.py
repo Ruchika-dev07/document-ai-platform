@@ -1,102 +1,131 @@
 """
 Page-level document classifier.
 
-Classifies based on the page's HEADER/TITLE area (first ~200 characters),
-not the whole page body. This matters because:
-- "Invoice" legitimately appears as a column value inside Supporting
-  Document trial-balance tables (e.g. "Document Type: Invoice"), which
-  would cause false positives if we scanned the whole page.
-- pdfplumber sometimes scrambles word order on multi-column layouts, so
-  exact phrases like "Invoice No" can get split apart in the body text -
-  but titles near the top of the page are short and stay intact.
+Keywords are loaded from classification_config.json rather than
+hardcoded, so they can be edited without touching code. Reloaded fresh
+on every call to classify_page so config edits take effect without
+restarting the server.
 
-If nothing matches in the header, we fall back to scanning the full
-page text at lower confidence, so genuinely ambiguous pages still get
-flagged "needs review" rather than silently misfiled.
+Classification logic (header/title area only, first `header_chars`
+characters):
+1. Check exclusion keywords first (e.g. "Credit Memo") - if any exclusion
+   keyword is present, the page is NEVER classified as Invoice, even if
+   an include keyword also matches. This prevents credit memos/notes
+   from being misfiled as invoices just because they share the word
+   "Invoice" in a compound heading like "Tax Purchase_Credit Memo".
+2. Check JV include keywords.
+3. Check Invoice include keywords (only if no exclusion matched).
+4. Anything else defaults to Supporting Document.
 """
 
+import json
+import os
 from typing import Optional
 
 CATEGORY_JV = "JV"
 CATEGORY_INVOICE = "Invoice"
 CATEGORY_SUPPORTING = "Supporting Document"
 
-HEADER_CHARS = 200
+CONFIG_PATH = os.path.join(os.path.dirname(__file__), "classification_config.json")
 
-JV_KEYWORDS = ["JOURNAL VOUCHER", "سند قيد", "JV NO", "JOURNAL ENTRY"]
-INVOICE_STRICT_KEYWORDS = ["TAX INVOICE", "ORIGINAL INVOICE", "TAX PURCHASE", "INVOICE NO", "فاتورة ضريبية"]
-INVOICE_HEADER_ONLY_KEYWORDS = ["TAX INVOICE", "فاتورة ضريبية", "Tax Purchase - Invoice"]  # too broad to trust outside the header/title area
+
+def _load_config() -> dict:
+    with open(CONFIG_PATH) as f:
+        return json.load(f)
 
 
 def classify_page(page_text: str) -> dict:
     """
-    Classifies a single page's OCR/text content.
-    Returns {"category": str, "confidence": float, "matched_keyword": str|None}
+    Classifies a single page's OCR/text content using the header/title
+    area, checking exclusions before inclusions.
     """
+    config = _load_config()
+    header_chars = config.get("header_chars", 200)
     full_text_upper = (page_text or "").upper()
-    header_upper = full_text_upper[:HEADER_CHARS]
+    header_upper = full_text_upper[:header_chars]
 
-    # Pass 1: header/title area - checks both strict phrases AND the
-    # broad "INVOICE" keyword, since a page's title is a reliable signal.
-    for kw in JV_KEYWORDS:
+    jv_keywords = config.get("jv_include_keywords", [])
+    invoice_include = config.get("invoice_include_keywords", [])
+    invoice_exclude = config.get("invoice_exclude_keywords", [])
+
+    # Exclusions checked first - if present, this page can never be
+    # classified as Invoice regardless of other keyword matches.
+    excluded = any(kw.upper() in header_upper for kw in invoice_exclude)
+
+    for kw in jv_keywords:
         if kw.upper() in header_upper:
             return {"category": CATEGORY_JV, "confidence": 0.9, "matched_keyword": kw}
 
-    for kw in INVOICE_STRICT_KEYWORDS + INVOICE_HEADER_ONLY_KEYWORDS:
-        if kw.upper() in header_upper:
-            return {"category": CATEGORY_INVOICE, "confidence": 0.9, "matched_keyword": kw}
+    if not excluded:
+        for kw in invoice_include:
+            if kw.upper() in header_upper:
+                return {"category": CATEGORY_INVOICE, "confidence": 0.9, "matched_keyword": kw}
 
-    # Pass 2: full page text fallback, strict phrases only - the broad
-    # "INVOICE" keyword is deliberately excluded here, since Supporting
-    # Document trial-balance tables list "Invoice" as a row/document-type
-    # value dozens of times per page, which would cause false positives.
-    for kw in JV_KEYWORDS:
+    # Fallback: full-text pass, strict phrases only (skips the single
+    # broad "INVOICE" keyword to avoid false positives from trial
+    # balance tables listing "Invoice" as a row/document-type value)
+    strict_invoice = [kw for kw in invoice_include if kw.upper() not in ("INVOICE", "فاتورة")]
+
+    for kw in jv_keywords:
         if kw.upper() in full_text_upper:
             return {"category": CATEGORY_JV, "confidence": 0.55, "matched_keyword": kw}
 
-    for kw in INVOICE_STRICT_KEYWORDS:
-        if kw.upper() in full_text_upper:
-            return {"category": CATEGORY_INVOICE, "confidence": 0.55, "matched_keyword": kw}
+    if not excluded:
+        for kw in strict_invoice:
+            if kw.upper() in full_text_upper:
+                return {"category": CATEGORY_INVOICE, "confidence": 0.55, "matched_keyword": kw}
 
-    return {"category": CATEGORY_SUPPORTING, "confidence": 0.4, "matched_keyword": None}
+    reason = "matched exclusion keyword" if excluded else None
+    return {"category": CATEGORY_SUPPORTING, "confidence": 0.4, "matched_keyword": reason}
 
 
 def group_pages_into_blocks(page_classifications: list) -> list:
-    blocks = []
+    """
+    Groups classified pages into blocks:
+    - JV and Invoice pages are numbered individually (JV 1, Invoice 1,
+      Invoice 2, ...) even if scattered across the document.
+    - ALL Supporting Document pages across the entire document are
+      merged into a single block ("Supporting Document 1"), regardless
+      of whether they're consecutive or scattered - since supporting
+      docs aren't the "main" document type and don't need per-section
+      splitting.
+    - Any other category (from a single-document-type upload, e.g.
+      "Emirates ID") is also grouped as one block per category.
+    """
+    blocks_by_category = {}
     invoice_counter = 0
     jv_counter = 0
-    supporting_counter = 0
-    current_block = None
+    ordered_blocks = []
 
     for page in page_classifications:
         category = page["category"]
         page_number = page["page_number"]
 
         if category == CATEGORY_SUPPORTING:
-            if current_block and current_block["category"] == CATEGORY_SUPPORTING:
-                current_block["pages"].append(page_number)
-                continue
-            else:
-                supporting_counter += 1
-                current_block = {
-                    "block_label": f"Supporting Document {supporting_counter}",
-                    "category": CATEGORY_SUPPORTING,
-                    "pages": [page_number],
-                }
-                blocks.append(current_block)
+            if CATEGORY_SUPPORTING not in blocks_by_category:
+                block = {"block_label": "Supporting Document 1", "category": CATEGORY_SUPPORTING, "pages": []}
+                blocks_by_category[CATEGORY_SUPPORTING] = block
+                ordered_blocks.append(block)
+            blocks_by_category[CATEGORY_SUPPORTING]["pages"].append(page_number)
+
+        elif category == CATEGORY_JV:
+            jv_counter += 1
+            block = {"block_label": f"JV {jv_counter}", "category": CATEGORY_JV, "pages": [page_number]}
+            ordered_blocks.append(block)
+
+        elif category == CATEGORY_INVOICE:
+            invoice_counter += 1
+            block = {"block_label": f"Invoice {invoice_counter}", "category": CATEGORY_INVOICE, "pages": [page_number]}
+            ordered_blocks.append(block)
+
         else:
-            if category == CATEGORY_JV:
-                jv_counter += 1
-                label = f"JV {jv_counter}"
-            else:
-                invoice_counter += 1
-                label = f"Invoice {invoice_counter}"
+            # Single-document-type mode (e.g. every page tagged
+            # "Emirates ID" directly) - one block per category, all
+            # pages merged together.
+            if category not in blocks_by_category:
+                block = {"block_label": f"{category} 1", "category": category, "pages": []}
+                blocks_by_category[category] = block
+                ordered_blocks.append(block)
+            blocks_by_category[category]["pages"].append(page_number)
 
-            current_block = {
-                "block_label": label,
-                "category": category,
-                "pages": [page_number],
-            }
-            blocks.append(current_block)
-
-    return blocks
+    return ordered_blocks
