@@ -33,6 +33,11 @@ from app.services.classification.document_classifier import (
 from app.services.extraction.invoice_extractor import extract_invoice_fields
 from app.services.extraction.jv_extractor import extract_jv_fields
 from app.services.ocr.azure_ocr_service import analyze_invoice
+from datetime import datetime
+from sqlalchemy.orm import Session
+from fastapi import Depends
+from app.database.connection import get_db
+from app.models.document_record import DocumentRecord
 
 router = APIRouter()
 
@@ -233,7 +238,7 @@ class ExtractRequest(BaseModel):
 
 
 @router.post("/documents/extract-invoice")
-async def extract_invoice_block(req: ExtractRequest):
+async def extract_invoice_block(req: ExtractRequest, db: Session = Depends(get_db)):
     thumb_path = os.path.join(THUMBNAIL_DIR, f"{req.batch_id}_page_{req.page_number}.png")
     if not os.path.exists(thumb_path):
         raise HTTPException(status_code=404, detail="Page image not found. Re-upload the document.")
@@ -244,11 +249,40 @@ async def extract_invoice_block(req: ExtractRequest):
         raise HTTPException(status_code=502, detail=f"Azure OCR call failed: {str(e)}")
 
     fields = extract_invoice_fields(analyze_result)
-    return {"page_number": req.page_number, "category": "Invoice", "fields": fields}
+
+    # Save to database. Date comes back as "YYYY-MM-DD" string from
+    # Azure - parse it, but don't fail the whole request if it's
+    # missing/unparseable, just store it as null.
+    parsed_date = None
+    if fields.get("invoice_date"):
+        try:
+            parsed_date = datetime.strptime(fields["invoice_date"], "%Y-%m-%d").date()
+        except (ValueError, TypeError):
+            pass
+
+    amount = None
+    if fields.get("invoice_total") and isinstance(fields["invoice_total"], dict):
+        amount = fields["invoice_total"].get("amount")
+
+    record = DocumentRecord(
+        batch_id=req.batch_id,
+        page_number=req.page_number,
+        category="Invoice",
+        invoice_no=fields.get("invoice_id"),
+        vendor=fields.get("vendor_name"),
+        amount=amount,
+        invoice_date=parsed_date,
+        status="extracted",
+    )
+    db.add(record)
+    db.commit()
+    db.refresh(record)
+
+    return {"page_number": req.page_number, "category": "Invoice", "fields": fields, "saved_record_id": record.id}
 
 
 @router.post("/documents/extract-jv")
-async def extract_jv_block(req: ExtractRequest):
+async def extract_jv_block(req: ExtractRequest, db: Session = Depends(get_db)):
     thumb_path = os.path.join(THUMBNAIL_DIR, f"{req.batch_id}_page_{req.page_number}.png")
     if not os.path.exists(thumb_path):
         raise HTTPException(status_code=404, detail="Page image not found. Re-upload the document.")
@@ -261,7 +295,38 @@ async def extract_jv_block(req: ExtractRequest):
         raise HTTPException(status_code=500, detail=f"OCR failed: {str(e)}")
 
     fields = extract_jv_fields(text)
-    return {"page_number": req.page_number, "category": "JV", "fields": fields}
+
+    parsed_date = None
+    if fields.get("date"):
+        for fmt in ("%d/%m/%Y", "%d-%m-%Y", "%d/%m/%y"):
+            try:
+                parsed_date = datetime.strptime(fields["date"], fmt).date()
+                break
+            except (ValueError, TypeError):
+                continue
+
+    amount = None
+    if fields.get("amount"):
+        try:
+            amount = float(fields["amount"].replace(",", ""))
+        except (ValueError, AttributeError):
+            pass
+
+    record = DocumentRecord(
+        batch_id=req.batch_id,
+        page_number=req.page_number,
+        category="JV",
+        invoice_no=fields.get("jv_number"),
+        vendor=None,
+        amount=amount,
+        invoice_date=parsed_date,
+        status="extracted",
+    )
+    db.add(record)
+    db.commit()
+    db.refresh(record)
+
+    return {"page_number": req.page_number, "category": "JV", "fields": fields, "saved_record_id": record.id}
 
 
 @router.get("/documents/download")
@@ -297,3 +362,27 @@ async def download_category(batch_id: str, category: str):
         media_type="application/pdf",
         headers={"Content-Disposition": f'attachment; filename="{filename}"'},
     )
+
+
+@router.get("/documents/records")
+async def list_records(batch_id: str = None, db: Session = Depends(get_db)):
+    """Lists saved extraction records, optionally filtered by batch_id."""
+    query = db.query(DocumentRecord)
+    if batch_id:
+        query = query.filter(DocumentRecord.batch_id == batch_id)
+    records = query.order_by(DocumentRecord.created_at.desc()).all()
+    return [
+        {
+            "id": r.id,
+            "batch_id": r.batch_id,
+            "page_number": r.page_number,
+            "category": r.category,
+            "invoice_no": r.invoice_no,
+            "vendor": r.vendor,
+            "amount": float(r.amount) if r.amount is not None else None,
+            "invoice_date": str(r.invoice_date) if r.invoice_date else None,
+            "status": r.status,
+            "created_at": str(r.created_at),
+        }
+        for r in records
+    ]
