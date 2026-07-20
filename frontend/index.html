@@ -383,32 +383,45 @@ function jumpToPage(pageNumber) {
 
 async function extractBlockData(pageNumber, category, resultDiv) {
   resultDiv.innerHTML = '<span class="loading">Extracting…</span>';
-  const endpoint = category === "Invoice" ? "/documents/extract-invoice" : "/documents/extract-jv";
   try {
-    const res = await fetch(API_BASE + endpoint, {
+    const res = await fetch(API_BASE + "/documents/extract", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ batch_id: currentData.batch_id, page_number: pageNumber }),
+      body: JSON.stringify({ batch_id: currentData.batch_id, page_number: pageNumber, category: category }),
     });
     const data = await res.json();
     if (!res.ok) { resultDiv.innerHTML = `<span class="error">${data.detail || "Extraction failed"}</span>`; return; }
 
     const f = data.fields;
+    let bodyHtml = "";
     if (category === "Invoice") {
-      resultDiv.innerHTML = `
+      bodyHtml = `
         <div class="row"><span>Vendor</span><b>${f.vendor_name || "—"}</b></div>
         <div class="row"><span>Invoice #</span><b>${f.invoice_id || "—"}</b></div>
         <div class="row"><span>Date</span><b>${f.invoice_date || "—"}</b></div>
         <div class="row"><span>Total</span><b>${f.invoice_total ? f.invoice_total.amount + " " + f.invoice_total.currencyCode : "—"}</b></div>
       `;
-    } else {
-      resultDiv.innerHTML = `
+    } else if (category === "JV") {
+      bodyHtml = `
         <div class="row"><span>JV #</span><b>${f.jv_number || "—"}</b></div>
         <div class="row"><span>Date</span><b>${f.date || "—"}</b></div>
         <div class="row"><span>Amount</span><b>${f.amount || "—"}</b></div>
-        <div class="note">${f.note}</div>
+        <div class="note">${f.note || ""}</div>
       `;
+    } else if (category === "Passport") {
+      bodyHtml = `
+        <div class="row"><span>Passport #</span><b>${f.passport_number || "—"}</b></div>
+        <div class="row"><span>Nationality</span><b>${f.nationality || "—"}</b></div>
+        <div class="row"><span>Surname</span><b>${f.surname || "—"}</b></div>
+        <div class="row"><span>Given names</span><b>${f.given_names || "—"}</b></div>
+        <div class="row"><span>DOB</span><b>${f.date_of_birth || "—"}</b></div>
+        <div class="row"><span>Expiry</span><b>${f.expiry_date || "—"}</b></div>
+        <div class="note">${f.note || ""}</div>
+      `;
+    } else {
+      bodyHtml = `<div class="note">${f.note || "No extraction available for this category yet."}</div>`;
     }
+    resultDiv.innerHTML = bodyHtml;
 
     extractedResults.unshift({ pageNumber, category, fields: f });
     renderExtracted();
@@ -518,7 +531,7 @@ function renderTree(data) {
 
       const blockHeader = document.createElement("div");
       blockHeader.className = "block-header";
-      const extractBtnHtml = (cat === "Invoice" || cat === "JV")
+      const extractBtnHtml = (cat === "Invoice" || cat === "JV" || cat === "Passport")
         ? `<button class="extract-btn" data-page="${block.pages[0]}" data-cat="${cat}">Extract</button>`
         : "";
       blockHeader.innerHTML = `
