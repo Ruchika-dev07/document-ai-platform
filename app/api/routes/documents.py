@@ -386,3 +386,94 @@ async def list_records(batch_id: str = None, db: Session = Depends(get_db)):
         }
         for r in records
     ]
+
+
+class UnifiedExtractRequest(BaseModel):
+    batch_id: str
+    page_number: int
+    category: str
+
+
+@router.post("/documents/extract")
+async def extract_by_category(req: UnifiedExtractRequest, db: Session = Depends(get_db)):
+    """
+    Single entry point for extraction. Looks at the page's category and
+    routes to the correct extractor via dispatch_extraction() - this is
+    the actual "if JV do X, if Invoice do Y, if Passport do Z" logic,
+    kept separate from classification (which already happened earlier,
+    during /documents/split).
+    """
+    thumb_path = os.path.join(THUMBNAIL_DIR, f"{req.batch_id}_page_{req.page_number}.png")
+    if not os.path.exists(thumb_path):
+        raise HTTPException(status_code=404, detail="Page image not found. Re-upload the document.")
+
+    kwargs = {}
+
+    if req.category == "Invoice":
+        try:
+            kwargs["analyze_result"] = analyze_invoice(thumb_path)
+        except Exception as e:
+            raise HTTPException(status_code=502, detail=f"Azure OCR call failed: {str(e)}")
+    elif req.category in ("JV", "Passport"):
+        try:
+            img = Image.open(thumb_path).convert("L")
+            img = ImageOps.autocontrast(img)
+            kwargs["raw_text"] = pytesseract.image_to_string(img)
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"OCR failed: {str(e)}")
+
+    fields = dispatch_extraction(req.category, **kwargs)
+
+    # Persist to database where we have a schema that fits (Invoice/JV).
+    # Passport and other types return fields for display but aren't
+    # saved yet - the current table schema (invoice_no/vendor/amount/
+    # invoice_date) doesn't have passport-appropriate columns
+    # (surname/nationality/DOB) without a migration, which is a
+    # reasonable next step rather than shoehorning data into the wrong
+    # columns now.
+    saved_record_id = None
+    if req.category == "Invoice":
+        parsed_date = None
+        if fields.get("invoice_date"):
+            try:
+                parsed_date = datetime.strptime(fields["invoice_date"], "%Y-%m-%d").date()
+            except (ValueError, TypeError):
+                pass
+        amount = fields["invoice_total"].get("amount") if isinstance(fields.get("invoice_total"), dict) else None
+        record = DocumentRecord(
+            batch_id=req.batch_id, page_number=req.page_number, category="Invoice",
+            invoice_no=fields.get("invoice_id"), vendor=fields.get("vendor_name"),
+            amount=amount, invoice_date=parsed_date, status="extracted",
+        )
+        db.add(record); db.commit(); db.refresh(record)
+        saved_record_id = record.id
+
+    elif req.category == "JV":
+        parsed_date = None
+        if fields.get("date"):
+            for fmt in ("%d/%m/%Y", "%d-%m-%Y", "%d/%m/%y"):
+                try:
+                    parsed_date = datetime.strptime(fields["date"], fmt).date()
+                    break
+                except (ValueError, TypeError):
+                    continue
+        amount = None
+        if fields.get("amount"):
+            try:
+                amount = float(fields["amount"].replace(",", ""))
+            except (ValueError, AttributeError):
+                pass
+        record = DocumentRecord(
+            batch_id=req.batch_id, page_number=req.page_number, category="JV",
+            invoice_no=fields.get("jv_number"), vendor=None,
+            amount=amount, invoice_date=parsed_date, status="extracted",
+        )
+        db.add(record); db.commit(); db.refresh(record)
+        saved_record_id = record.id
+
+    return {
+        "page_number": req.page_number,
+        "category": req.category,
+        "fields": fields,
+        "saved_record_id": saved_record_id,
+    }
