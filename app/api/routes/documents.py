@@ -21,7 +21,12 @@ from pypdf import PdfReader, PdfWriter
 # Homebrew adds /opt/homebrew/bin to PATH only for zsh (via ~/.zprofile),
 # but bash sessions never get it, causing intermittent "tesseract not
 # found" failures depending on which terminal tab is running.
-for _candidate in ["/opt/homebrew/bin/tesseract", "/usr/local/bin/tesseract"]:
+# Windows installs to Program Files by default instead.
+for _candidate in [
+    "/opt/homebrew/bin/tesseract",
+    "/usr/local/bin/tesseract",
+    r"C:\Program Files\Tesseract-OCR\tesseract.exe",
+]:
     if os.path.exists(_candidate):
         pytesseract.pytesseract.tesseract_cmd = _candidate
         break
